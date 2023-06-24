@@ -1,0 +1,13 @@
+Create a topic content for "Topic", which has the following expected content
+-"content"
+
+Make sure it is in .md format, add images, codeblocks if possible, and references. Also add an introduction and a conclusion. Make sure its generic.
+the topic content must only focus on the topic and must not include anything that is not within the scope of the topic.
+the vibe of the explanation must not feel like talking to the student. do not include any " In this guide, we will explore" or anything
+that's the same as that language.
+the conclusion must just be a summarized version of the content.
+
+Craft a comprehensive Markdown guide on the "content" under the topic 'topic'. 
+The guide should include a clear introduction, code snippets demonstrating their placement and use, 
+diagrams if possible, links to authoritative resources for additional learning, images
+and a conclusion summarizing the importance of "content". 
