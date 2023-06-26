@@ -1,6 +1,6 @@
 # HTML Navigation: Creating Navigation Menus using Lists and Anchor Tags
 
-In HTML (Hypertext Markup Language), you can create navigation menus to help users navigate through different sections or pages of a website. Navigation menus play a crucial role in providing a clear and organized structure to your web content. In this comprehensive guide, we will explore how to create navigation menus using lists and anchor tags.
+In HTML, you can create navigation menus to help users navigate through different sections or pages of a website. Navigation menus play a crucial role in providing a clear and organized structure to your web content. In this topic, we will explore how to create navigation menus using lists and anchor tags.
 
 ## Introduction
 

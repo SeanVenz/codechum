@@ -1,6 +1,6 @@
 # HTML Links: Creating Hyperlinks with Anchor Tags (a) and Linking to External Websites and Internal Sections
 
-In HTML (Hypertext Markup Language), you can create hyperlinks to connect different web pages and sections within a page. Hyperlinks, also known as links, allow users to navigate between web pages, access external resources, or jump to specific sections within a page. In this comprehensive guide, we will explore how to create hyperlinks using anchor tags (a) and link to both external websites and internal sections within your website.
+In HTML, you can create hyperlinks to connect different web pages and sections within a page. Hyperlinks, also known as links, allow users to navigate between web pages, access external resources, or jump to specific sections within a page. In this topic, we will explore how to create hyperlinks using anchor tags (a) and link to both external websites and internal sections within your website.
 
 ## Introduction
 

@@ -10,4 +10,13 @@ the conclusion must just be a summarized version of the content.
 Craft a comprehensive Markdown guide on the "content" under the topic 'topic'. 
 The guide should include a clear introduction, code snippets demonstrating their placement and use, 
 diagrams if possible, links to authoritative resources for additional learning, images
-and a conclusion summarizing the importance of "content". 
+and a conclusion summarizing the importance of "content".
+
+Craft a comprehensive Markdown guide on the content:
+- Components of a computer system (CPU, memory, storage, input/output devices)
+- Interaction between hardware and software
+
+under the topic "The Computer System". The guide should include a clear introduction, code snippets demonstrating their placement and use, diagrams if possible, links to authoritative resources for additional learning, images and a conclusion summarizing the importance of
+content:
+- Components of a computer system (CPU, memory, storage, input/output devices)
+- Interaction between hardware and software

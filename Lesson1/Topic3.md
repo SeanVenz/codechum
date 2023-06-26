@@ -1,6 +1,6 @@
 # HTML Paragraphs: Using the `<p>` Tag
 
-In HTML (Hypertext Markup Language), the `<p>` tag is used to define paragraphs of text within a web page. It allows you to structure and format blocks of text, making it easier for users to read and understand the content. In this comprehensive guide, we will explore how to use the `<p>` tag effectively.
+In HTML (Hypertext Markup Language), the `<p>` tag is used to define paragraphs of text within a web page. It allows you to structure and format blocks of text, making it easier for users to read and understand the content. In this topic, we will explore how to use the `<p>` tag effectively.
 
 ## Introduction
 
@@ -33,10 +33,10 @@ Here's a diagram illustrating the usage of the `<p>` tag:
 <html>
   <head>
     <title>Paragraphs</title>
-    <!-- Other HTML elements go here -->
   </head>
   <body>
     <p>This is a paragraph of text.</p>
+    <p>This is another paragraph of text.</p>
   </body>
 </html>
 ```

@@ -1,6 +1,6 @@
 # HTML Text Formatting: Formatting Text with Strong, Emphasis, Underline, and Other Tags
 
-In HTML (Hypertext Markup Language), you can apply various formatting styles to text to enhance its appearance and convey emphasis. Using tags such as `<strong>`, `<em>`, `<u>`, and others, you can format text in different ways. In this comprehensive guide, we will explore how to format text using these tags and create visually appealing content.
+In HTML, you can apply various formatting styles to text to enhance its appearance and convey emphasis. Using tags such as `<strong>`, `<em>`, `<u>`, and others, you can format text in different ways. In this topic, we will explore how to format text using these tags and create visually appealing content.
 
 ## Introduction
 

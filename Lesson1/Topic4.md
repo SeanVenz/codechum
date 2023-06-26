@@ -1,6 +1,6 @@
 # Line Breaks: Inserting Line Breaks with the `<br>` Tag
 
-In HTML (Hypertext Markup Language), the `<br>` tag is used to insert line breaks within a web page. Line breaks are useful when you want to create a new line without starting a new paragraph or adding additional space between elements. In this comprehensive guide, we will explore how to use the `<br>` tag effectively to insert line breaks.
+In HTML (Hypertext Markup Language), the `<br>` tag is used to insert line breaks within a web page. Line breaks are useful when you want to create a new line without starting a new paragraph or adding additional space between elements. In this topic, we will explore how to use the `<br>` tag effectively to insert line breaks.
 
 ## Introduction
 
@@ -31,7 +31,7 @@ Here's a diagram illustrating the usage of the `<br>` tag:
   <body>
     <p>This is a paragraph of text.</p>
     <br>
-    <p>This is a paragraph of text.</p>
+    <p>This is another paragraph of text separated by a line break.</p>
   </body>
 </html>
 ```

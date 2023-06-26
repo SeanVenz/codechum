@@ -1,6 +1,6 @@
 # HTML Basics: Structure of an HTML Document
 
-HTML (Hypertext Markup Language) serves as the backbone of the web, allowing us to create stunning and interactive websites. Understanding the structure of an HTML document is crucial for anyone starting their journey into web development. In this comprehensive guide, we will explore the structure of an HTML document, providing you with a solid understanding of its components.
+HTML (Hypertext Markup Language) serves as the backbone of the web, allowing us to create stunning and interactive websites. Understanding the structure of an HTML document is crucial for anyone starting their journey into web development. In this topic, we will explore the structure of an HTML document, providing you with a solid understanding of its components.
 
 ## Introduction
 
@@ -83,8 +83,6 @@ Here is a diagram illustrating the structure of an HTML document:
   </body>
 </html>
 ```
-
-![HTML Document Structure](../images/lesson%201/structure-of-an-html-document.png)
 
 ## Conclusion
 

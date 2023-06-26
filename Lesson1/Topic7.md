@@ -1,6 +1,6 @@
 # HTML Lists: Creating Ordered Lists (ol) and Unordered Lists (ul)
 
-In HTML (Hypertext Markup Language), you can create both ordered lists and unordered lists to organize and present information in a structured manner. Lists are useful for displaying items or concepts in a sequential or non-sequential format. In this comprehensive guide, we will explore how to create ordered lists (ol) and unordered lists (ul), as well as how to nest lists and add list items (li).
+In HTML, you can create both ordered lists and unordered lists to organize and present information in a structured manner. Lists are useful for displaying items or concepts in a sequential or non-sequential format. In this topic, we will explore how to create ordered lists (ol) and unordered lists (ul), as well as how to nest lists and add list items (li).
 
 ## Introduction
 
@@ -38,6 +38,23 @@ In the above example, the `<ul>` tag denotes the beginning of an unordered list.
 
 HTML allows you to nest lists within other lists, creating a hierarchical structure. This is useful when you want to group related items together. Here's an example:
 
+```
+<ol>
+  <li>First item</li>
+  <li>Second item
+    <ul>
+      <li>Nested item 1</li>
+      <li>Nested item 2</li>
+    </ul>
+  </li>
+  <li>Third item</li>
+</ol>
+```
+
+## Diagram: HTML List Structure
+
+Here's a diagram illustrating the structure of HTML lists:
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -57,22 +74,6 @@ HTML allows you to nest lists within other lists, creating a hierarchical struct
     </ul>
   </body>
 </html>
-```
-
-## Diagram: HTML List Structure
-
-Here's a diagram illustrating the structure of HTML lists:
-
-```
-<ol>            : Ordered List
-  <li>          : List Item
-    <ul>        : Unordered List (Nested)
-      <li>      : List Item (Nested)
-      <li>      : List Item (Nested)
-    </ul>
-  </li>
-  <li>          : List Item
-</ol>
 ```
 
 ## Conclusion
