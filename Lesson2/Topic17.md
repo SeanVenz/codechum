@@ -52,7 +52,7 @@ The above selector will apply the defined styles to all elements that have the c
 
 ### ID Selectors
 
-ID selectors target elements with a specific ID attribute value. To select elements with a specific ID, use a hash (`#`) followed by the ID name. For example, to select an element with the ID "logo", you can use the following selector:
+ID selectors target elements with a specific ID attribute value. To select elements with a specific ID, use a hash (`#`) followed by the ID name. For example, to select an element with the ID "sample", you can use the following selector:
 
 HTML file:
 

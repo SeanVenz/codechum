@@ -51,9 +51,9 @@ Here's a diagram illustrating the structure of a navigation menu using lists and
 </html>
 ```
 
-## Additional Considerations
+## Additional Consideration
 
-- Use meaningful and descriptive text for your menu items to provide clear navigation options for users.
+Use meaningful and descriptive text for your menu items to provide clear navigation options for users.
 
 ## Conclusion
 

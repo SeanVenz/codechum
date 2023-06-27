@@ -41,6 +41,10 @@ To define the border properties, you can use the CSS `border` property. Here's a
 }
 ```
 
+#### Other border examples
+
+![Border](https://www.w3.org/community/webed/wiki/images/a/af/Cssed_borderstyles.png)
+
 ### Margin
 
 The margin is the space outside the border, which determines the gap between elements. It provides control over the spacing between elements on the page.
@@ -55,8 +59,6 @@ To add margin to an element, you can use the CSS `margin` property. Here's an ex
 }
 ```
 
-## Manipulating Dimensions and Spacing
-
 ### Controlling Width and Height
 
 The width and height properties allow you to control the dimensions of an element. You can set them in absolute values (pixels, centimeters) or relative values (percentage, viewport units).
@@ -70,6 +72,12 @@ The width and height properties allow you to control the dimensions of an elemen
 }
 ```
 
+## CSS Box Model
+
+![Box Model](https://media.geeksforgeeks.org/wp-content/uploads/box-model-1.png)
+
+## Manipulating Dimensions and Spacing
+
 ### Box Sizing
 
 By default, the width and height properties set the dimensions of the content box only, excluding padding and border. However, you can change this behavior by using the `box-sizing` property.
@@ -81,9 +89,13 @@ By default, the width and height properties set the dimensions of the content bo
 }
 ```
 
+![Box Sizing](https://global.discourse-cdn.com/freecodecamp/original/3X/3/a/3a400a6d29bd5475c376bb7585d1a29a7030ea39.png)
+
 ### Margin Collapse
 
 When two adjacent elements have vertical margins, they may collapse, resulting in a combined margin equal to the larger of the two margins. This behavior can affect spacing and should be considered when designing layouts.
+
+![Margin Collapse](https://miro.medium.com/v2/resize:fit:535/1*irihT0essp7Rs2cqtHxyQw.png)
 
 ## Conclusion
 

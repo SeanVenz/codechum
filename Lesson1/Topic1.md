@@ -50,7 +50,7 @@ The `<head>` section is not visible to users directly, but it includes important
 
 ### Document Body: `<body>`
 
-The `<body>` element represents the visible content of the web page. It includes all the elements that users see and interact with, such as headings, paragraphs, images, links, and more. The content within the `<body>` tags is what gets rendered in the browser window.
+The `<body>` element represents the visible content of the web page. It includes all the elements that users see and interact with. The content within the `<body>` tags is what gets rendered in the browser window.
 
 ```html
 <!DOCTYPE html>
@@ -66,23 +66,6 @@ The `<body>` element represents the visible content of the web page. It includes
 ```
 
 The `<body>` section is where you structure and organize the main content of your web page.
-
-## Diagram: Structure of an HTML Document
-
-Here is a diagram illustrating the structure of an HTML document:
-
-```
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Page Title</title>
-    <!-- Other HTML elements go here -->
-  </head>
-  <body>
-    <!-- Content goes here -->
-  </body>
-</html>
-```
 
 ## Conclusion
 

@@ -1,4 +1,4 @@
-Lesson 1: Introduction to HTML 
+Lesson 1: Introduction to HTML
 
 - Topic 1: HTML Basics
   - Structure of an HTML document
@@ -9,7 +9,7 @@ Lesson 1: Introduction to HTML
 - Topic 3: HTML Paragraphs
   - Using the paragraph tag (p)
 
-- Topic 4: Line Breaks
+- Topic 4: HTML Line Breaks
   - Inserting line breaks with the break tag (br)
 
 - Topic 5: HTML Headings
@@ -29,181 +29,207 @@ Lesson 1: Introduction to HTML
 - Topic 9: HTML Navigation
   - Creating navigation menus using lists and anchor tags
 
+- Topic 10: HTML Comments
+  - Using comments to explain code and hide elements from the browser
+
+- Topic 11: HTML Semantics
+  - Understanding the importance of HTML semantics
+  - Using semantic tags: header, nav, main, section, article, aside, footer
+  - The role of semantic tags in SEO and web accessibility
+
+- Topic 12: HTML Tables
+  - Creating tables using table, tr, td, and th tags
+  - Understanding table attributes: colspan, rowspan
+
+- Topic 13: HTML Horizontal Line
+  - Inserting horizontal line with the hr tag
+
+- Topic 14: HTML Forms
+  - Creating forms with form, input, textarea, button, select, option tags
+  - Understanding form attributes: action, method
+
+- Topic 15: HTML Div
+  - Using the div tag for general grouping and organization
+
 Lesson 2: Styling Web Pages with CSS
 
-- Topic 10: Introduction to CSS
+- Topic 16: Introduction to CSS
   - Role of CSS in web development
   - Inline, internal, and external CSS styles
 
-- Topic 11: CSS Selectors
+- Topic 17: CSS Selectors
   - Selecting elements with tag, class, and ID selectors
   - Understanding selector specificity
 
-- Topic 12: CSS Box Model
+- Topic 18: CSS Box Model
   - Understanding the box model (margin, padding, border)
   - Controlling element dimensions and spacing
 
-- Topic 13: CSS Layout
+- Topic 19: CSS Layout
   - Creating layouts with CSS
   - Using CSS display properties (block, inline, inline-block)
 
-- Topic 14: CSS Text Styling
+- Topic 20: CSS Text Styling
   - Modifying font properties (font-family, font-size, font-weight)
   - Changing text color, alignment, and decoration
 
-- Topic 15: CSS Fonts and Web Typography
+- Topic 21: CSS Fonts and Web Typography
   - Working with web fonts and importing custom fonts
 
-- Topic 16: CSS Backgrounds
+- Topic 22: CSS Backgrounds
   - Styling backgrounds with colors, images, and gradients
 
-- Topic 17: CSS Borders
+- Topic 23: CSS Borders
   - Adding borders with different styles, widths, and colors
 
 Lesson 3: Introduction to JavaScript
 
-- Topic 18: JavaScript Syntax and Structure
+- Topic 24: JavaScript Syntax and Structure
   - Understanding the basic syntax of JavaScript
   - Structure of a JavaScript program
 
-- Topic 19: Variables
+- Topic 25: Variables
   - Declaration, assignment, and naming conventions in JavaScript
   - Working with different data types: string, number, boolean, null, undefined
 
-- Topic 20: Arithmetic Operators
+- Topic 26: Arithmetic Operators
   - Using arithmetic operators for mathematical operations
 
-- Topic 21: Assignment Operators
+- Topic 27: Assignment Operators
   - Assigning values to variables using assignment operators
 
-- Topic 22: Comparison Operators
+- Topic 28: Comparison Operators
   - Comparing values using comparison operators
 
-- Topic 23: Logical Operators
+- Topic 
+
+29: Logical Operators
   - Combining conditions using logical operators
 
-- Topic 24: if-else Statements
+- Topic 30: if-else Statements
   - Using if statements for conditional execution
   - Adding else statements for alternative execution
 
-- Topic 25: Switch Statement
+- Topic 31: Switch Statement
   - Using the switch statement for multiple conditions
   - Adding case statements and a default case
 
-- Topic 26: for Loops
+- Topic 32: for Loops
   - Using the for loop for iterating over a specific range
   - Initializing, condition, and iteration in a for loop
 
-- Topic 27: while Loops
+- Topic 33: while Loops
   - Using the while loop for condition-based iteration
   - Controlling the loop with a boolean condition
 
-- Topic 28: do-while Loops
+- Topic 34: do-while Loops
   - Using the do-while loop for executing the loop body at least once
   - Evaluating the condition after the loop body execution
 
-- Topic 29: Arrays
+- Topic 35: Arrays
   - Creating and initializing arrays
   - Declaring and initializing arrays with values
   - Using array literals and the Array constructor
 
-- Topic 30: Accessing Array Elements
+- Topic 36: Accessing Array Elements
   - Accessing elements using index values
   - Understanding zero-based indexing
 
-- Topic 31: Modifying Array Elements
+- Topic 37: Modifying Array Elements
   - Assigning new values to array elements
   - Changing the value of specific array elements
 
-- Topic 32: Array Methods
+- Topic 38: Array Methods
   - Using common array methods: push, pop, shift, unshift
   - Adding and removing elements from an array
 
-- Topic 33: Defining Functions and Function Syntax
+- Topic 39: Defining Functions and Function Syntax
   - Declaring functions with the function keyword
   - Understanding function syntax and structure
 
-- Topic 34: Function Parameters and Arguments
+- Topic 40: Function Parameters and Arguments
   - Declaring function parameters and their purpose
   - Passing arguments to functions when invoking them
 
-- Topic 35: Returning Values from Functions
+- Topic 41: Returning Values from Functions
   - Using the return statement to return a value from a function
   - Capturing and utilizing the returned value
 
-- Topic 36: Function Invocation and Calling Functions
+- Topic 42: Function Invocation and Calling Functions
   - Invoking functions by calling them
   - Understanding the execution of function code
 
-- Topic 37: Global Scope and Local Scope
+- Topic 43: Global Scope and Local Scope
   - Understanding global and local scope in JavaScript
   - Scope hierarchy and access to variables
 
-- Topic 38: Variable Declaration and Assignment within Scopes
+- Topic 44: Variable Declaration and Assignment within Scopes
   - Declaring variables within different scopes
   - Assigning values to variables in different scopes
 
-- Topic 39: Accessing Variables within Different Scopes
+- Topic 45: Accessing Variables within Different Scopes
   - Accessing variables defined in different scopes
   - Shadowing variables in nested scopes
 
-- Topic 40: Variable Hoisting and Its Implications
+- Topic 46: Variable Hoisting and Its Implications
   - Understanding variable hoisting in JavaScript
   - Effects of hoisting on variable declaration and assignment
 
 Lesson 4: DOM Manipulation and Event Handling
 
-- Topic 41: DOM Tree Structure
+- Topic 47: DOM Tree Structure
   - Understanding the hierarchical structure of the DOM
   - Parent-child relationships between elements
 
-- Topic 42: Accessing Elements with JavaScript
+- Topic 48: Accessing Elements with JavaScript
   - Using methods like getElementById, getElementsByTagName, getElementsByClassName
   - Navigating the DOM using parent, child, and sibling relationships
 
-- Topic 43: Modifying Element Properties and Content
+- Topic 49: Modifying Element Properties and Content
   - Changing text content, attributes, and CSS styles
   - Adding, removing, and manipulating DOM nodes
 
-- Topic 44: Event Listeners
+- Topic 50: Event Listeners
   - Adding event listeners to elements
   - Specifying the type of event to listen for (click, mouseover, etc.)
 
-- Topic 45: Event Handling Functions
+- Topic 51: Event Handling Functions
   - Defining functions to handle events
   - Responding to user interactions and triggering actions
 
-- Topic 46: Event Object
+- Topic 52: Event Object
   - Accessing event information and properties
   - Preventing default browser behavior and propagating events
 
-- Topic 47: Form Validation Basics
+- Topic 53: Form Validation
+
+ Basics
   - Validating form input on the client-side
   - Checking for empty fields, required formats, and constraints
 
-- Topic 48: Event Handling for Form Validation
+- Topic 54: Event Handling for Form Validation
   - Listening for form submission events
   - Validating form input before submitting
 
-- Topic 49: Displaying Error Messages
+- Topic 55: Displaying Error Messages
   - Showing error messages for invalid input
   - Updating the user interface to indicate validation errors
 
-- Topic 50: Modifying Inline Styles
+- Topic 56: Modifying Inline Styles
   - Changing element styles directly using JavaScript
   - Setting properties like color, font-size, background-color
 
-- Topic 51: Manipulating CSS Classes
+- Topic 57: Manipulating CSS Classes
   - Adding, removing, and toggling classes dynamically
   - Applying predefined styles by adding/removing classes
 
-- Topic 52: Attribute Manipulation
+- Topic 58: Attribute Manipulation
   - Modifying element attributes related to styling
   - Manipulating attributes like "src", "href", "data-*"
 
 Lesson 5: JavaScript ES6
 
-- Topic 53: Introduction to JavaScript ES6
+- Topic 59: Introduction to JavaScript ES6
   - Block-scoped variables: let and const
   - Arrow functions and their syntax
   - Enhanced object literals
@@ -211,34 +237,34 @@ Lesson 5: JavaScript ES6
   - Spread and rest operators
   - Default parameters and parameter handling
 
-- Topic 54: Template Literals for String Interpolation
+- Topic 60: Template Literals for String Interpolation
   - Creating dynamic strings with variables and expressions
   - Multiline strings using template literals
 
-- Topic 55: String Methods in ES6
+- Topic 61: String Methods in ES6
   - String interpolation with template literals
   - String methods: length, indexOf, slice, replace, toUpperCase, toLowerCase, etc.
 
-- Topic 56: Array Iteration Methods in ES6
+- Topic 62: Array Iteration Methods in ES6
   - forEach: iterating over array elements
   - map: creating a new array with modified elements
   - filter: creating a new array with elements that satisfy a condition
   - reduce: reducing an array to a single value
 
-- Topic 57: Arrow Functions in ES6
+- Topic 63: Arrow Functions in ES6
   - Shorter syntax for function expressions
   - Lexical scoping and this binding in arrow functions
 
 Lesson 6: Building Responsive Web Design
 
-- Topic 58: Introduction to Responsive Web Design
+- Topic 64: Introduction to Responsive Web Design
   - Principles of responsive design
     - Understanding the importance of responsive web design
     - Fluid grids and flexible layouts
     - Media queries for adapting to different screen sizes
     - Viewport meta tag and its role in responsive design
 
-- Topic 59: Flexbox Basics
+- Topic 65: Flexbox Basics
   - Flex Container and Flex Items
     - Understanding the flex container and its properties
     - Defining flex items and their properties
@@ -250,7 +276,7 @@ Lesson 6: Building Responsive Web Design
   - Align Items
     - Aligning flex items along the cross axis
 
-- Topic 60: Creating Flexible Layouts with Flexbox
+- Topic 66: Creating Flexible Layouts with Flexbox
   - Distributing Space with Flexbox Properties
     - Using flex-grow, flex-shrink, and flex-basis to distribute space
   - Controlling Item Order and Alignment
@@ -259,7 +285,7 @@ Lesson 6: Building Responsive Web Design
   - Responsive Design with Flexbox
     - Adapting flexbox layouts to different screen sizes
 
-- Topic 61: CSS Grid Fundamentals
+- Topic 67: CSS Grid Fundamentals
   - Grid Container and Grid Items
     - Understanding the grid container and its properties
     - Defining grid items and their properties
@@ -268,7 +294,7 @@ Lesson 6: Building Responsive Web Design
   - Grid Areas and Grid Templates
     - Creating grid areas and defining grid templates
 
-- Topic 62: Building Grid-based Layouts with CSS Grid
+- Topic 68: Building Grid-based Layouts with CSS Grid
   - Creating Grid Columns and Rows
     - Defining the number and size of grid columns and rows
   - Placing Items on the Grid using Grid Properties

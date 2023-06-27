@@ -8,7 +8,13 @@ Lists are an essential part of web content as they provide a clear and organized
 
 ## Creating Ordered Lists (ol)
 
-Ordered lists are used to present items in a sequential order, typically using numbers or letters to indicate the order of the items. Here's an example of an ordered list:
+To create an ordered list, simply do an opening and closing `<ol>` tags first. Here's an example:
+
+```html
+<ol></ol>
+```
+
+The `<ol>` tag signifies the beginning of an ordered list. Each item within the list is marked using the `<li>` tag, which stands for 'list item'. Here's an example of how to use the `<ol>` and `<li>` tags together to create an ordered list:
 
 ```html
 <ol>
@@ -18,11 +24,15 @@ Ordered lists are used to present items in a sequential order, typically using n
 </ol>
 ```
 
-In the above example, the `<ol>` tag denotes the beginning of an ordered list, and each list item is marked with the `<li>` tag. The list items will be automatically numbered in the order they appear in the code.
-
 ## Creating Unordered Lists (ul)
 
-Unordered lists are used to present items without any specific sequence. They are typically represented by bullet points. Here's an example of an unordered list:
+Unordered lists are used to present items without any specific sequence. They are typically represented by bullet points. To create an unordered list, simply do an opening and closing `<ul>` tags first. Here's an example:
+
+```html
+<ul></ul>
+```
+
+Here's an example of how to use the `<ul>` and `<li>` tags together to create an unordered list too:
 
 ```html
 <ul>
@@ -32,13 +42,11 @@ Unordered lists are used to present items without any specific sequence. They ar
 </ul>
 ```
 
-In the above example, the `<ul>` tag denotes the beginning of an unordered list. The `<li>` tag is used to represent each list item, and bullet points will be displayed for each item.
-
 ## Nesting Lists and Adding List Items (li)
 
 HTML allows you to nest lists within other lists, creating a hierarchical structure. This is useful when you want to group related items together. Here's an example:
 
-```
+```html
 <ol>
   <li>First item</li>
   <li>Second item
@@ -62,15 +70,27 @@ Here's a diagram illustrating the structure of HTML lists:
     <title>Lists</title>
   </head>
   <body>
+    <h3>Ordered List:</h3>
     <ol>
         <li>First item</li>
-        <li>Second item</li>
+        <li>Second item
+          <ul>
+            <li>Nested item 1</li>
+            <li>Nested item 2</li>
+          </ul>
+        </li>
         <li>Third item</li>
     </ol>
+    <h3>Unordered List:</h3>
     <ul>
         <li>Red</li>
         <li>Green</li>
-        <li>Blue</li>
+        <li>Blue
+          <ol>
+            <li>Nested item 1</li>
+            <li>Nested item 2</li>
+          </ol>
+        </li>
     </ul>
   </body>
 </html>
