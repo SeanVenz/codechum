@@ -24,7 +24,9 @@ The above selector will apply the defined styles to all `<p>` elements in the HT
 
 ### Class Selectors
 
-Class selectors target elements with a specific class attribute value. To select elements with a specific class, use a dot (`.`) followed by the class name. For example, to select elements with the class "highlight", you can use the following selector:
+#### Class
+
+Class selectors target elements with a specific class attribute value. To select elements with a specific class, use a dot (`.`) followed by the class name. For example, to select elements with the class "sample", you can use the following selector:
 
 HTML file:
 

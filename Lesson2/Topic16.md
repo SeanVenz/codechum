@@ -23,7 +23,7 @@ CSS serves several key roles in web development:
 Inline CSS styles are applied directly within HTML tags using the `style` attribute. This method allows you to apply styles to individual elements. Here's an example:
 
 ```html
-<p style="color: blue; font-size: 16px;">
+<p style="<!--css styles-->">
   This is a paragraph with inline styles.
 </p>
 ```
@@ -40,8 +40,7 @@ Internal CSS styles are defined within the `<style>` element in the `<head>` sec
   <head>
     <style>
       p {
-        color: blue;
-        font-size: 16px;
+        "<!--css styles-->"
       }
     </style>
   </head>
@@ -76,8 +75,7 @@ CSS file (styles.css):
 
 ```css
 p {
-  color: blue;
-  font-size: 16px;
+  /* css styles */
 }
 ```
 
@@ -90,28 +88,26 @@ be applied to all `<p>` elements in the HTML file.
 Here's a diagram illustrating the different methods of applying CSS styles:
 
 ```
-Inline CSS: <p style="color: blue; font-size: 16px;">...</p>
+Inline CSS: <p style="css styles">...</p>
 
 Internal CSS:
 <head>
   <style>
     p {
-      color: blue;
-      font-size: 16px;
+      "<!--css styles-->"
     }
   </style>
 </head>
 
 External CSS (styles.css):
 p {
-  color: blue;
-  font-size: 16px;
+  "<!--css styles-->"
 }
 ```
 
 ## Additional Considerations
 
-- It's generally recommended to use external CSS stylesheets for better code organization, maintainability, and reusability.
+It's generally recommended to use external CSS stylesheets for better code organization, maintainability, and reusability.
 
 ## Conclusion
 
