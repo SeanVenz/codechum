@@ -2,9 +2,7 @@
 
 ## Introduction
 
-The CSS Box Model is a fundamental concept in web development that describes how elements are rendered on a webpage. It consists of four main components: content, padding, border, and margin. Understanding the box model is crucial for controlling element dimensions, spacing, and overall layout.
-
-In this topic, we will explore each component of the box model and learn how to manipulate them to achieve the desired design.
+The CSS Box Model is a fundamental concept in web development that describes how elements are rendered on a webpage. It consists of four main components: content, padding, border, and margin. Understanding the box model is crucial for controlling element dimensions, spacing, and overall layout. In this topic, we will explore each component of the box model and learn how to manipulate them to achieve the desired design.
 
 ## The Box Model Components
 
