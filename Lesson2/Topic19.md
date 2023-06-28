@@ -1,6 +1,6 @@
-# CSS Layout: Creating Layouts with CSS and Using Display Properties (block, inline, inline-block)
+# CSS Layout: Creating Layouts with CSS and Using Display Properties 
 
-CSS offers a rich set of tools for creating layouts on web pages. You can control the positioning, sizing, and arrangement of elements to craft various layout designs. This topic explores creating layouts with CSS and using the display properties: block, inline, and inline-block.
+CSS offers a rich set of tools for creating layouts on web pages. You can control the positioning, sizing, and arrangement of elements to craft various layout designs. This topic explores creating layouts with CSS and using different display properties.
 
 ## Introduction
 
@@ -61,6 +61,9 @@ This part of the CSS file is styling the `.float-child` class. It sets the width
 
 In this example, `float: left;` causes each child box to be placed to the left of the next box in the line, stacking them horizontally instead of vertically. If there isn't enough horizontal space in the container for all boxes, they will wrap to the next line, just like words in a text.
 
+### Sample Output
+![Sample Float Output](https://i.imgur.com/aGjXjwC.png)
+
 2. **Flexbox:** Flexbox is a robust CSS layout model offering flexible and responsive layout options. It easily arranges elements in a row or column, controls their alignment, and manages wrapping and spacing.
 
 ![CSS Flexbox](https://media.geeksforgeeks.org/wp-content/uploads/20200719214439/202007193.png)
@@ -88,8 +91,6 @@ HTML file:
 
 CSS file (styles.css):
 
-Sure, let's break down the CSS part of the Flexbox example.
-
 ```css
 .flex-container {
   display: flex;
@@ -115,6 +116,9 @@ Here, `display: flex;` is the key CSS property that applies the Flexbox layout t
 ```
 
 This part of the CSS file is styling the `.flex-child` class. It sets the width and height of the child elements to 50 pixels and surrounds them with a border that is 1 pixel wide and solid. Since their parent container is a flex container, these child elements become flex items and follow the flex rules defined in their parent container.
+
+### Sample Output
+![CSS Flex Sample](https://i.imgur.com/MZQlv3H.png)
 
 3. **CSS Grid:** CSS Grid is a two-dimensional layout system for creating complex grid-based layouts. It defines both rows and columns, controls their sizes, and positions elements within the grid cells.
 
@@ -155,9 +159,7 @@ CSS file (styles.css):
 
 In this part, the `.grid-container` class is being styled. The dimensions of the container are set to 200 pixels in width and height and a 1 pixel solid border is set.
 
-Here, `display: grid;` is the essential CSS property that applies the CSS Grid layout technique. This display value turns the container into a grid container and its direct children into grid items. It enables two-dimensional layouts where you can control both rows and columns.
-
-Sure, let's extend the explanation of the `grid-template-columns` property. 
+Here, `display: grid;` is the essential CSS property that applies the CSS Grid layout technique. This display value turns the container into a grid container and its direct children into grid items. It enables two-dimensional layouts where you can control both rows and columns. 
 
 `grid-template-columns: auto auto;` is an important feature of CSS Grid. This property defines the structure of the grid by specifying the number and size of the columns. In our example, `auto auto` specifies the creation of two columns with widths determined automatically by the browser, based on the content of the grid cells. 
 
@@ -184,6 +186,9 @@ Through these settings, you can create a flexible and responsive grid layout tha
 This part is styling the `.grid-child` class. It sets the width and height of the child elements (i.e., grid items) to 50 pixels and surrounds them with a 1 pixel solid border. Since their parent container is a grid container, these child elements become grid items and follow the grid rules defined in their parent container. It's worth noting that in a real-world CSS Grid layout, you often do not need to set explicit width and height on the child items as the grid container controls their sizing.
 
 Each method has its strengths and use cases, so choose the one that best suits your layout requirements.
+
+### Sample Output
+![CSS Grid Sample](https://i.imgur.com/MXP8Hvp.png)
 
 ## Using CSS Display Properties
 
@@ -221,6 +226,9 @@ CSS file (styles.css):
 
 In this example, the `.block-element` selector in the CSS file targets the `<div>` element with the class "block-element" in the HTML file. The `display: block;` rule applies a block-level display property to the element. This means the `<div>` will take up the full width available and create a new line before and after itself, as block-level elements do. The `border: 1px solid black;;` rule applies a border to the element, making it easier to visualize its block-level behavior.
 
+### Sample Output
+![Block Element](https://i.imgur.com/6Bx0neI.png)
+
 2. **inline:** The `display: inline;` property transforms an element into an inline-level element. Inline-level elements do not create line breaks and only occupy as much space as necessary. Examples of inline-level elements include `<span>`, and `<a>`. By default, inline-level elements flow horizontally.
 
 Here's an example of `display: inline;`:
@@ -253,7 +261,8 @@ CSS file (styles.css):
 
 In this example, the `.inline-element` selector in the CSS file targets the `<span>` element with the class "inline-element" in the HTML file. The `display: inline;` rule applies an inline-level display property to the element. This means the `<span>` will not create line breaks before and after itself and will only take up as much space as necessary, as inline-level elements do. The `border: 1px solid black;` rule applies a border to the element, making it easier to visualize its inline-level behavior.
 
-Sure, here's the revised section with explanations and separated CSS:
+### Sample Output
+![CSS Inline Sample](https://i.imgur.com/R08FrtM.png)
 
 3. **inline-block:** The `display: inline-block;` property combines characteristics of both block and inline elements. It allows elements to flow inline like inline-level elements while still allowing for setting width, height, margins, and padding like block-level elements. This display property is useful for creating layouts where elements need to have block-like properties but flow inline.
 
@@ -287,6 +296,9 @@ CSS file (styles.css):
 
 In this example, the `.inline-block-element` selector in the CSS file targets the `<div>` element with the class "inline-block-element" in the HTML file. The `display: inline-block;` rule applies an inline-block-level display property to the element. This means the `<div>` will flow inline like an inline-level element but will still accept settings for width, height, margins, and padding like a block-level element. The `border: 1px solid black` rule applies a border to the element, making it easier to visualize its inline-block-level behavior.
 
+### Sample Output
+![CSS Inline-block Sample](https://i.imgur.com/wI3xRC6.png)
+
 By using these display properties, you can control how elements interact and flow within your layout.
 
 ## Diagram: CSS Display Properties
@@ -297,8 +309,7 @@ Here's an image illustrating the CSS display properties:
 
 ## Additional Considerations
 
-- It's recommended to use modern CSS layout techniques like Flexbox and CSS Grid for complex layouts, as they provide more powerful and flexible options.
-- Consider the responsive design principles to ensure that your layouts adapt well to different screen sizes and devices.
+It's recommended to use modern CSS layout techniques like Flexbox and CSS Grid for complex layouts, as they provide more powerful and flexible options.
 
 ## Conclusion
 
