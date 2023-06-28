@@ -26,9 +26,11 @@ HTML file:
 </head>
 <body>
 
-<div class="float-container">
-  <div class="float-child">Box 1</div>
-  <div class="float-child">Box 2</div>
+<div class="float-left">
+  <p>I'm a box floating to the left!</p>
+</div>
+<div class="float-right">
+  <p>I'm a box floating to the right!</p>
 </div>
 
 </body>
@@ -38,18 +40,18 @@ HTML file:
 CSS file (styles.css):
 
 ```css
-.float-container {
-  width: 200px;
-  height: 200px;
-  border: 1px solid;
+.float-left {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
-.float-child {
-  width: 50px;
-  height: 50px;
-  float: left;
-  border: 1px solid;
-  margin: 5px;
+.float-right {
+  float: right;
+  width: 50%;
+  padding: 10px;
+  box-sizing: border-box;
 }
 ```
 
@@ -120,8 +122,6 @@ HTML file:
 </body>
 </html>
 ```
-
-
 
 CSS file (styles.css):
 
@@ -221,6 +221,4 @@ CSS provides various methods for creating layouts on web pages. By leveraging CS
 Resources:
 - [Mozilla Developer Network (MDN) - CSS Layout](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout)
 - [CSS-Tricks - A Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
-- [Flexbox
-
- Froggy](https://flexboxfroggy.com/)
+- [FlexboxFroggy](https://flexboxfroggy.com/)
