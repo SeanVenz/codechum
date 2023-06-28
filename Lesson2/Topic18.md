@@ -67,6 +67,7 @@ The width and height properties let you decide how big your box (including conte
   height: 150px; /* sets the height to 150 pixels */
   width: 50%; /* sets the width to 50% of the parent element */
   height: 25vh; /* sets the height to 25% of the viewport height */
+  /* viewport height epresents the height of the visible portion of the web page */
 }
 ```
 

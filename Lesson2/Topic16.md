@@ -54,21 +54,26 @@ In the above example, the CSS rules for the `<p>` element are defined within the
 
 ## External CSS Styles
 
-External CSS styles are stored in separate CSS files and linked to HTML documents using the `<link>` element. This method allows you to apply styles across multiple HTML files, promoting reusability and easier maintenance. Here's an example:
+External CSS styles are stored in separate CSS files and linked to HTML documents using the `<link>` element. This method allows you to apply styles across multiple HTML files, promoting reusability and easier maintenance. The `<link>` element has two main attributes, the `rel` and `href` attributes. both have have significant roles:
 
-HTML file:
+1. **rel:** This attribute describes the relationship between the current document and the linked resource. When we use the `rel` attribute with the value "stylesheet", we're specifying that the linked file is a CSS stylesheet that should be used to style the current HTML document.
+
+2. **href:** The `href` attribute specifies the location of the linked resource. In the context of an external CSS file, it would be the path to your CSS file. This can be an absolute path, starting with "http://" or "https://" for externally hosted CSS files, or a relative path to a CSS file hosted on the same server as the HTML file. The web browser uses this path to find and load the CSS file. For example, `href="styles.css"` tells the browser to look for a file named "styles.css" in the same directory as the current HTML file.
+
+Here's the example with those attributes in use:
 
 ```html
 <!DOCTYPE html>
 <html>
   <head>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <p>This is a paragraph with external styles.</p>
-</body>
+    <!-- The rel attribute specifies the relationship (stylesheet) between the HTML document and the linked resource.
+    The href attribute provides the path to the CSS file. -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <p>This is a paragraph with external styles.</p>
+  </body>
 </html>
-
 ```
 
 CSS file (styles.css):
@@ -79,9 +84,7 @@ p {
 }
 ```
 
-In the above example, the CSS styles are defined in the external file "styles.css" and linked to the HTML document using the `<link>` element. The defined styles will
-
-be applied to all `<p>` elements in the HTML file.
+In the above example, the CSS styles are defined in the external file "styles.css" and linked to the HTML document using the `<link>` element. The defined styles will be applied to all `<p>` elements in the HTML file.
 
 ## Diagram: CSS Application Methods
 
