@@ -116,6 +116,61 @@ body {
 
 This selector targets the `<body>` element of the HTML document and applies styles to all elements within it. Note that specific tag, class, or ID selectors will override the body selector due to specificity rules.
 
+## Nesting Selectors
+
+In addition to the selectors already discussed, CSS allows for a more precise targeting of elements through the use of nested selectors. Nested selectors allow you to apply styles to elements based on their context or their relationship with other elements in the HTML document.
+
+### Descendant Selectors
+
+A descendant selector targets elements that are descendants of a specific element. Descendants can be children, grandchildren, or any elements nested within another.
+
+Consider this HTML structure:
+
+```html
+<div class="container">
+  <p>This is a paragraph within the container.</p>
+  <div class="nested-container">
+    <p>This is a paragraph within the nested container.</p>
+  </div>
+</div>
+```
+
+If you wanted to style all `<p>` elements that are inside the `.container` class, you could use the descendant selector like so:
+
+```css
+.container p {
+  /* CSS styles for <p> elements that are descendants of elements with the class "container" */
+}
+```
+
+In this case, both paragraphs will be styled, because they are both descendants of an element with the `container` class.
+
+### Child Selectors
+
+Child selectors are a more specific type of descendant selector that target only the direct children of an element. This means it won't select grandchildren or elements deeper in the hierarchy.
+
+To use a child selector, use the `>` character between selectors. For example:
+
+```css
+.container > p {
+  /* CSS styles for <p> elements that are direct children of elements with the class "container" */
+}
+```
+
+In the earlier HTML example, this selector will only style the first paragraph, as it is a direct child of an element with the `container` class. The second paragraph, being a grandchild (inside `.nested-container`), will not be selected.
+
+### Chaining Selectors
+
+It's possible to chain selectors to target elements that match multiple criteria. For example, you could select an element by its ID and its class at the same time:
+
+```css
+#unique.sample {
+  /* CSS styles for elements with the ID "unique" and the class "sample" */
+}
+```
+
+Note that there is no space between the selectors, indicating that they must both apply to the same element. If the selectors were separated by a space, they would be a descendant selector targeting `.sample` elements inside the `#unique` element.
+
 ## Understanding Selector Specificity
 
 Selector specificity determines which styles will be applied when multiple selectors target the same element. It follows a specific hierarchy:

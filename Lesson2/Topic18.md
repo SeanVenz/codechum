@@ -32,16 +32,12 @@ To define the border properties, you can use the CSS `border` property. Here's a
 
 ```css
 .example {
-  border: 1px solid black; /* sets a 1px solid black border */
+  border: 1px; /* sets a 1px border */
   border-width: 2px; /* sets the border width independently for each side */
   border-color: red; /* sets the border color */
   border-radius: 5px; /* rounds the corners of the border */
 }
 ```
-
-#### Other border examples
-
-![Border](https://www.w3.org/community/webed/wiki/images/a/af/Cssed_borderstyles.png)
 
 ### Margin
 
@@ -67,7 +63,7 @@ The width and height properties let you decide how big your box (including conte
   height: 150px; /* sets the height to 150 pixels */
   width: 50%; /* sets the width to 50% of the parent element */
   height: 25vh; /* sets the height to 25% of the viewport height */
-  /* viewport height epresents the height of the visible portion of the web page */
+  /* viewport height represents the height of the visible portion of the web page */
 }
 ```
 
@@ -95,6 +91,56 @@ By default, when you set an element's width or height, it only affects the conte
 Sometimes, when you have two boxes one below another, the space between them isn't what you'd expect. That's because of margin collapse: the larger margin between them is used, and the smaller one is ignored. Keep this in mind when you're spacing out your elements.
 
 ![Margin Collapse](https://miro.medium.com/v2/resize:fit:535/1*irihT0essp7Rs2cqtHxyQw.png)
+
+## Diagram: CSS Box Model
+
+To demonstrate the CSS Box Model, let's create an HTML and a CSS file. Our HTML file will have a simple structure with a `div` that contains a paragraph.
+
+HTML (`index.html`):
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="box-model">
+        <p>This is the content.</p>
+    </div>
+</body>
+</html>
+```
+CSS (`styles.css`):
+
+```css
+.box-model {
+    width: 200px;
+    height: 150px;
+    padding: 10px;
+    border: 2px solid #000;
+    margin: 20px;
+    box-sizing: border-box;
+}
+
+.box-model p {
+  margin: 0;
+}
+
+```
+
+In this CSS code, we styled our `div` with the class `box-model` and applied different box model properties:
+
+- `width` and `height` are used to set the dimensions of the content box.
+- `padding` is used to create space around the content inside the border.
+- `border` is used to create a border around the padding and content.
+- `border-radius` is used to round the corners of the border.
+- `margin` is used to create space around the border.
+- `box-sizing: border-box` is used to include the padding and border in the element's total width and height.
+
+The `body` styling is just to center our `div` and to apply a simple background color and font family.
+
+Finally, the `p` selector is used to remove the default top and bottom margin of the paragraph element, demonstrating the control
 
 ## Conclusion
 
