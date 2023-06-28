@@ -94,7 +94,6 @@ CSS file (styles.css):
 ```css
 .flex-container {
   display: flex;
-  justify-content: space-between;
   width: 200px;
   height: 200px;
   border: 1px solid;
@@ -104,8 +103,6 @@ CSS file (styles.css):
 This part of the CSS file is styling the `.flex-container` class. It sets the width and height of the container to 200 pixels and surrounds it with a border that is 1 pixel wide and solid.
 
 Here, `display: flex;` is the key CSS property that applies the Flexbox layout technique. The Flexbox model is designed for one-dimensional layouts and can manage space distribution and alignment between items in a container, even when their sizes are unknown or dynamic. The `display: flex;` declaration turns the container into a flex container and its children into flex items.
-
-`justify-content: space-between;` is another powerful feature of Flexbox. This property defines how the browser distributes space between and around content items along the main-axis of a flex container, and it helps align the flex items. `space-between` means items display with equal space between them. Other options include `flex-start`, `flex-end`, `center`, `space-around`, and `space-evenly`.
 
 ```css
 .flex-child {

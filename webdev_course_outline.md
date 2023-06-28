@@ -101,9 +101,7 @@ Lesson 3: Introduction to JavaScript
 - Topic 28: Comparison Operators
   - Comparing values using comparison operators
 
-- Topic 
-
-29: Logical Operators
+- Topic 29: Logical Operators
   - Combining conditions using logical operators
 
 - Topic 30: if-else Statements
@@ -201,9 +199,7 @@ Lesson 4: DOM Manipulation and Event Handling
   - Accessing event information and properties
   - Preventing default browser behavior and propagating events
 
-- Topic 53: Form Validation
-
- Basics
+- Topic 53: Form Validation Basics
   - Validating form input on the client-side
   - Checking for empty fields, required formats, and constraints
 
