@@ -1,6 +1,6 @@
 # CSS Fonts and Web Typography
 
-Web typography plays a significant role in the overall design and aesthetics of a website. With CSS, you can control the appearance and style of text on your web pages. In this guide, we will explore how to work with web fonts and import custom fonts to enhance the typography of your website.
+Web typography plays a significant role in the overall design and aesthetics of a website. With CSS, you can control the appearance and style of text on your web pages. In this topic, we will explore how to work with web fonts and import custom fonts to enhance the typography of your website.
 
 ## Introduction to Web Fonts
 
@@ -28,7 +28,16 @@ In this example, the font-family property is set to Arial as the preferred font,
 
 ## Importing Custom Fonts
 
+### Downloading and using Custom Fonts
+
 If you want to use custom fonts on your website, you can import them using `@font-face` rule in CSS. This allows you to load font files from your server and use them in your CSS rules.
+
+To use downloaded custom fonts, follow these steps:
+
+1. Go to a website that lets you download fonts for free.
+2. Look through the fonts and pick one you like.
+3. Download the font file. This is usually a .ttf or .otf file.
+4. Unzip the downloaded file and save the font file in your project's folder.
 
 To import a custom font, you need to have the font files in different formats (e.g., .woff, .woff2, .ttf) and add the following CSS code to your stylesheet:
 
@@ -79,6 +88,71 @@ body {
 
 In this example, the `@import` rule is used to import the Roboto font from Google Fonts, and the `font-family` property is set to `'Roboto', sans-serif` to use Roboto as the preferred font with a sans-serif fallback.
 
+## Example: Using Custom Fonts
+
+Let's look at two examples of how to use custom fonts in CSS:
+
+### Downloading and using Custom Fonts
+
+Here's how your HTML and CSS could look:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Web and Font Typography</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Some Heading Text</h1>
+  <h3>Some Heading Text</h3>
+  <p>Some paragraph text.</p>
+</body>
+</html>
+```
+
+```css
+@font-face {
+  font-family: 'CustomFont';
+  src: url('fonts/CustomFont-Regular.ttf') format('truetype');
+}
+
+body {
+  font-family: 'CustomFont', sans-serif;
+}
+```
+
+### Using Google Fonts
+
+HTML File:
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Web and Font Typography</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Some Heading Text</h1>
+  <h3>Some Heading Text</h3>
+  <p>Some paragraph text.</p>
+</body>
+</html>
+```
+
+CSS File:
+```css
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+p{
+  font-family: 'Courier New'
+}
+```
+
 ## Conclusion
 
 Typography is an essential aspect of web design that can greatly impact the user experience and overall aesthetics of a website. By working with web fonts and importing custom fonts, you can enhance the visual appeal and create a unique typographic style for your web pages. Whether you choose to use web-safe fonts or import custom fonts, it's crucial to consider factors such as readability, accessibility, and cross-platform compatibility to ensure a consistent and engaging user experience.
@@ -86,5 +160,4 @@ Typography is an essential aspect of web design that can greatly impact the user
 Resources:
 - [Google Fonts](https://fonts.google.com/)
 - [MDN Web Docs - @font-face](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face)
-- [CSS-Tricks - A Complete Guide to Font Loading Strategies](https://css-tricks.com/a-complete-guide-to-font-loading-strategies/)
 - [W3Schools - CSS font-family Property](https://www.w3schools.com/cssref/pr_font_font-family.asp)

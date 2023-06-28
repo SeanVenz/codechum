@@ -19,4 +19,4 @@ Craft a comprehensive Markdown guide on the content:
 under the topic "The Computer System". The guide should include a clear introduction, code snippets demonstrating their placement and use, diagrams if possible, links to authoritative resources for additional learning, images and a conclusion summarizing the importance of
 content:
 - Components of a computer system (CPU, memory, storage, input/output devices)
-- Interaction between hardware and software
+- Interaction between hardware and software 

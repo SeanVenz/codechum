@@ -92,6 +92,30 @@ CSS file (styles.css):
 }
 ```
 
+### Universal Selectors
+
+The universal selector targets all elements on the page, regardless of their type, class, or ID. It is denoted by an asterisk (`*`). For example:
+
+```css
+* {
+  /* CSS styles for all elements */
+}
+```
+
+The above CSS code will target all elements on the web page and apply the styles within the curly braces to those elements.
+
+### Selectors Targeting Body
+
+You can also target the entire body of the HTML document using the body selector:
+
+```css
+body {
+  /* CSS styles for the entire HTML document */
+}
+```
+
+This selector targets the `<body>` element of the HTML document and applies styles to all elements within it. Note that specific tag, class, or ID selectors will override the body selector due to specificity rules.
+
 ## Understanding Selector Specificity
 
 Selector specificity determines which styles will be applied when multiple selectors target the same element. It follows a specific hierarchy:

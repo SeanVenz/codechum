@@ -4,7 +4,7 @@ Lesson 1: Introduction to HTML
   - Structure of an HTML document
 
 - Topic 2: HTML Tags and Elements
-  - Understanding HTML tags and their purpose
+  - Understanding HTML tags and their purpose 
 
 - Topic 3: HTML Paragraphs
   - Using the paragraph tag (p)

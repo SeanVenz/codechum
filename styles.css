@@ -1,4 +1,8 @@
-.inline-block-element {
-  display: inline-block;
-  border: 1px solid black;
+@font-face {
+  font-family: 'Valegan';
+  src: url('./Valegan\ Demo.otf') format('woff2');
+}
+
+h1 {
+  font-family: 'Valegan', Arial, sans-serif;
 }
