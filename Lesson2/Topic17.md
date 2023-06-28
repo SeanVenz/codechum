@@ -22,11 +22,11 @@ p {
 
 The above selector will apply the defined styles to all `<p>` elements in the HTML document.
 
-### Class Selectors
+### Class Attributes in HTML and Using Class Selectors in CSS
 
-#### Class
+In HTML, a class is a type of attribute that is used to define a group of elements. The class attribute can be used to apply the same styles to multiple elements. Each element can have one or more classes, separated by spaces, allowing you to group and target elements in various ways. 
 
-Class selectors target elements with a specific class attribute value. To select elements with a specific class, use a dot (`.`) followed by the class name. For example, to select elements with the class "sample", you can use the following selector:
+Consider this example:
 
 HTML file:
 
@@ -37,10 +37,14 @@ HTML file:
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <p class = "sample">This is a paragraph with class.</p>
+  <p class="sample">This is a paragraph with a class.</p>
 </body>
 </html>
 ```
+
+In this example, we have a paragraph (`<p>`) element that is assigned a class named "sample". This class can be used to apply styling to this paragraph element, but it can also be used with any other HTML element as well. The same class can be used across multiple elements to apply the same set of styles to each of them.
+
+When it comes to using classes in CSS, we have what we call class selectors. A class selector targets elements based on their class attribute. 
 
 CSS file (styles.css):
 
@@ -50,11 +54,13 @@ CSS file (styles.css):
 }
 ```
 
-The above selector will apply the defined styles to all elements that have the class attribute set to "sample".
+The class selector in CSS is denoted by a dot (`.`) followed by the class name. In the example above, `.sample` is a class selector. This will select any HTML element that has a class of "sample" and apply the styles defined within the curly braces (`{}`). 
 
-### ID Selectors
+### ID Attributes in HTML and Using ID Selectors in CSS
 
-ID selectors target elements with a specific ID attribute value. To select elements with a specific ID, use a hash (`#`) followed by the ID name. For example, to select an element with the ID "sample", you can use the following selector:
+In HTML, an ID is a type of attribute that is used to uniquely identify a specific element. The ID attribute can be used to apply styles to a single, unique element. Each element can have only one ID, and each ID should be unique across the entire HTML document.
+
+Consider this example:
 
 HTML file:
 
@@ -65,20 +71,26 @@ HTML file:
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <p id = "sample">This is a paragraph with external styles.</p>
+  <p id="unique">This is a paragraph with an ID.</p>
 </body>
 </html>
 ```
 
+In this example, we have a paragraph (`<p>`) element that is assigned an ID named "unique". This ID can be used to apply styling to this specific paragraph element. Unlike classes, IDs should be unique and not used on multiple elements.
+
+When it comes to using IDs in CSS, we have what we call ID selectors. An ID selector targets a single element based on its ID attribute.
+
+The ID selector in CSS is denoted by a hash (`#`) followed by the ID name. This will select the HTML element that has an ID of "unique" and apply the styles defined within the curly braces (`{}`). 
+
+For instance, if you wanted the element with the ID "unique" to have stylings, you would define your CSS like this:
+
 CSS file (styles.css):
 
 ```css
-#sample {
-  /* CSS styles for elements with the class "sample" */
+#unique {
+  /* CSS styles for the element with the ID "unique" */
 }
 ```
-
-The above selector will apply the defined styles to the element that has the ID attribute set to "sample".
 
 ## Understanding Selector Specificity
 
