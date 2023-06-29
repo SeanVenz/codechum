@@ -28,15 +28,29 @@ Here's an example of using a `for` loop to iterate over a specific range:
 
 ```javascript
 for (let i = 0; i < 5; i++) {
-  // Code to be executed for each iteration
+  console.log("Iteration:", i);
 }
 ```
+
+In the above example, the loop will iterate five times. The loop control variable `i` is initialized with a value of `0`. The loop continues executing as long as `i` is less than `5`. After each iteration, the value of `i` is incremented by `1`, and the iteration count is logged to the console.
+
+To provide user input and use it in a `for` loop, we can use the `prompt` function to ask the user for a value. Here's an example:
+
+```javascript
+let count = prompt("Enter the number of iterations:");
+
+for (let i = 0; i < count; i++) {
+  console.log("Iteration:", i);
+}
+```
+
+In the above example, the user is prompted to enter the number of iterations. The value is stored in the `count` variable after converting it to an integer using `parseInt`. The `for` loop will then iterate `count` times, and the iteration count is logged to the console.
 
 In addition to iterating over a specific range using a for loop, you can also control the step size of the iteration. This allows you to skip elements or perform operations at regular intervals. Let's explore an example:
 
 ```javascript
 for (let i = 0; i < 10; i += 2) {
-  // Code to be executed for each iteration
+  console.log("Iteration:", i);
 }
 ```
 
@@ -46,7 +60,7 @@ In the above example, the loop control variable `i` is initialized with a value 
 
 `for` loops are a fundamental construct in JavaScript for performing repetitive tasks and iterating over data. By understanding how to initialize variables, define loop conditions, and specify iteration actions, we can control the flow of our code and efficiently process large amounts of data.
 
-Using `for` loops allows us to automate repetitive tasks, and perform calculations based on a specific range. They provide a structured and concise way to write code that performs repetitive actions, reducing the need for duplicating code and improving the efficiency of our programs.
+Using `for` loops allows us to automate repetitive tasks and perform calculations based on a specific range. They provide a structured and concise way to write code that performs repetitive actions, reducing the need for duplicating code and improving the efficiency of our programs.
 
 Resources:
 - [MDN Web Docs - for statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for)

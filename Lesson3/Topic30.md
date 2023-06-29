@@ -1,4 +1,4 @@
-# if-else Statements
+# If-else Statements
 
 ## Introduction
 
@@ -17,14 +17,14 @@ if (condition) {
 Here's an example of using the `if` statement:
 
 ```javascript
-let age = 18;
+let age = 20;
 
 if (age >= 18) {
-  // Code to be executed if the condition is true
+  console.log("You are an adult.");
 }
 ```
 
-In the above example, the code inside the `if` block will be executed only if the `age` is greater than or equal to 18. If the condition is true, code blocks inside the `if` statement will be executed.
+In the above example, the code inside the `if` block will be executed only if the `age` is greater than or equal to 18. The user is prompted to enter their age, and if the entered age meets the condition, the message "You are an adult." will be logged to the console.
 
 ## Adding else Statements
 
@@ -38,19 +38,19 @@ if (condition) {
 }
 ```
 
-Here's an example of using the `if-else` statement:
+Here's an example of using the `if-else` statement with user input:
 
 ```javascript
-let age = 16;
+let age = prompt("Enter your age:");
 
 if (age >= 18) {
-  // Code to be executed if the condition is true
+  console.log("You are an adult.");
 } else {
-  // Code to be executed if the condition is false
+  console.log("You are not an adult.");
 }
 ```
 
-In the above example, if the `age` is less than 18, the code inside the `else` block will be executed.
+In the above example, if the entered age is less than 18, the code inside the `else` block will be executed and the message "You are not an adult." will be logged to the console.
 
 ## Adding else if Statements
 
@@ -66,43 +66,41 @@ if (condition1) {
 }
 ```
 
-Here's an example of using the `if-else` statement:
+Here's an example of using the `if-else if-else` statement with user input:
 
 ```javascript
-let age = 20;
+let age = prompt("Enter your age:");
 
 if (age < 18) {
-  // Code to be executed if the condition1 is true
+  console.log("You are a minor.");
 } else if (age >= 18 && age <= 30) {
-  // Code to be executed if the condition2 is true
+  console.log("You are a young adult.");
 } else {
-  // Code to be executed if all other conditions are false
+  console.log("You are an adult.");
 }
 ```
 
-In the above example, if the `age` is less than 18, the code inside the first `if` block will be executed. If the `age` is between 18 and 30 (inclusive), the code inside the `else if`
-
- block will be executed. If all conditions are false, the code inside the `else` block will be executed.
+In the above example, if the entered age is less than 18, the code inside the first `if` block will be executed and the message "You are a minor." will be logged to the console. If the entered age is between 18 and 30 (inclusive), the code inside the `else if` block will be executed and the message "You are a young adult." will be logged to the console. If all conditions are false, the code inside the `else` block will be executed and the message "You are an adult." will be logged to the console.
 
 ## Nested if Statements
 
 We can also nest `if` statements within other `if` statements to create more complex conditions and execution paths. This allows us to check for multiple conditions in a hierarchical manner. Here's an example of nested `if` statements:
 
 ```javascript
-let num = 10;
+let num = prompt("Enter a number:");
 
 if (num > 0) {
   if (num % 2 === 0) {
-    // Code to be executed if num is positive and even
+    console.log("The number is positive and even.");
   } else {
-    // Code to be executed if num is positive but not even
+    console.log("The number is positive but not even.");
   }
 } else {
-  // Code to be executed if num is not positive
+  console.log("The number is not positive.");
 }
 ```
 
-In the above example, the outer `if` statement checks if `num` is greater than 0. If it is, the inner `if` statement checks if `num` is divisible by 2. Depending on the conditions, different code blocks will be executed.
+In the above example, the outer `if` statement checks if the entered number is greater than 0. If it is, the inner `if` statement checks if the number is divisible by 2. Depending on the conditions, different messages will be logged to the console.
 
 ## Conclusion
 

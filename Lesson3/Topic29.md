@@ -13,7 +13,8 @@ Here's an example of using the AND operator:
 ```javascript
 let num1 = 5;
 let num2 = 10;
-let result = (num1 < 10 && num2 > 5); // Output: true
+let result = (num1 < 10 && num2 > 5);
+console.log(result); // Output: true
 ```
 
 In the above example, the expression `(num1 < 10 && num2 > 5)` evaluates to `true` because both conditions are true: `num1` is less than `10` and `num2` is greater than `5`.
@@ -27,7 +28,8 @@ Here's an example of using the OR operator:
 ```javascript
 let num1 = 5;
 let num2 = 10;
-let result = (num1 > 10 || num2 < 5); // Output: false
+let result = (num1 > 10 || num2 < 5);
+console.log(result); // Output: false
 ```
 
 In the above example, the expression `(num1 > 10 || num2 < 5)` evaluates to `false` because both conditions are false: `num1` is not greater than `10` and `num2` is not less than `5`.
@@ -40,7 +42,8 @@ Here's an example of using the NOT operator:
 
 ```javascript
 let isLogged = false;
-let result = !isLogged; // Output: true
+let result = !isLogged;
+console.log(result); // Output: true
 ```
 
 In the above example, the expression `!isLogged` returns `true` because the value of `isLogged` is `false`.
@@ -55,14 +58,15 @@ Here's an example of using parentheses to control the order of evaluation:
 let num1 = 5;
 let num2 = 10;
 let num3 = 15;
-let result = (num1 < num2) && (num2 < num3); // Output: true
+let result = (num1 < num2) && (num2 < num3);
+console.log(result); // Output: true
 ```
 
 In the above example, the expression `(num1 < num2) && (num2 < num3)` uses parentheses to ensure that the comparison between `num1` and `num2` is evaluated first, and then the result is combined with the comparison between `num2` and `num3`.
 
 ## Conclusion
 
-Logical operators are powerful tools for combining conditions and making decisions based on multiple expressions. By using the AND (`&&`), OR (`||`), and NOT (`!`) operators, you can create complex conditions and control the flow of your JavaScript code.
+Logical operators are powerful tools for combining conditions and making decisions based on multiple expressions. By using the AND (`&&`), OR (`||`), and NOT(`!`) operators, you can create complex conditions and control the flow of your JavaScript code.
 
 Understanding how to use logical operators correctly allows you to write more flexible and robust code. By combining conditions, you can create sophisticated decision-making processes and solve complex problems in JavaScript applications.
 

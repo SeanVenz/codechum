@@ -23,23 +23,22 @@ The case statements inside the switch statement represent the different possible
 Here's an example of using the switch statement with case statements:
 
 ```javascript
-let day = "Wednesday";
+let day "Wednesday";
 
 switch (day) {
   case "Monday":
-    // Code to be executed if day is "Monday"
+    console.log("It's Monday!");
     break;
   case "Tuesday":
-    // Code to be executed if day is "Tuesday"
+    console.log("It's Tuesday!");
     break;
   case "Wednesday":
-    // Code to be executed if day is "Wednesday"
+    console.log("It's Wednesday!");
     break;
-  // Add more cases as needed
 }
 ```
 
-In the above example, if the value of the `day` variable is "Wednesday", the code block inside the "Wednesday" case will be executed.
+In the above example, the user is prompted to enter a day. The value is then compared against different case values inside the switch statement. Depending on the entered day, the corresponding code block will be executed and a message will be logged to the console.
 
 ## Using a Default Case
 
@@ -48,22 +47,22 @@ The default case in a switch statement is optional but useful when we want to ha
 Here's an example of using the switch statement with a default case:
 
 ```javascript
-let fruit = "banana";
+let fruit = prompt("Enter a fruit:");
 
 switch (fruit) {
   case "apple":
-    // Code to be executed if fruit is "apple"
+    console.log("It's an apple!");
     break;
   case "orange":
-    // Code to be executed if fruit is "orange"
+    console.log("It's an orange!");
     break;
   default:
-    // Code to be executed if none of the cases match the fruit value
+    console.log("It's an unknown fruit!");
     break;
 }
 ```
 
-In the above example, if the value of the `fruit` variable is not "apple" or "orange", the code block inside the default case will be executed.
+In the above example, the user is prompted to enter a fruit. The value is then compared against different case values inside the switch statement. If the entered fruit matches one of the cases, the corresponding message will be logged to the console. Otherwise, the default case will be executed.
 
 ## Conclusion
 
