@@ -20,12 +20,6 @@ form.addEventListener('submit', function(event) {
 
 In this example, the event handling function is defined to prevent the default form submission behavior and log a message when the form is submitted. **`event.preventDefault();`** Within the event handling function, we call the preventDefault() method on the event object. This method prevents the default form submission behavior, which typically results in the page being refreshed or redirected. By calling `preventDefault()`, we can stop this default behavior from happening.
 
-## More Examples
-
-Here are a few more examples of event handling functions to demonstrate their usage:
-
-Here are a few more examples of event handling functions that require the event as an argument:
-
 ### Example: Click Event
 
 ```javascript
@@ -60,13 +54,9 @@ container.addEventListener('mousemove', function(event) {
 
 In this example, the event handling function is triggered when the mouse is moved over the container element. It logs the mouse coordinates (X and Y) to the console. The `event` parameter provides information about the mousemove event, including the mouse coordinates relative to the viewport.
 
-These examples demonstrate how event handling functions can make use of the `event` parameter to access event-specific information and perform actions based on user interactions. Experiment with these examples and explore different event types to gain a deeper understanding of event handling in JavaScript.
+These examples demonstrate how event handling functions can make use of the `event` parameter to access event-specific information and perform actions based on user interactions.
 
-Please note that the `event` parameter can be named differently. It is a convention to use `event` or `e`, but you can choose any valid identifier.
-
-Experiment with these examples and modify the event types, element ids, or event handling functions to suit your specific needs and create custom interactions in your web applications.
-
-By defining event handling functions, you can respond to user interactions and trigger actions that enhance the interactivity and functionality of your web applications.
+Please note that the `event` parameter can be named differently. It is a convention to use `event` or `e`, but you can choose any valid identifier. By defining event handling functions, you can respond to user interactions and trigger actions that enhance the interactivity and functionality of your web applications.
 
 Resources:
 - [MDN Web Docs - Introduction to events](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events)

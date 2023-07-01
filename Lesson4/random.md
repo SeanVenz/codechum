@@ -1,158 +1,137 @@
-# Modifying Element Properties and Content
+# Event Handling in JavaScript with the Event Argument
 
 ## Introduction
 
-When creating dynamic web pages with JavaScript, it's often necessary to change the properties or content of HTML elements on the fly. This could be anything from updating the text inside an element, to changing the image source in an `img` tag, or even altering the look and feel by changing CSS styles. This topic covers how to do this by using various JavaScript methods and properties.
+When users interact with a webpage, such as clicking on a button or moving the mouse, these actions trigger what we call 'events.' JavaScript allows us to define how our webpage should respond to these events using something called 'event handling functions'. The functions receive an argument—usually named 'event'—which holds details about the event. By using this event argument, we can make our webpages more dynamic and interactive.
 
-## Changing Text Content
+## Using the Event Argument
 
-Imagine you have a webpage with a welcoming message that you want to change based on the time of day. The `textContent` property allows you to manipulate the text inside an HTML element. Here's an example:
+The event argument is an object containing information related to the specific event. Its properties can provide useful data, such as the exact location of a mouse click or the specific key pressed on the keyboard. Let's see how this works in practice:
 
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Welcome Message</title>
-  <script src="script.js"></script>
-</head>
-<body>
-  <div id="welcomeMessage">Welcome, visitor!</div>
-</body>
-</html>
-```
+### Example 1: Click Event
 
-Your `script.js` might look something like this:
-
-```javascript
-let element = document.getElementById('welcomeMessage');
-element.textContent = 'Good morning, visitor!';
-```
-
-This will change the welcoming message to 'Good morning, visitor!' using the `textContent` property.
-
-## Changing Attributes
-
-Say you have an image gallery and want to change the displayed image based on user interaction. For this, you can use the `setAttribute` and `getAttribute` methods to change or get the value of an attribute on an element.
+Imagine we have a button on our webpage, and we want to display a message with the exact coordinates where the button was clicked. Here's how we might do this:
 
 ```html
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Image Gallery</title>
-  <script src="script.js"></script>
+  <title>Click Event Example</title>
 </head>
 <body>
-  <img id="galleryImage" src="image1.jpg" alt="Gallery Image">
+  <button id="myButton">Click Me</button>
+  <script src="script.js"></script>
 </body>
 </html>
 ```
 
-Your `script.js` can then be used to change the image:
+In this case, `event.clientX` and `event.clientY` give us the horizontal and vertical coordinates, respectively, of where the click event happened.
+
+Inside the "script.js" file:
 
 ```javascript
-let element = document.getElementById('galleryImage');
-element.setAttribute('src', 'image2.jpg');
+const button = document.getElementById('myButton');
+button.addEventListener('click', function(event) {
+  console.log(`Button was clicked at coordinates (${event.clientX}, ${event.clientY})`);
+});
 ```
 
-This changes the `src` attribute of the image, effectively showing a different picture in your gallery.
+### Example 2: Keydown Event
 
-## Changing CSS Styles
-
-To give your webpage a dynamic feel, you might want to change the style of an element based on specific conditions or events. To do this, you can access the `style` property of an element and change its individual CSS properties.
+Suppose we want to log a message to the console every time the user presses a key. We also want to display which key was pressed:
 
 ```html
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Dynamic Styling</title>
-  <script src="script.js"></script>
+  <title>Keydown Event Example</title>
 </head>
 <body>
-  <div id="dynamicElement">Watch my style change!</div>
+  <script src="script.js"></script>
 </body>
 </html>
 ```
 
-Your `script.js` can then change the style of this element:
+Inside the "script.js" file:
 
 ```javascript
-let element = document.getElementById('dynamicElement');
-element.style.color = 'blue';
-element.style.backgroundColor = 'yellow';
+document.addEventListener('keydown', function(event) {
+  console.log(`The key '${event.key}' was pressed`);
+});
 ```
 
-This changes the color of the text inside the `dynamicElement` to blue and the background color to yellow.
+Here, `event.key` gives us the specific key that triggered the keydown event.
 
-## Adding, Removing, and Manipulating DOM Nodes
+### Example 3: Mousemove Event
 
-Sometimes, you may need to add or remove elements from the webpage dynamically. 
-
-### Adding Elements
-
-For instance, imagine you have a to-do list application where you want to add new items as the user inputs them. You can create new elements and append them to existing elements:
+If we want to track the mouse's movement and display the exact coordinates of the mouse cursor, we could do the following:
 
 ```html
 <!DOCTYPE html>
 <html>
 <head>
-  <title>To-Do List</title>
-  <script src="script.js"></script>
+  <title>Mousemove Event Example</title>
+  <style>
+    #myContainer {
+      width: 500px;
+      height: 300px;
+      background-color: #eee;
+    }
+  </style>
 </head>
 <body>
-  <ul id="todoList"></ul>
+  <div id="myContainer"></div>
+  <script src="script.js"></script>
 </body>
 </html>
 ```
 
-Then, in your `script.js`, you can add a new list item:
+Inside the "script.js" file:
 
 ```javascript
-let todoList = document.getElementById('todoList');
-let newItem = document.createElement('li');
-newItem.textContent = 'New To-Do Item';
-todoList.appendChild(newItem);
+const container = document.getElementById('myContainer');
+container.addEventListener('mousemove', function(event) {
+  console.log(`Mouse coordinates: (${event.clientX}, ${event.clientY})`);
+});
 ```
 
-### Removing Elements
+Similar to the click event, `event.clientX` and `event.clientY` give us the mouse's position when the mousemove event is fired.
 
-Similarly, in the to-do list application, you might want to remove items once they're completed:
-
-```javascript
-let todoList = document.getElementById('todoList');
-let firstItem = todoList.childNodes[0]; // Assuming there is at least one item in the list
-todoList.removeChild(firstItem);
-```
-
-This removes the first item from the to-do list.
-
-### Manipulating DOM Structure
-
-In a webpage, you might need to move an element from one place to another based on user interaction:
+### Example 4: Submit Event
 
 ```html
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Interactive Webpage</title>
-  <script src="script.js"></script>
+  <title>Submit Event Example</title>
 </head>
 <body>
-  <div id="sourceElement">I'm an element that can move!</div>
-  <div id="destinationElement">I'm the destination!</div>
-</body>
+  <form id="myForm">
+    <input type="text" name="username" placeholder="Username">
+    <input type="password" name="password" placeholder="Password">
+    <button type="submit">Submit</button>
+  </form>
+  <script src="script.js"></script>
+</
+
+body>
 </html>
 ```
 
-In your `script.js`, you can move the `sourceElement` to `destinationElement`:
+Inside the "script.js" file:
 
 ```javascript
-let sourceElement = document.getElementById('sourceElement');
-let destinationElement = document.getElementById('destinationElement');
-destinationElement.appendChild(sourceElement);
+const form = document.getElementById('myForm');
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+  console.log('Form submitted');
+});
 ```
 
-This will make `sourceElement` a child of `destinationElement`.
+In this example, the event handling function is defined to prevent the default form submission behavior and log a message when the form is submitted. **`event.preventDefault();`** Within the event handling function, we call the preventDefault() method on the event object. This method prevents the default form submission behavior, which typically results in the page being refreshed or redirected. By calling `preventDefault()`, we can stop this default behavior from happening.
 
-## Conclusion
+By making good use of the event argument, you can make your webpages react more specifically to user interactions. For example, you can display different responses when the user clicks different parts of a button or responds differently to different key presses.
 
-Being able to change the properties, content, and structure of HTML elements is a crucial part of creating dynamic and interactive web pages with JavaScript. Practice and get comfortable with these techniques, and you'll be well on your way to creating more engaging and interactive web applications.
+Resources:
+- [MDN Web Docs - Introduction to events](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events)
+- [W3Schools - JavaScript Events](https://www.w3schools.com/js/js_events.asp)
