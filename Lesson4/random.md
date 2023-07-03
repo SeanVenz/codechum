@@ -1,137 +1,125 @@
-# Event Handling in JavaScript with the Event Argument
+# Event Object
+
+The Event Object is a fundamental concept in web development that allows developers to interact with and handle various events that occur within a web page. Events can include actions such as clicks, mouse movements, key presses, form submissions, and more. In this guide, we will explore two important aspects of the Event Object: accessing event information and properties, and preventing default browser behavior while propagating events.
 
 ## Introduction
 
-When users interact with a webpage, such as clicking on a button or moving the mouse, these actions trigger what we call 'events.' JavaScript allows us to define how our webpage should respond to these events using something called 'event handling functions'. The functions receive an argument—usually named 'event'—which holds details about the event. By using this event argument, we can make our webpages more dynamic and interactive.
+When working with web development, it's essential to understand how to handle events. The Event Object provides valuable information about events and allows us to control their behavior. By accessing event information and properties, we can retrieve specific details about the events occurring on elements within a web page. Additionally, by preventing default browser behavior and propagating events, we can customize the behavior of our web applications and create more interactive user experiences.
 
-## Using the Event Argument
+## Accessing Event Information and Properties
 
-The event argument is an object containing information related to the specific event. Its properties can provide useful data, such as the exact location of a mouse click or the specific key pressed on the keyboard. Let's see how this works in practice:
+To access event information and properties, we can utilize the Event Object that is automatically created when an event occurs. This object contains valuable information about the event, such as the type of event, the element that triggered the event, and other relevant details.
 
-### Example 1: Click Event
-
-Imagine we have a button on our webpage, and we want to display a message with the exact coordinates where the button was clicked. Here's how we might do this:
+Here's an example of how to access event information using JavaScript:
 
 ```html
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Click Event Example</title>
+  <title>Accessing Event Information</title>
 </head>
 <body>
-  <button id="myButton">Click Me</button>
+  <button id="myButton">Click Me!</button>
+
   <script src="script.js"></script>
 </body>
 </html>
 ```
 
-In this case, `event.clientX` and `event.clientY` give us the horizontal and vertical coordinates, respectively, of where the click event happened.
-
-Inside the "script.js" file:
-
+**script.js:**
 ```javascript
-const button = document.getElementById('myButton');
-button.addEventListener('click', function(event) {
-  console.log(`Button was clicked at coordinates (${event.clientX}, ${event.clientY})`);
+document.getElementById("myButton").addEventListener("click", function(event) {
+  console.log("Event type:", event.type);
+  console.log("Target element:", event.target);
+  console.log("Mouse coordinates:", event.clientX, event.clientY);
 });
 ```
 
-### Example 2: Keydown Event
+In the above code snippet, we have an HTML file with a button element. We create an external JavaScript file called `script.js` to separate the JavaScript code. In `script.js`, we attach a click event listener to the button. When the button is clicked, the event handler function is called with the event object as the argument. We can then access various properties of the event object, such as `type`, `target`, and `clientX`/`clientY` to retrieve information about the event.
 
-Suppose we want to log a message to the console every time the user presses a key. We also want to display which key was pressed:
+To learn more about the properties and methods available on the Event Object, refer to the [Mozilla Developer Network (MDN) documentation on the Event Object](https://developer.mozilla.org/en-US/docs/Web/API/Event).
+
+## Preventing Default Browser Behavior and Propagating Events
+
+There may be cases where we want to prevent the default behavior associated with an event or control how events propagate through the DOM tree.
+
+### Preventing Default Behavior
+
+To prevent the default behavior of an event, we can use the `preventDefault()` method of the Event Object. This allows us to stop the default action associated with the event.
 
 ```html
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Keydown Event Example</title>
-</head>
-<body>
-  <script src="script.js"></script>
-</body>
-</html>
-```
-
-Inside the "script.js" file:
-
-```javascript
-document.addEventListener('keydown', function(event) {
-  console.log(`The key '${event.key}' was pressed`);
-});
-```
-
-Here, `event.key` gives us the specific key that triggered the keydown event.
-
-### Example 3: Mousemove Event
-
-If we want to track the mouse's movement and display the exact coordinates of the mouse cursor, we could do the following:
-
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Mousemove Event Example</title>
-  <style>
-    #myContainer {
-      width: 500px;
-      height: 300px;
-      background-color: #eee;
-    }
-  </style>
-</head>
-<body>
-  <div id="myContainer"></div>
-  <script src="script.js"></script>
-</body>
-</html>
-```
-
-Inside the "script.js" file:
-
-```javascript
-const container = document.getElementById('myContainer');
-container.addEventListener('mousemove', function(event) {
-  console.log(`Mouse coordinates: (${event.clientX}, ${event.clientY})`);
-});
-```
-
-Similar to the click event, `event.clientX` and `event.clientY` give us the mouse's position when the mousemove event is fired.
-
-### Example 4: Submit Event
-
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Submit Event Example</title>
+  <title>Preventing Default Behavior</title>
 </head>
 <body>
   <form id="myForm">
     <input type="text" name="username" placeholder="Username">
-    <input type="password" name="password" placeholder="Password">
     <button type="submit">Submit</button>
   </form>
-  <script src="script.js"></script>
-</
 
-body>
+  <script src="script.js"></script>
+</body>
 </html>
 ```
 
-Inside the "script.js" file:
-
+**script.js:**
 ```javascript
-const form = document.getElementById('myForm');
-form.addEventListener('submit', function(event) {
+document.getElementById("myForm").addEventListener("submit", function(event) {
   event.preventDefault();
-  console.log('Form submitted');
+  console.log("Form submitted!");
 });
 ```
 
-In this example, the event handling function is defined to prevent the default form submission behavior and log a message when the form is submitted. **`event.preventDefault();`** Within the event handling function, we call the preventDefault() method on the event object. This method prevents the default form submission behavior, which typically results in the page being refreshed or redirected. By calling `preventDefault()`, we can stop this default behavior from happening.
+In the above example, we have a form element with an input field and a submit button. When the form is submitted, the event handler function is called with the event object as the argument. Within the event handler function, we call the `event.preventDefault()` method to prevent the default form submission behavior. Instead of the form
 
-By making good use of the event argument, you can make your webpages react more specifically to user interactions. For example, you can display different responses when the user clicks different parts of a button or responds differently to different key presses.
+ being submitted and the page reloading, we can perform custom actions or handle the form data as needed.
 
-Resources:
-- [MDN Web Docs - Introduction to events](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events)
-- [W3Schools - JavaScript Events](https://www.w3schools.com/js/js_events.asp)
+### Propagating Events
+
+By default, events in JavaScript follow a process called event propagation, which means that an event occurring on an element can "bubble up" to its parent elements. However, there may be cases where we want to stop the event from propagating further. This can be achieved using the `stopPropagation()` method of the Event Object.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Propagating Events</title>
+</head>
+<body>
+  <div id="outer">
+    <div id="inner">
+      Click Me!
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+```
+
+**script.js:**
+```javascript
+document.getElementById("inner").addEventListener("click", function(event) {
+  event.stopPropagation();
+  console.log("Clicked on inner element!");
+});
+
+document.getElementById("outer").addEventListener("click", function(event) {
+  console.log("Clicked on outer element!");
+});
+```
+
+In the above example, we have an outer `<div>` element and an inner `<div>` element. When the inner element is clicked, the event handler function is called with the event object as the argument. By calling `event.stopPropagation()`, we prevent the event from propagating up to parent elements. Therefore, the click event on the inner element will not trigger the click event listener attached to the outer element.
+
+For more details on preventing default behavior and event propagation, refer to the [MDN documentation on preventing default actions](https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault) and [event propagation](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events#event_propagation).
+
+## Conclusion
+
+Understanding the Event Object and how to access event information, prevent default browser behavior, and control event propagation is crucial for effective event handling in web development. By accessing event properties, we can gather specific details about events and utilize them to enhance the functionality and interactivity of our web applications. Additionally, being able to prevent default behavior and control event propagation allows us to customize the behavior of events and create more tailored user experiences.
+
+Experimenting with the Event Object and practicing event handling will enable you to create dynamic and interactive web applications that respond to user interactions. As you gain more experience, you'll be able to leverage the power of events to build rich and engaging web experiences.
+
+References:
+[MDN Web Docs](https://developer.mozilla.org/)
+[W3Schools](https://www.w3schools.com/)

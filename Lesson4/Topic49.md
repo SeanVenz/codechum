@@ -50,6 +50,7 @@ Here are some examples of commonly used event types:
 
 The `'click'` event is triggered when an element is clicked by the user. You can use it to perform an action or execute a function when the element is clicked. Here's an example:
 
+HTML File:
 ```html
 <!DOCTYPE html>
 <html>
