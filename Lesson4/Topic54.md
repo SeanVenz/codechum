@@ -30,7 +30,6 @@ HTML File:
 ```
 JavaScript File:
 ```javascript
-// script.js
 const emailInput = document.getElementById('email');
 emailInput.addEventListener('input', function() {
   if (!emailInput.validity.valid) {
@@ -72,6 +71,7 @@ In the code snippet above, we define a CSS rule targeting the `input:invalid` ps
 
 To further illustrate the concepts of displaying error messages and updating the user interface, let's consider an example of a registration form. We'll show how to validate the password confirmation and display error messages accordingly.
 
+HTML File:
 ```html
 <!DOCTYPE html>
 <html>
@@ -101,9 +101,8 @@ To further illustrate the concepts of displaying error messages and updating the
 </body>
 </html>
 ```
-
+JavaScript File:
 ```javascript
-// script.js
 function validateForm() {
   var password = document.forms["registrationForm"]["password"].value;
   var confirmPassword = document.forms["registrationForm"]["confirmPassword"].value;

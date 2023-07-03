@@ -23,3 +23,6 @@ content:
 
 make sure to add html code to examples so students 
 with 0 knowledge can easily copy paste it and experiment it for themselves
+also add a part of ## More Examples 
+with explanation and complete html and external javascript code 
+(script tag must be above the closing body tag) so students can understand more

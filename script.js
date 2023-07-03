@@ -1,9 +1,12 @@
-// script.js
-const emailInput = document.getElementById('email');
-emailInput.addEventListener('input', function() {
-  if (!emailInput.validity.valid) {
-    emailInput.setCustomValidity('Please enter a valid email address.');
+function validateForm() {
+  var password = document.forms["registrationForm"]["password"].value;
+  var confirmPassword = document.forms["registrationForm"]["confirmPassword"].value;
+  var passwordError = document.getElementById("passwordError");
+  
+  if (password !== confirmPassword) {
+    passwordError.textContent = "Passwords do not match.";
+    return false;
   } else {
-    emailInput.setCustomValidity('');
+    passwordError.textContent = "";
   }
-});
+}
