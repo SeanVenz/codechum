@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Registration Form</title>
+  <title>Manipulating CSS Classes</title>
   <style>
-    input:invalid {
-      border-color: red;
+    .highlight {
+      background-color: yellow;
     }
   </style>
+
+
 </head>
 <body>
-  <h1>Registration Form</h1>
+  <p id="myParagraph" onmouseover="addHighlight()" onmouseout="removeHighlight()">This is a paragraph.</p>
   
-  <form name="registrationForm" onsubmit="return validateForm()">
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required>
+  <script>
+    function addHighlight() {
+      var paragraph = document.getElementById('myParagraph');
+      paragraph.classList.add('highlight');
+    }
     
-    <label for="confirmPassword">Confirm Password:</label>
-    <input type="password" id="confirmPassword" name="confirmPassword" required>
-    <span id="passwordError" style="color: red;"></span>
-    
-    <input type="submit" value="Register">
-  </form>
-
-  <script src="script.js"></script>
+    function removeHighlight() {
+      var paragraph = document.getElementById('myParagraph');
+      paragraph.classList.remove('highlight');
+    }
+  </script>
 </body>
 </html>
