@@ -286,8 +286,6 @@ greet('Alice', 25); // Output: Hello, my name is Alice and I'm 25 years old.
 
 In this example, the `greet` function has default parameters `name` and `age` set to `'John'` and `30` respectively. If no arguments are provided, the default values are used. If arguments are provided, the function uses the provided values.
 
-These examples provide a glimpse into the power and flexibility of ES6 features. Experiment with these concepts to further enhance your understanding of JavaScript and leverage the full potential of modern web development.
-
 ## Conclusion
 
 ES6 brought several powerful features and syntax enhancements to JavaScript, making it more expressive and efficient. Block-scoped variables (`let` and `const`) improve code organization and prevent hoisting issues. Arrow functions provide a concise syntax for writing function expressions. Enhanced object literals offer shorthand property names and concise methods for object definition. Destructuring assignments simplify working with arrays. Spread and rest operators enable easy array manipulation and flexible function parameter handling. Default parameters allow for the specification of default values, ensuring functions work correctly with missing or undefined arguments.

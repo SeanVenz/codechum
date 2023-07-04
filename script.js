@@ -1,3 +1,5 @@
-const letters = ['a', 'b', 'c', 'd', 'e'];
-const [a, b, , , e] = letters;
-console.log(a, b, e);
+const numbers = [1, 2, 3, 4, 5];
+
+numbers.forEach((number) => {
+  console.log(number);
+});
