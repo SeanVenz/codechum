@@ -1,28 +1,18 @@
 <!DOCTYPE html>
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 <html>
 <head>
-  <title>Manipulating CSS Classes</title>
-  <style>
-    .highlight {
-      background-color: yellow;
-    }
-  </style>
-
-
+  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-  <p id="myParagraph" onmouseover="addHighlight()" onmouseout="removeHighlight()">This is a paragraph.</p>
-  
-  <script>
-    function addHighlight() {
-      var paragraph = document.getElementById('myParagraph');
-      paragraph.classList.add('highlight');
-    }
-    
-    function removeHighlight() {
-      var paragraph = document.getElementById('myParagraph');
-      paragraph.classList.remove('highlight');
-    }
-  </script>
+  <div class="container">
+    <div class="item itemA">Item A</div>
+    <div class="item itemB">Item B</div>
+    <div class="item itemC">Item C</div>
+  </div>
 </body>
 </html>
