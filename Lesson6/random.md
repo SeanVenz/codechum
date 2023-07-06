@@ -1,187 +1,177 @@
-# Creating Flexible Layouts with Flexbox
+# Building Grid-based Layouts with CSS Grid
 
-Flexbox is a powerful layout system in CSS that allows you to create flexible and responsive designs. It provides a set of properties that enable you to distribute space, control item order and alignment, and adapt layouts to different screen sizes. In this guide, we will explore the key concepts of creating flexible layouts with Flexbox, including distributing space, controlling item order and alignment, and implementing responsive designs.
+## Introduction
 
-## Distributing Space with Flexbox Properties
+CSS Grid is a powerful layout system that allows you to create complex grid-based layouts for your web pages. With CSS Grid, you can easily define rows and columns, position items within the grid, align items, and create responsive layouts that adapt to different screen sizes. In this guide, we will explore the key concepts of building grid-based layouts using CSS Grid.
 
-Flexbox provides three important properties to distribute space within a flex container: `flex-grow`, `flex-shrink`, and `flex-basis`. Let's see how each property works:
+## Creating Grid Columns and Rows
 
-### `flex-grow`
-
-The `flex-grow` property determines how much a flex item grows relative to other flex items within the same container. By default, the value is set to 0, which means the item won't grow. However, you can assign a positive value to distribute the available space proportionally.
+To create a grid layout, you need to define the number and size of the grid columns and rows. This can be done by applying the `display: grid;` property to a container element. Here's an example of creating a grid with three columns and four rows:
 
 ```css
 .container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* Three columns of equal width */
+  grid-template-rows: 100px 200px 150px 100px; /* Four rows with specific heights */
 }
+```
 
+In the above example, `1fr` represents a fraction unit, which means the columns will have equal width. You can also use other length units like `px` or `%` to define specific widths. Similarly, you can specify the height of rows using different length units.
+
+## Placing Items on the Grid using Grid Properties
+
+Once you have defined the grid structure, you can position items within the grid using various grid properties. Two commonly used properties are `grid-row` and `grid-column`. Here's an example:
+
+```css
 .item {
-  flex-grow: 1;
+  grid-row: 2 / 4; /* Item spans from row 2 to row 4 */
+  grid-column: 1 / 3; /* Item spans from column 1 to column 3 */
 }
 ```
 
-In the example above, the `container` class defines a flex container, and the `item` class specifies a flex item. By setting `flex-grow: 1` on the item, it will grow and occupy any remaining space in the container after accounting for other fixed-width or content-sized items.
+In the above example, the `.item` class is positioned to span from the second row to the fourth row and from the first column to the second column of the grid. The numbering starts from 1.
 
-### `flex-shrink`
-
-The `flex-shrink` property determines how much a flex item shrinks when there is not enough space available. It works in a similar way to `flex-grow` but controls the shrinking behavior instead.
+Alternatively, you can use the `grid-area` property to name and position items on the grid. This approach allows you to create named areas within the grid and place items using those names. Here's an example:
 
 ```css
-.container {
-  display: flex;
-}
-
 .item {
-  flex-shrink: 1;
+  grid-area: header; /* Item is placed in the "header" area */
+}
+
+.container {
+  grid-template-areas:
+    "header header header"
+    "sidebar main main"
+    "footer footer footer";
 }
 ```
 
-In this example, the `item` class is set to `flex-shrink: 1`, which means it will shrink proportionally when necessary to fit within the container.
+In the above example, the `.item` class is placed in the "header" area, which is defined by the `grid-template-areas` property of the container. This approach provides a more intuitive way to position items within the grid.
 
-### `flex-basis`
+## Grid Alignment and Spanning Items
 
-The `flex-basis` property defines the initial size of a flex item before the available space is distributed. It allows you to specify a fixed width, a percentage, or a keyword like `auto` to use the item's content size.
+CSS Grid provides powerful alignment options for aligning items within grid cells. You can use properties like `justify-items` and `align-items` to control the alignment of items horizontally and vertically, respectively. Here's an example:
 
 ```css
 .container {
-  display: flex;
+  display: grid;
+  justify-items: center; /* Center-align items horizontally */
+  align-items: end; /* Align items to the bottom vertically */
 }
+```
 
+In the above example, the items within the grid will be centered horizontally and aligned to the bottom vertically.
+
+You can also span items across multiple grid cells using the `grid-row` and `grid-column` properties. Here's an example:
+
+```css
 .item {
-  flex-basis: 200px;
+  grid-row: 1 / span 2; /* Item spans 2 rows */
+  grid-column: 2 / 4; /* Item spans from column 2 to column 4 */
 }
 ```
 
-In the code snippet above, the `item` class has a fixed width of `200px` specified by `flex-basis`. The remaining space in the container will be distributed among the other flex items according to their `flex-grow` values.
+In the above example, the `.item` class spans two rows and extends from the second column to the fourth column.
 
-## Controlling Item Order and Alignment
+## Responsive Grid Layout
 
-Flexbox provides features to control the order and alignment of flex items within a container. Let's explore how to change the order and align items individually:
+Creating responsive grid layouts is essential to ensure your design adapts to different screen sizes. CSS Grid provides several techniques to achieve responsive grid layouts.
 
-### Changing the Order of Flex Items
-
-With the `order` property, you can change the visual order of flex items independently of their source order in the HTML markup. A lower `order` value places the item before those with higher values.
+One common approach is to use media queries to change the grid structure based on the screen size. Here's an example:
 
 ```css
 .container {
-  display: flex;
-}
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns for larger screens */
 
-.item-1 {
-  order: 1;
-}
-
-.item-2 {
-  order: 2;
-}
-```
-
-In the example above, the `item-1` will appear before `item-2` visually, even if `item-2` comes first in the HTML markup.
-
-### Aligning Flex Items Individually
-
-Flexbox offers various alignment properties to control the positioning of flex items along the main and cross axes. Here are some commonly used properties:
-
-```css
-.container {
-  display: flex;
-  align-items: center; /* Aligns items vertically in the center */
-  justify-content: space-between; /* Distributes items horizontally with equal spacing */
-}
-```
-
-The `align-items` property aligns items vertically along the cross
-
- axis, while `justify-content` distributes items horizontally along the main axis.
-
-## Responsive Design with Flexbox
-
-Flexbox makes it easy to create responsive layouts that adapt to different screen sizes. By utilizing media queries, you can modify the flexbox properties to adjust the layout based on specific breakpoints.
-
-```css
-.container {
-  display: flex;
-  flex-wrap: wrap; /* Allows items to wrap to a new line */
-}
-
-.item {
-  flex-basis: 100%; /* Each item takes full width initially */
-}
-
-@media (min-width: 768px) {
-  .item {
-    flex-basis: 50%; /* Two items per row on screens wider than 768px */
-  }
-}
-
-@media (min-width: 1024px) {
-  .item {
-    flex-basis: 33.33%; /* Three items per row on screens wider than 1024px */
+  /* Media query for smaller screens */
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr; /* Single column for smaller screens */
   }
 }
 ```
 
-In this example, the layout adjusts based on two media queries. Initially, each item takes the full width (`flex-basis: 100%`) and wraps to a new line (`flex-wrap: wrap`). At the specified breakpoints, the `flex-basis` property is updated to distribute the items in multiple columns.
+In the above example, the grid initially has two columns for larger screens. However, when the screen width is 768 pixels or less, the grid changes to a single column layout.
+
+Another technique is to use the `auto-fill` or `auto-fit` keywords in combination with the `minmax()` function to create a flexible grid. Here's an example:
+
+```css
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+```
+
+In the above example, the grid will automatically fill the available space with columns that have a minimum width of 200 pixels. If there is extra space, the columns will expand equally (`1fr`).
+
+By using these techniques, you can create grid layouts that respond effectively to different screen sizes.
 
 ## More Examples
 
-Here are a few additional examples to help you further understand Flexbox and its usage in creating flexible layouts.
+Let's explore some additional examples to solidify the concepts further.
 
-### Example 1: Equal-width Columns
-
-In this example, we create a simple two-column layout with equal-width columns using Flexbox.
+### Example 1: Grid with Image Gallery
 
 ```html
 <div class="container">
-  <div class="column">Column 1</div>
-  <div class="column">Column 2</div>
+  <div class="item"><img src="image1.jpg" alt="Image 1"></div>
+  <div class="item"><img src="image2.jpg" alt="Image 2"></div>
+  <div class="item"><img src="image3.jpg" alt="Image 3"></div>
+  <div class="item"><img src="image4.jpg" alt="Image 4"></div>
 </div>
 ```
 
 ```css
 .container {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 10px;
 }
 
-.column {
-  flex-grow: 1;
-  flex-basis: 0;
+.item img {
+  width: 100%;
+  height: auto;
 }
 ```
 
-The `flex-grow: 1` property ensures that both columns expand equally to fill the available space, while `flex-basis: 0` sets the initial width to zero, allowing the available space to be distributed evenly.
+In this example, we create a responsive grid layout for an image gallery. The grid adapts to different screen sizes, and each image takes up a minimum width of 200 pixels.
 
-### Example 2: Centered and Spaced Items
-
-In this example, we create a horizontal navigation menu with centered and evenly spaced items using Flexbox.
+### Example 2: Grid with Sidebar and Main Content
 
 ```html
-<nav class="menu">
-  <a href="#">Home</a>
-  <a href="#">About</a>
-  <a href="#">Services</a>
-  <a href="#">Contact</a>
-</nav>
+<div class="container">
+  <div class="sidebar">Sidebar Content</div>
+  <div class="main">Main Content</div>
+</div>
 ```
 
 ```css
-.menu {
-  display: flex;
-  justify-content: center;
+.container {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-gap: 20px;
 }
 
-.menu a {
-  margin: 0 10px;
+.sidebar {
+  background-color: lightgray;
+}
+
+.main {
+  background-color: white;
 }
 ```
 
-The `justify-content: center` property centers the items horizontally within the navigation menu, and the `margin: 0 10px` applies equal spacing of `10px` on the left and right sides of each item.
-
-For more in-depth learning, you can refer to the following resources:
-
-- [CSS-Tricks: A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-- [MDN Web Docs: Flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox)
+In this example, we create a grid layout with a sidebar and main content. The sidebar has a fixed width of 200 pixels, and the main content takes up the remaining space.
 
 ## Conclusion
 
-Flexbox provides a flexible and intuitive way to create layouts that adapt to different screen sizes and distribute space effectively. By utilizing properties like `flex-grow`, `flex-shrink`, and `flex-basis`, you can easily create responsive designs. Additionally, the ability to control item order and alignment adds further flexibility to your layouts. Remember to experiment with different properties and values to fully harness the power of Flexbox in your projects.
+CSS Grid is a powerful tool for building grid-based layouts. By defining columns and rows, positioning items, aligning content, and creating responsive layouts, you can create visually appealing and flexible designs for your web pages. Experiment with different grid properties and techniques to unleash the full potential of CSS Grid.
+
+To learn more about CSS Grid and explore advanced concepts, refer to the following resources:
+
+- [CSS Grid Layout - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout)
+- [A Complete Guide to Grid - CSS-Tricks](https://css
+
+-tricks.com/snippets/css/complete-guide-grid/)
+
+Remember to experiment with the provided code examples and modify them to suit your specific layout requirements. Happy grid building!

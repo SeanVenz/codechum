@@ -86,10 +86,6 @@ This will ensure each item can grow to take up the same proportion of space, shr
 
 ![Flex](https://i.imgur.com/BmUt4lL.png)
 
-## Controlling Item Order and Alignment
-
-In addition to controlling the distribution of space, Flexbox also offers easy ways to control the order and alignment of items.
-
 ### Changing the order of flex items
 
 The `order` property in Flexbox allows you to control the order in which items appear within the flex container. By default, items will display in the order they are written in the HTML. However, you can override this:
@@ -207,24 +203,63 @@ Flexbox is a valuable tool when creating responsive layouts. With it, you can ea
 
 With media queries, you can make your Flexbox layout respond to different viewport sizes:
 
+HTML File:
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+  </div>
+</body>
+</html>
+```
+
+CSS File:
 ```css
 .container {
-  display:
-
- flex;
+  display: flex;
   flex-wrap: wrap;
+  justify-content: space-around; /* Optional: To give items some space around them */
+}
+
+.item {
+  flex: 0 0 auto; /* This is the default flex setting: no growth, no shrink, auto basis */
+  width: 30%; /* For bigger screens, items take up roughly a third of the container. Adjust as needed */
+  border: 1px solid black; /* Just for visualizing the boxes, can be removed */
+  margin: 10px; /* Optional: Add some margin around items */
+  text-align: center; /* Optional: Center the item text */
+  padding: 20px; /* Optional: Add some padding inside items */
 }
 
 @media (max-width: 600px) {
   .item {
-    flex: 1 0 100%; /* grow, shrink, basis */
+    flex: 1 0 100%; /* On smaller screens, each item takes up the full width of the container */
   }
 }
 ```
 
-In this example, when the viewport is 600px or less, each flex item will take up the full width of the container, stacking vertically.
+In the CSS file, the `container` class uses `display: flex;` to create a Flexbox container. `flex-wrap: wrap;` ensures that the items inside the container will wrap onto the next line if there isn't enough room on the current line. `justify-content: space-around;` ensures that there is some space around each item.
 
-## More Examples
+The `item` class uses `flex: 0 0 auto;` to specify that each item will not grow or shrink and its basis size will be automatic. It also specifies that each item should have a width of 30%, a border, some margin, and the text inside each item should be centered and have some padding.
+
+Finally, the `@media (max-width: 600px)` rule is a media query that will apply if the viewport width is 600px or less. In this case, it changes the flex property of each item to `flex: 1 0 100%;` so that each item takes up the full width of the container, stacking vertically instead of horizontally. This is essentially how the layout adapts to smaller screens.
+
+#### Visualization
+
+##### PC
+
+![Output](https://i.imgur.com/CZj6t4o.png)
+
+##### CP
+
+![Output](https://i.imgur.com/eR7xIAo.png)
+## More Example
 
 Let's illustrate these concepts with a more comprehensive example. In this snippet, we define a flex container and several flex items, all of varying sizes. The goal is to distribute the space between the items evenly, regardless of their individual widths.
 
@@ -270,7 +305,8 @@ Let's illustrate these concepts with a more comprehensive example. In this snipp
 }
 ```
 
-In this example, each item has a basis of `100px`, but they are allowed to grow to fill the container. The second item will take up twice as much remaining space as the others, due to its `flex-grow` value of `2`.
+#### Visualization
+![Output](https://i.imgur.com/VCdW92r.png)
 
 ## Conclusion
 
