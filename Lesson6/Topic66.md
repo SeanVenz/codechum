@@ -1,6 +1,6 @@
 # CSS Grid Fundamentals
 
-CSS Grid is a powerful layout system that allows you to create complex grid-based designs in web development. It provides a flexible and efficient way to organize and align content on a web page. In this topic, we will talk about the key concepts of CSS Grid, including the grid container, grid items, grid lines, grid tracks, grid areas, and grid templates. By the end of this guide, you will have a solid understanding of CSS Grid and be able to use it effectively in your web projects.
+CSS Grid is a powerful layout system that allows you to create complex grid-based designs in web development. It provides a flexible and efficient way to organize and align content on a web page. In this topic, we will talk about the key concepts of CSS Grid, including the grid container, grid items, grid lines, grid tracks, grid areas, and grid templates.
 
 ## Grid Container and Grid Items
 

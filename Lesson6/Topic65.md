@@ -7,7 +7,7 @@ Creating flexible and responsive designs for web pages is a common requirement i
 Flexbox gives you control over how space is distributed among items within a container. The main properties involved are: `flex-grow`, `flex-shrink`, and `flex-basis`.
 
 ### Using flex-grow, flex-shrink, and flex-basis to distribute space
-
+  
 `flex-grow` and `flex-shrink` dictate how much a flex item will grow or shrink relative to others in the container. `flex-basis` sets the initial main size of a flex item.
 
 - **`flex-grow`**: This property specifies how much a flex item will grow relative to the rest of the flex items in the container. It's a unitless value that serves as a proportion. It dictates how much of the remaining space inside the flex container the item should take up. If every item has `flex-grow` set to 1, the remaining space in the container will be distributed equally to all children. If one of the children has a `flex-grow` of 2, the remaining space would take up twice as much space as the others (or it will try to, as long as it doesn't violate other constraints, like `min-width` or `max-width`).
@@ -85,6 +85,10 @@ This will ensure each item can grow to take up the same proportion of space, shr
 #### Output
 
 ![Flex](https://i.imgur.com/BmUt4lL.png)
+
+## Controlling Item Order and Alignment
+
+In addition to controlling the distribution of space, Flexbox also offers easy ways to control the order and alignment of items.
 
 ### Changing the order of flex items
 
@@ -203,63 +207,24 @@ Flexbox is a valuable tool when creating responsive layouts. With it, you can ea
 
 With media queries, you can make your Flexbox layout respond to different viewport sizes:
 
-HTML File:
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div class="container">
-      <div class="item">Item 1</div>
-      <div class="item">Item 2</div>
-      <div class="item">Item 3</div>
-  </div>
-</body>
-</html>
-```
-
-CSS File:
 ```css
 .container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around; /* Optional: To give items some space around them */
-}
+  display:
 
-.item {
-  flex: 0 0 auto; /* This is the default flex setting: no growth, no shrink, auto basis */
-  width: 30%; /* For bigger screens, items take up roughly a third of the container. Adjust as needed */
-  border: 1px solid black; /* Just for visualizing the boxes, can be removed */
-  margin: 10px; /* Optional: Add some margin around items */
-  text-align: center; /* Optional: Center the item text */
-  padding: 20px; /* Optional: Add some padding inside items */
+ flex;
+  flex-wrap: wrap;
 }
 
 @media (max-width: 600px) {
   .item {
-    flex: 1 0 100%; /* On smaller screens, each item takes up the full width of the container */
+    flex: 1 0 100%; /* grow, shrink, basis */
   }
 }
 ```
 
-In the CSS file, the `container` class uses `display: flex;` to create a Flexbox container. `flex-wrap: wrap;` ensures that the items inside the container will wrap onto the next line if there isn't enough room on the current line. `justify-content: space-around;` ensures that there is some space around each item.
+In this example, when the viewport is 600px or less, each flex item will take up the full width of the container, stacking vertically.
 
-The `item` class uses `flex: 0 0 auto;` to specify that each item will not grow or shrink and its basis size will be automatic. It also specifies that each item should have a width of 30%, a border, some margin, and the text inside each item should be centered and have some padding.
-
-Finally, the `@media (max-width: 600px)` rule is a media query that will apply if the viewport width is 600px or less. In this case, it changes the flex property of each item to `flex: 1 0 100%;` so that each item takes up the full width of the container, stacking vertically instead of horizontally. This is essentially how the layout adapts to smaller screens.
-
-#### Visualization
-
-##### PC
-
-![Output](https://i.imgur.com/CZj6t4o.png)
-
-##### CP
-
-![Output](https://i.imgur.com/eR7xIAo.png)
-## More Example
+## More Examples
 
 Let's illustrate these concepts with a more comprehensive example. In this snippet, we define a flex container and several flex items, all of varying sizes. The goal is to distribute the space between the items evenly, regardless of their individual widths.
 
@@ -305,8 +270,7 @@ Let's illustrate these concepts with a more comprehensive example. In this snipp
 }
 ```
 
-#### Visualization
-![Output](https://i.imgur.com/VCdW92r.png)
+In this example, each item has a basis of `100px`, but they are allowed to grow to fill the container. The second item will take up twice as much remaining space as the others, due to its `flex-grow` value of `2`.
 
 ## Conclusion
 
