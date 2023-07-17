@@ -45,8 +45,8 @@ To import a custom font, you need to have the font files in different formats (e
 @font-face {
   font-family: 'CustomFont';
   src: url('path/to/font.woff2') format('woff2'),
-       url('path/to/font.woff') format('woff'),
-       url('path/to/font.ttf') format('truetype');
+    url('path/to/font.woff') format('woff'),
+    url('path/to/font.ttf') format('truetype');
 }
 ```
 
