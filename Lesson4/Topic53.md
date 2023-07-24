@@ -44,7 +44,7 @@ form.addEventListener("submit", function (event) {
 
   // Perform validation on the input
   if (input === "") {
-    alert("Please enter a value.");
+    console.log("Please enter a value.");
     return; // Prevent form submission if validation fails
   }
 
@@ -53,7 +53,7 @@ form.addEventListener("submit", function (event) {
 });
 ```
 
-In the code snippet above, we retrieve the value of the input field (`myInput`) within the form. We then perform a validation check to ensure that the input is not empty. If the validation fails, we display an alert to the user and return to prevent the form from being submitted. On the other hand, if the validation passes, we submit the form programmatically using the `submit()` method.
+In the code snippet above, we retrieve the value of the input field (`myInput`) within the form. We then perform a validation check to ensure that the input is not empty. If the validation fails, we display an console.log to the user and return to prevent the form from being submitted. On the other hand, if the validation passes, we submit the form programmatically using the `submit()` method.
 
 These resources provide comprehensive explanations, examples, and exercises to reinforce your understanding of event handling and form validation.
 
@@ -89,7 +89,7 @@ function validateForm() {
   const input = document.getElementById("myInput").value;
 
   if (input === "") {
-    alert("Please enter a value.");
+    console.log("Please enter a value.");
     return false;
   }
 
@@ -97,7 +97,7 @@ function validateForm() {
 }
 ```
 
-In this example, we define a JavaScript function `validateForm()` that is called when the form is submitted. The function retrieves the input value and performs a validation check for an empty input. If the input is empty, an alert is displayed, and the function returns `false` to prevent form submission. Otherwise, the function returns `true`, allowing the form to be submitted.
+In this example, we define a JavaScript function `validateForm()` that is called when the form is submitted. The function retrieves the input value and performs a validation check for an empty input. If the input is empty, an console.log is displayed, and the function returns `false` to prevent form submission. Otherwise, the function returns `true`, allowing the form to be submitted.
 
 Make sure to place the JavaScript code inside a `<script>` tag above the closing `</body>` tag to ensure it is executed after the HTML elements have been loaded.
 
