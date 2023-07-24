@@ -66,13 +66,13 @@ function validateForm() {
   var email = document.forms["myForm"]["email"].value;
   
   if (name === "" || email === "") {
-    alert("Please fill out all required fields.");
+    console.log("Please fill out all required fields.");
     return false;
   }
 }
 ```
 
-In the code snippet above, we define a `validateForm` function that is called when the form is submitted. Inside the function, we retrieve the values of the `name` and `email` fields using the `document.forms` property. The subsequent `if` statement checks if either of these fields is empty. If any required field is empty, an alert is displayed, and the function returns `false`, preventing the form from being submitted.
+In the code snippet above, we define a `validateForm` function that is called when the form is submitted. Inside the function, we retrieve the values of the `name` and `email` fields using the `document.forms` property. The subsequent `if` statement checks if either of these fields is empty. If any required field is empty, an console.log is displayed, and the function returns `false`, preventing the form from being submitted.
 
 To use this function, you need to include the following HTML code within the `<form>` tags:
 
@@ -98,7 +98,7 @@ function validateForm() {
   var password = document.forms["myForm"]["password"].value;
   
   if (password.length < 8) {
-    alert("Password must be at least 8 characters long.");
+    console.log("Password must be at least 8 characters long.");
     return false;
   }
 }
@@ -106,7 +106,7 @@ function validateForm() {
 
 In the code snippet above, we define a function named `validateForm`. This function is called when the form is submitted. Inside the function, we retrieve the value entered in the password field using the `document.forms` property.
 
-The subsequent `if` statement checks if the length of the `password` string is less than 8 characters. If the password fails to meet this length requirement, an alert is displayed with the message "Password must be at least 8 characters long." The function then returns `false`, preventing the form from being submitted.
+The subsequent `if` statement checks if the length of the `password` string is less than 8 characters. If the password fails to meet this length requirement, an console.log is displayed with the message "Password must be at least 8 characters long." The function then returns `false`, preventing the form from being submitted.
 
 ## More Example
 
@@ -145,12 +145,12 @@ function validateForm() {
   var password = document.forms["registrationForm"]["password"].value;
   
   if (email === "" || password === "") {
-    alert("Please fill out all required fields.");
+    console.log("Please fill out all required fields.");
     return false;
   }
   
   if (password.length < 8) {
-    alert("Password must be at least 8 characters long.");
+    console.log("Password must be at least 8 characters long.");
     return false;
   }
 }
@@ -158,9 +158,9 @@ function validateForm() {
 
 Within the `validateForm()` function, the values entered in the email and password fields are retrieved using the `document.forms` property. The variables `email` and `password` store these values.
 
-The function then checks if either the email or password field is empty by comparing them to an empty string. If any of these required fields is empty, an alert is displayed with the message "Please fill out all required fields." The function returns `false`, which prevents the form from being submitted.
+The function then checks if either the email or password field is empty by comparing them to an empty string. If any of these required fields is empty, an console.log is displayed with the message "Please fill out all required fields." The function returns `false`, which prevents the form from being submitted.
 
-Additionally, there is a check to ensure that the password is at least 8 characters long. If the length of the password is less than 8, an alert is displayed with the message "Password must be at least 8 characters long." Again, the function returns `false` to prevent form submission.
+Additionally, there is a check to ensure that the password is at least 8 characters long. If the length of the password is less than 8, an console.log is displayed with the message "Password must be at least 8 characters long." Again, the function returns `false` to prevent form submission.
 
 By performing these validations, this ensures that the user fills out all required fields and that the password meets the minimum length requirement before allowing the form to be submitted.
 
