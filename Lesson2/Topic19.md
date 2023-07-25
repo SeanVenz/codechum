@@ -64,7 +64,7 @@ In this example, `float: left;` causes each child box to be placed to the left o
 ### Sample Output
 ![Sample Float Output](https://i.imgur.com/aGjXjwC.png)
 
-2. **Flexbox:** Flexbox is a robust CSS layout model offering flexible and responsive layout options. It easily arranges elements in a row or column, controls their alignment, and manages wrapping and spacing.
+2. **Flexbox:** Flexbox is a robust CSS layout model offering flexible layout options. It easily arranges elements in a row or column, controls their alignment, and manages wrapping and spacing.
 
 ![CSS Flexbox](https://media.geeksforgeeks.org/wp-content/uploads/20200719214439/202007193.png)
 
@@ -170,7 +170,7 @@ However, `grid-template-columns` can take a variety of other values to control t
 
 - `grid-template-columns: 80px auto 80px;` would create three columns. The first and third columns would have a width of 80px, and the middle column would have its width automatically adjusted to take up the remaining space.
 
-Through these settings, you can create a flexible and responsive grid layout that suits your content and design needs.
+Through these settings, you can create a flexible grid layout that suits your content and design needs.
 
 ```css
 .grid-child {
