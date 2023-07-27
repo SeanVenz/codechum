@@ -43,6 +43,20 @@ function greet(name, age) {
 
 In this example, the `greet` function has two parameters, `name` and `age`. When the function is going to be used, the values `name` and `age` are passed as arguments. These values are assigned to the corresponding parameters within the function. The function then constructs a greeting message using the provided values and logs it to the console.
 
+## Default Parameter Values
+
+In JavaScript, you can assign default values to function parameters. Default parameter values are used when an argument is not provided for the corresponding parameter or when the argument is explicitly set to `undefined`. This allows functions to have fallback values in case specific arguments are missing.
+
+Here's an example of using default parameter values:
+
+```javascript
+function greet(name = "Anonymous") {
+  console.log("Hello, " + name + "!");
+}
+```
+
+In this example, the `greet` function has a single parameter named `name` with a default value of `"Anonymous"`. If no argument is passed for `name` or if `name` is explicitly set to `undefined`, the default value `"Anonymous"` will be used. However, if an argument is provided, it will override the default value.
+
 ## Conclusion
 
 Function parameters and arguments are crucial components of JavaScript functions. Parameters enable functions to accept input values, while arguments provide the actual values to be processed by the function. By correctly declaring parameters and passing arguments, you can create flexible and reusable functions that perform specific tasks based on the provided input.
