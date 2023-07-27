@@ -84,16 +84,20 @@ function outer() {
 
   function inner() {
     let x = 30;
-    console.log(x); // Output: 30
+    console.log("Inner: " + x); // Output: 30
   }
-
   inner();
+  console.log("Outer: " + x); //Output: 20
 }
-
 outer();
+console.log("Global: " + x); //Output 10;
 ```
 
-In this example, we have a variable `x` declared in the global scope with a value of `10`. Within the `outer` function, there's another variable `x` declared with a value of `20`. Inside the `inner` function, there's yet another variable `x` declared with a value of `30`. When we log `x` within the `inner` function, it references the innermost variable `x`, which is `30`. This demonstrates the concept of variable shadowing, where variables with the same name in different scopes can have different values.
+In this example, a variable `x` is initially declared in the global scope with a value of `10`. However, within the function `outer`, another variable `x` is declared, this time with a value of `20`. This instance of `x` shadows the `x` from the global scope within the confines of the `outer` function. The same phenomenon occurs within the `inner` function, where yet another variable `x` is declared, now with a value of `30`. Here, this `x` shadows both the `x` from the `outer` function and the `x` from the global scope within the `inner` function.
+
+When the `console.log(x)` statement is executed inside the `inner` function, it refers to and outputs the value of the innermost `x` (which is `30`), as this is the `x` it has access to due to the variable shadowing. Likewise, when `console.log(x)` is executed inside the `outer` function but outside the `inner` function, it outputs `20`, and when executed in the global scope, it outputs `10`.
+
+This demonstrates the concept of variable shadowing in JavaScript, wherein variables with the same name in different scopes can coexist without influencing each other, with the closest scoped variable taking precedence within its respective block or function scope.
 
 ## Conclusion
 
