@@ -39,11 +39,13 @@ To define the border properties, you can use the CSS `border` property. Here's a
 }
 ```
 
-### Margin
+Certainly! Here's an updated section discussing the `margin: auto;` property:
+
+## Margin
 
 The margin is like the space around the outside of our shipping box. It's the space between the border and other elements on the page.
 
-To add margin to an element, you can use the CSS `margin` property. Here's an example:
+To add margin to an element, you can use the CSS `margin` property. This property allows you to control the spacing around an element by specifying values for different sides or using shorthand notation. Here's an example:
 
 ```css
 .example {
@@ -52,6 +54,39 @@ To add margin to an element, you can use the CSS `margin` property. Here's an ex
   margin-right: 15px; /* sets specific margin for the right side */
 }
 ```
+
+In addition to the above options, CSS also provides a special value for the `margin` property called `auto`. When you set `margin: auto;` on a block-level element, it automatically calculates and distributes the margins evenly, centering the element horizontally within its parent container. This can be useful for creating centered layouts.
+
+Here's an example of using `margin: auto;`:
+
+HTML file:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="centered-box">This box is centered.</div>
+
+</body>
+</html>
+```
+
+CSS file (styles.css):
+
+```css
+.centered-box {
+  width: 200px;
+  height: 200px;
+  background-color: lightblue;
+  margin: auto;
+}
+```
+
+In this example, the `.centered-box` class is applied to a `<div>` element. The `width` and `height` properties define the dimensions of the box, and the `background-color` property sets the background color to light blue. The `margin: auto;` rule centers the box horizontally within its parent container. Since no specific values are provided for the top, right, bottom, or left margins, the `auto` value evenly distributes the margins, achieving the desired centered effect.
 
 ### Controlling Width and Height
 

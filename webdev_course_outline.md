@@ -174,7 +174,7 @@ Lesson 4: DOM Manipulation and Event Handling
 - Topic 46: DOM Tree Structure
   - Understanding the hierarchical structure of the DOM
   - Parent-child relationships between elements
-
+ 
 - Topic 47: Accessing Elements with JavaScript
   - Using methods like getElementById, getElementsByTagName, getElementsByClassName
   - Navigating the DOM using parent, child, and sibling relationships

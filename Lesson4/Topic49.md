@@ -30,6 +30,13 @@ There are various types of events that you can listen for, depending on the user
 - `keydown`: Triggered when a key is pressed down.
 - `submit`: Triggered when a form is submitted.
 - `load`: Triggered when a page finishes loading.
+- `focus:` Triggered when an element receives focus
+- `blur:` Triggered when an element loses focus
+- `contextmenu:` Triggered when a context menu is opened
+- `scroll:` Triggered when an element's scroll position changes
+- `touchstart:` Triggered when a touch point is placed on the touch surface (usually used on touch screen devices)
+- `touchmove:` Triggered when a touch point is moved along the touch surface (usually used on touch screen devices)
+- `touchend:` Triggered when a touch point is removed from the touch surface (usually used on touch screen devices)
 
 To listen for a specific event type, simply pass the event type as the first argument to the `addEventListener` method. Here's an example:
 

@@ -180,4 +180,5 @@ In this example, the header and footer span across the full width of the grid wh
 
 CSS Grid is a powerful tool for web developers to create complex and responsive grid-based layouts. The syntax can seem complex at first, but with practice, it can drastically simplify your layout code and make it easier to manage. Try out these examples in your own projects to see the potential of CSS Grid!
 
-If you want to dive deeper into CSS Grid, [this complete guide on CSS-Tricks](https://css-tricks.com/snippets/css/complete-guide-grid/) is a great resource to further your understanding.
+References
+[CSS-Tricks](https://css-tricks.com/snippets/css/complete-guide-grid/) is a great resource to further your understanding.

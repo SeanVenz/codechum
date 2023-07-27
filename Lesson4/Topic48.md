@@ -32,6 +32,29 @@ element.textContent = 'New Text Content';
 
 In this example, the `textContent` property is used to change the text content of the element with the id "myElementId" from "Initial Text Content" to "New Text Content".
 
+### Changing Text Color
+
+Similarly you can change the color of the text:
+
+```javascript
+const element = document.getElementById('myElementId');
+element.style.color = 'red';
+```
+
+In this example, the color of the text of the element with the ID `myElementId` will be changed to red.
+
+### Changing Background Color
+
+Similarly, you can change the background color:
+
+```javascript
+const element = document.getElementById('myElementId');
+element.style.backgroundColor = 'blue';
+```
+
+This will change the background color of the element with the ID `myElementId` to blue.
+
+
 ### Changing Attributes
 
 To change the value of an attribute on an element, you can access and modify the attribute using the `setAttribute` and `getAttribute` methods. Here's an example:

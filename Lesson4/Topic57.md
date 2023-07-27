@@ -57,14 +57,14 @@ Custom data attributes provide a way to store custom data within HTML elements. 
       var category = productDiv.dataset.category;
       var price = productDiv.dataset.price;
       
-      alert('Category: ' + category + '\nPrice: $' + price);
+      console.log('Category: ' + category + '\nPrice: $' + price);
     }
   </script>
 </body>
 </html>
 ```
 
-In this example, we have a div element with the ID "myDiv" that includes custom data attributes "data-category" and "data-price". The "showProductDetails()" function retrieves the values of these data attributes using the "dataset" property. The retrieved values are then displayed in an alert box, providing additional product details.
+In this example, we have a div element with the ID "myDiv" that includes custom data attributes "data-category" and "data-price". The "showProductDetails()" function retrieves the values of these data attributes using the "dataset" property. The retrieved values are then displayed in an console.log box, providing additional product details.
 
 ## More Examples
 
