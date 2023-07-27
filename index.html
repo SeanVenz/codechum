@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="styles.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grid Areas and Grid Templates</title>
+  <title>Complex Table</title>
 </head>
 <body>
-    <div class="container">
-        <div class="item item1">Header</div>
-        <div class="item item2">Sidebar</div>
-        <div class="item item3">Main</div>
-        <div class="item item4">Footer</div>
-    </div>
+  <table>
+    <tr>
+      <td rowspan="2">A</td>
+      <td>B</td>
+      <td>C</td>
+      <td>D</td>
+    </tr>
+    <tr>
+      <td colspan="3">E</td>
+    </tr>
+    <tr>
+      <td>F</td>
+      <td>G</td>
+      <td>H</td>
+      <td>I</td>
+    </tr>
+  </table>
 </body>
 </html>

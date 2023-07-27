@@ -16,7 +16,7 @@ Lesson 1: Introduction to HTML
   - Using heading tags (h1-h6) for different levels of headings
 
 - Topic 6: HTML Text Formatting
-  - Formatting text with strong, emphasis, underline, and other tags
+  - Formatting text with strong, emphasis, underline, and other tags 
 
 - Topic 7: HTML Lists
   - Creating ordered lists (ol) and unordered lists (ul)
