@@ -50,13 +50,13 @@ Here's an example demonstrating scope hierarchy and variable access:
 ```javascript
 let globalVariable = "I am a global variable";
 
-function outerFunction() {
+function myFunction() {
   let outerVariable = "I am an outer variable";
   console.log(globalVariable);
   console.log(outerVariable);
 }
 
-outerFunction();
+myFunction();
 
 
 // Output:
@@ -69,6 +69,31 @@ In this example, we have a global variable `globalVariable` that can be accessed
 Both `globalVariable` and `outerVariable` can be accessed and logged within the `outerFunction` because they are in the same or higher scope.
 
 Executing the code will output the values of both variables, demonstrating the hierarchical nature of scope and the ability to access variables from higher scopes within functions.
+
+## Shadowing Variables in Nested Scopes
+
+In JavaScript, when a variable with the same name is defined in an inner scope, it can "shadow" or temporarily hide the variable with the same name in an outer scope. This means that the inner variable takes precedence over the outer variable within that inner scope.
+
+Here's an example illustrating variable shadowing:
+
+```javascript
+let x = 10;
+
+function outer() {
+  let x = 20;
+
+  function inner() {
+    let x = 30;
+    console.log(x); // Output: 30
+  }
+
+  inner();
+}
+
+outer();
+```
+
+In this example, we have a variable `x` declared in the global scope with a value of `10`. Within the `outer` function, there's another variable `x` declared with a value of `20`. Inside the `inner` function, there's yet another variable `x` declared with a value of `30`. When we log `x` within the `inner` function, it references the innermost variable `x`, which is `30`. This demonstrates the concept of variable shadowing, where variables with the same name in different scopes can have different values.
 
 ## Conclusion
 
