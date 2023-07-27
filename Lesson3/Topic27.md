@@ -122,6 +122,57 @@ In the above example, the compound assignment operator `+=` is used to increment
 
 Compound assignment operators provide a concise and convenient way to perform arithmetic operations and assign the result back to the same variable.
 
+## Parsing Numbers in JavaScript
+
+Handling user input is a fundamental aspect of interactive JavaScript programs. Using `prompt` allows us to get input from the user. However, it's important to note that all user input is treated as a string by default, which can lead to unexpected results when performing arithmetic operations. 
+
+Let's consider the following example:
+
+```javascript
+let num1 = prompt("Enter the first number:");
+let num2 = prompt("Enter the second number:");
+let result = num1 + num2;
+console.log(result); 
+```
+
+If the user enters `5` and `10`, the output will be `510` instead of `15`. This is because the `+` operator is performing string concatenation instead of numerical addition. To resolve this issue, we need to convert the string input to a number.
+
+JavaScript provides several functions for parsing numbers from strings:
+
+- `parseInt(string, radix)`: Parses a string and returns an integer.
+- `parseFloat(string)`: Parses a string and returns a floating-point number.
+- `Number(string)`: Can be used to convert both integer and floating-point numbers.
+
+Let's modify the previous example using `parseInt`:
+
+```javascript
+let num1 = parseInt(prompt("Enter the first number:"));
+let num2 = parseInt(prompt("Enter the second number:"));
+let result = num1 + num2;
+console.log(result); 
+```
+
+Now, if the user enters `5` and `10`, the output will be `15` as expected. 
+
+For floating-point numbers, `parseFloat` can be used:
+
+```javascript
+let num1 = parseFloat(prompt("Enter the first number:"));
+let num2 = parseFloat(prompt("Enter the second number:"));
+let result = num1 + num2;
+console.log(result); 
+```
+
+## Conclusion
+
+Taking user input and converting it to numerical data is an essential skill for creating interactive JavaScript applications. By using the `parseInt`, `parseFloat`, and `Number` functions, we can ensure that user input is treated as numerical data, allowing us to perform arithmetic operations as expected.
+
+Resources:
+- [MDN Web Docs - Global Objects: parseInt()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt)
+- [MDN Web Docs - Global Objects: parseFloat()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseFloat)
+- [W3Schools - JavaScript Type Conversion](https://www.w3schools.com/js/js_type_conversion.asp)
+- [MDN Web Docs - isNaN()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isNaN)
+
 ## Conclusion
 
 Arithmetic operators are essential for performing mathematical operations in JavaScript. They enable us to add, subtract, multiply, divide, find remainders, and modify numeric values. Understanding how to use these operators correctly allows us to perform complex calculations and manipulate numerical data effectively.
