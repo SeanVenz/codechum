@@ -487,9 +487,22 @@ The `.item` class styles each flex item with a border, some padding, and a `flex
 ![Align](https://i.imgur.com/wKWZp3s.png)
 ![Align](https://i.imgur.com/SpjM8w3.png)
 
-## More Examples
+## Gap Property
 
-To further understand the concepts of flex containers, flex items, and the properties used to control their behavior, let's explore additional examples.
+The `gap` property is a newer addition to Flexbox. It is used to define the spacing between the flex items in a flex container along both the main and cross axes.
+
+Here's how you can use the `gap` property:
+
+```css
+.container {
+  display: flex;
+  gap: 20px;
+}
+```
+
+In this example, the `.container` class is a flex container, and `gap: 20px;` is applied to it. This means that there will be a 20-pixel gap between each flex item inside the container, both horizontally and vertically.
+
+Using the `gap` property is a convenient way to add spacing between flex items without having to add margin or padding to each item individually. It also ensures that the spacing between items is consistent, making your layout more uniform and easier to manage.
 
 ## Conclusion
 
