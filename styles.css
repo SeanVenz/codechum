@@ -1,3 +1,21 @@
-div {
-  border: 3px dashed green;
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 }
+
+p {
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+/* margin-left: 300px;
+margin-top: 300px; */

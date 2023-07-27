@@ -12,7 +12,7 @@ Responsive web design plays a vital role in ensuring a seamless user experience 
 
 - **Search Engine Optimization (SEO):** Responsive websites are preferred by search engines because they provide a consistent user experience across devices. Search engines prioritize mobile-friendly websites in their search results, leading to improved visibility and organic traffic.
 
-###     Understanding Media Queries
+### Understanding Media Queries
 
 Media queries are a fundamental aspect of responsive web design. They allow you to apply different styles and layout rules based on the characteristics of the device or viewport. Media queries enable your website to adapt and provide an optimal user experience on various screen sizes, from small smartphones to large desktop monitors.
 
@@ -37,6 +37,8 @@ When selecting appropriate parameters for media queries, it's important to consi
 - Large devices (e.g., desktops, laptops): Have a width greater than 1024px. You can use media queries with a `min-width` of 1024px to apply specific styles for larger screens.
 
 These guidelines provide a starting point for determining appropriate media query parameters. However, it's crucial to consider the specific needs of your design and test your website across different devices to ensure optimal responsiveness.
+
+![Device View](https://www.seobility.net/en/wiki/images/6/6f/Media-Queries.png)
 
 ## Viewport Meta Tag and Its Role in Responsive Design
 

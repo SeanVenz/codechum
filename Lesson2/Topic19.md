@@ -302,7 +302,7 @@ By using these display properties, you can control how elements interact and flo
 
 Here's an image illustrating the CSS display properties:
 
-![CSS Grid](https://i.stack.imgur.com/mGTYI.png)
+![Display Properties](https://i.stack.imgur.com/mGTYI.png)
 
 ## Additional Considerations
 

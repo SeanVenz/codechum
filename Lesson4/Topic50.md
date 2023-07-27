@@ -1,4 +1,4 @@
-## Event Handling Functions
+# Event Handling Functions
 
 In JavaScript, event handling functions are used to define the behavior or actions that should occur in response to specific events. These functions are associated with event listeners and are executed when the corresponding event is triggered. Event handling functions play a crucial role in creating interactive and dynamic web applications by allowing you to respond to user interactions and trigger actions.
 

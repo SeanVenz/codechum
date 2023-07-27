@@ -77,7 +77,7 @@ The `<footer>` tag represents the footer section of a webpage. It typically cont
 
 ## Diagram: Common Use of Semantic Tags
 
-![Border](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8G7N9wCz4LEOsPJtCxxuLFkY3zKfpxEjnAGxnLhVtaw&s)
+![Common Use of Semantic Tags](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8G7N9wCz4LEOsPJtCxxuLFkY3zKfpxEjnAGxnLhVtaw&s)
 
 ```html
 <!DOCTYPE html>
