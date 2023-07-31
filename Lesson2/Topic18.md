@@ -24,23 +24,6 @@ To add padding to an element, you can use the CSS `padding` property. Here's an 
 }
 ```
 
-### Border
-
-The border is like the walls of our shipping box - it surrounds the content and padding. You can choose its style, width, and color. By default, elements have no border.
-
-To define the border properties, you can use the CSS `border` property. Here's an example:
-
-```css
-.example {
-  border: 1px; /* sets a 1px border */
-  border-width: 2px; /* sets the border width independently for each side */
-  border-color: red; /* sets the border color */
-  border-radius: 5px; /* rounds the corners of the border */
-}
-```
-
-Certainly! Here's an updated section discussing the `margin: auto;` property:
-
 ## Margin
 
 The margin is like the space around the outside of our shipping box. It's the space between the border and other elements on the page.
@@ -81,12 +64,11 @@ CSS file (styles.css):
 .centered-box {
   width: 200px;
   height: 200px;
-  background-color: lightblue;
   margin: auto;
 }
 ```
 
-In this example, the `.centered-box` class is applied to a `<div>` element. The `width` and `height` properties define the dimensions of the box, and the `background-color` property sets the background color to light blue. The `margin: auto;` rule centers the box horizontally within its parent container. Since no specific values are provided for the top, right, bottom, or left margins, the `auto` value evenly distributes the margins, achieving the desired centered effect.
+In this example, the `.centered-box` class is applied to a `<div>` element. The `width` and `height` properties define the dimensions of the box. The `margin: auto;` rule centers the box horizontally within its parent container. Since no specific values are provided for the top, right, bottom, or left margins, the `auto` value evenly distributes the margins, achieving the desired centered effect.
 
 ### Controlling Width and Height
 
@@ -153,7 +135,6 @@ CSS (`styles.css`):
     width: 200px;
     height: 150px;
     padding: 10px;
-    border: 2px solid #000;
     margin: 20px;
     box-sizing: border-box;
 }
@@ -168,14 +149,10 @@ In this CSS code, we styled our `div` with the class `box-model` and applied dif
 
 - `width` and `height` are used to set the dimensions of the content box.
 - `padding` is used to create space around the content inside the border.
-- `border` is used to create a border around the padding and content.
-- `border-radius` is used to round the corners of the border.
 - `margin` is used to create space around the border.
 - `box-sizing: border-box` is used to include the padding and border in the element's total width and height.
 
-The `body` styling is just to center our `div` and to apply a simple background color and font family.
-
-Finally, the `p` selector is used to remove the default top and bottom margin of the paragraph element, demonstrating the control
+The `body` styling is just to center our `div` and the `p` selector is used to remove the default top and bottom margin of the paragraph element, demonstrating the control
 
 ## Conclusion
 
