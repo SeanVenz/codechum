@@ -54,6 +54,6 @@ Here's a diagram illustrating the hierarchy of heading tags:
 
 Using heading tags (`<h1>` to `<h6>`) is essential for creating well-structured and organized HTML documents. By applying heading tags appropriately, you provide a clear hierarchy to your content, making it easier for users to navigate and understand the information presented.
 
-Resources:
+References:
 - [Mozilla Developer Network (MDN) - HTML Heading Elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements)
 - [W3Schools - HTML Headings](https://www.w3schools.com/html/html_headings.asp)

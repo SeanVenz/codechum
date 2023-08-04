@@ -140,6 +140,6 @@ By using this approach, users can interact with the buttons and dynamically chan
 
 Modifying inline styles using JavaScript allows you to dynamically change the appearance of HTML elements on your webpage. By accessing and modifying the `style` object's properties, you can customize various aspects such as color, font size, and background color. This provides you with the flexibility to create dynamic and visually appealing user interfaces. Experiment with different styles and properties to enhance your web applications and provide an engaging user experience.
 
-Resources:
+References:
 - [MDN Web Docs: Manipulating CSS with JavaScript](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents)
 - [W3Schools: JavaScript Style Object](https://www.w3schools.com/jsref/dom_obj_style.asp)

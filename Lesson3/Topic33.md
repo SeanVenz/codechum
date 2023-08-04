@@ -65,6 +65,6 @@ The `while` loop is a powerful construct in JavaScript that allows you to perfor
 
 Remember to use caution when working with `while` loops to ensure the condition eventually becomes false. Otherwise, the loop may continue indefinitely, resulting in an infinite loop. Be mindful of the control flow and make sure to update the loop condition appropriately to avoid such situations.
 
-Resources:
+References:
 - [MDN Web Docs - while statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while)
 - [W3Schools - JavaScript While Loop](https://www.w3schools.com/js/js_loop_while.asp)

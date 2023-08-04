@@ -94,6 +94,6 @@ Comparison operators are fundamental in JavaScript for comparing values and maki
 
 By understanding and using comparison operators effectively, we can write code that performs different actions based on specific conditions. This allows us to create dynamic and interactive JavaScript applications.
 
-Resources:
+References:
 - [MDN Web Docs - Comparison operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators)
 - [W3Schools - JavaScript Comparison and Logical Operators](https://www.w3schools.com/js/js_comparisons.asp)

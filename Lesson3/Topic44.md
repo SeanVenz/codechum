@@ -1,57 +1,91 @@
-# Variable Declaration and Assignment within Scopes
+# Variable Hoisting and its implications
 
 ## Introduction
 
-In JavaScript, understanding how variables are declared and assigned values within different scopes is essential for writing clean and organized code. In this topic, we will explore the concepts of declaring variables within different scopes and assigning values to them.
+In JavaScript, variable hoisting is a concept that can sometimes lead to confusion, especially for beginners. Hoisting refers to how variable declarations and function declarations are processed during the creation phase of the JavaScript execution context. Understanding variable hoisting is crucial to writing predictable and error-free code.
 
-## Assigning Values to Variables in Different Scopes
+## Understanding Variable Hoisting
 
-Once variables are declared within a scope, you can assign values to them. Assigning values to variables allows you to store and manipulate data as needed within your code.
+Variable hoisting is the behavior where JavaScript moves variable declarations to the top of their respective scope during the compilation phase. However, it's important to note that only the declarations are hoisted, not the assignments.
 
-### Global Scope
-
-In the global scope, you can assign values to global variables directly.
+Let's look at an example to understand this better:
 
 ```javascript
-let globalVariable = "I am a global variable";
-globalVariable = "Updated value";
+console.log(a); // Output: undefined
+var a = 10;
+console.log(a); // Output: 10
 ```
 
-In this example, the initial value of `globalVariable` is "I am a global variable." Later, the value is updated to "Updated value" by assigning a new value to it.
+In the above code snippet, the variable `a` is hoisted, but its assignment (`var a = 10;`) remains in its original place. This means that when we first log `a`, it is hoisted to the top of the scope and exists but has a value of `undefined`. After that, the assignment is executed, and `a` gets the value `10`.
 
-### Local Scope
+## Effect of Hoisting on Variable Declaration and Assignment
 
-In local scopes, you can assign values to local variables directly within the respective scopes.
+Variable hoisting can lead to unexpected results if not understood properly. Let's see an example:
 
 ```javascript
-function greet() {
-  let localVariable = "I am a local variable";
-  localVariable = "Updated value";
+console.log(b); // Output: undefined
+var b = 5;
+function example() {
+  console.log(b); // Output: undefined
+  var b = 15;
+  console.log(b); // Output: 15
 }
+example();
+console.log(b); // Output: 5
 ```
 
-In this example, the initial value of `localVariable` is "I am a local variable" within the `greet` function's scope. Later, the value is updated to "Updated value" by assigning a new value to it within the same scope.
+In this code snippet, we have a function `example()` that defines a local variable `b`. Inside the function, the variable `b` is hoisted to the top of the function scope, so the first `console.log(b)` within the function logs `undefined`. Then, after the assignment `var b = 15;`, the second `console.log(b)` logs `15`.
+
+The global variable `b` remains unaffected by the local variable inside the function, as you can see in the last `console.log(b)` statement outside the function, which logs `5`.
 
 ## More Examples
 
+Let's explore more examples to solidify our understanding of variable hoisting:
+
+### Example 1:
+
 ```javascript
-let outerVariable = "I am an outer variable";
-
-function outerFunction() {
-  let innerVariable = "I am an inner variable";
-  outerVariable = "Updated value";
-  console.log(innerVariable);
-}
-
-outerFunction();
-console.log(outerVariable);
+console.log(c); // Output: ReferenceError: c is not defined
+c = 25;
+console.log(c); // Output: 25
 ```
 
-In this example, we have an `outerVariable` declared in the global scope. Inside the `outerFunction`, we have an `innerVariable` declared in the local scope. The `outerVariable` is assigned an updated value within the `outerFunction` scope. Both the `innerVariable` and the updated `outerVariable` can be accessed and logged within their respective scopes.
+In this example, `c` is not declared with `var`, `let`, or `const`. Hence, it is not hoisted, and trying to access it before the assignment leads to a ReferenceError.
+
+### Example 2:
+
+```javascript
+console.log(d); // Output: undefined
+var d;
+console.log(d); // Output: undefined
+d = 30;
+console.log(d); // Output: 30
+```
+
+Here, the variable `d` is declared but not assigned a value before the first `console.log(d)`, resulting in `undefined`. After the assignment `d = 30;`, the last `console.log(d)` logs `30`.
+
+### Example 3:
+
+```javascript
+var e = 40;
+function example2() {
+  console.log(e); // Output: undefined
+  var e = 50;
+  console.log(e); // Output: 50
+}
+example2();
+console.log(e); // Output: 40
+```
+
+This example is similar to the one before, but now we have a global variable `e`. Inside the function, the variable `e` is hoisted and shadows the global `e`, causing the first `console.log(e)` inside the function to log `undefined`. The local variable `e` is then assigned `50`, and the second `console.log(e)` logs `50`. The global `e` remains unchanged.
 
 ## Conclusion
 
-Understanding how to declare variables within different scopes and assign values to them is crucial for writing organized and maintainable JavaScript code. By properly scoping variables and assigning values within the appropriate scopes, you can ensure the correct usage and manipulation of data throughout your program.
+Variable hoisting is an essential concept to understand when working with JavaScript. It can impact the behavior of your code, especially when variables are declared inside functions. Remember that only variable declarations are hoisted, not the assignments. By being aware of hoisting, you can write more predictable and maintainable code.
+
+Remember that hoisting applies to `var` declarations, but not to `let` and `const` declarations, as `let` and `const` have block-level scope and do not get hoisted to the top of their scope. Always declare variables before using them to avoid unexpected behavior and make your code more readable.
 
 Resources:
-- [MDN Web Docs - Variables](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#
+[MDN Web Docs var](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var)
+[MDN Web Docs let](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)
+[MDN Web Docs const](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)

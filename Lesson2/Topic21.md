@@ -157,7 +157,7 @@ p{
 
 Typography is an essential aspect of web design that can greatly impact the user experience and overall aesthetics of a website. By working with web fonts and importing custom fonts, you can enhance the visual appeal and create a unique typographic style for your web pages. Whether you choose to use web-safe fonts or import custom fonts, it's crucial to consider factors such as readability, accessibility, and cross-platform compatibility to ensure a consistent and engaging user experience.
 
-Resources:
+References:
 - [Google Fonts](https://fonts.google.com/)
 - [MDN Web Docs - @font-face](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face)
 - [W3Schools - CSS font-family Property](https://www.w3schools.com/cssref/pr_font_font-family.asp)

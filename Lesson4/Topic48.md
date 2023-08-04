@@ -209,6 +209,6 @@ In this example, the element with the id "sourceElementId" is moved from its cur
 
 Modifying element properties and content is crucial for creating dynamic and interactive web applications. JavaScript provides powerful methods and properties to change text content, attributes, and CSS styles of elements. Additionally, adding, removing, and manipulating DOM nodes allows you to modify the structure and composition of the webpage dynamically. By mastering these techniques, you can create engaging user experiences and build sophisticated web applications.
 
-Resources:
+References:
 - [MDN Web Docs - Manipulating documents](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
 - [W3Schools - JavaScript HTML DOM](https://www.w3schools.com/js/js_htmldom.asp)

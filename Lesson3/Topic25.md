@@ -76,6 +76,6 @@ Variables are an integral part of JavaScript as they allow us to store and manip
 
 Remember that `const` variables are constants and cannot be changed once assigned a value. They provide a way to declare variables that should not be reassigned. By following naming conventions and using appropriate variable names, we can write clean and readable code.
 
-Resources:
+References:
 - [MDN Web Docs - Variables](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#Variables)
 - [W3Schools - JavaScript Variables](https://www.w3schools.com/js/js_variables.asp)

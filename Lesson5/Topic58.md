@@ -292,7 +292,7 @@ ES6 brought several powerful features and syntax enhancements to JavaScript, mak
 
 By mastering these ES6 features, you can write cleaner, more readable code and take advantage of the modern capabilities of JavaScript.
 
-Resources:
+References:
 - [MDN Web Docs: let](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)
 - [MDN Web Docs: const](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)
 - [MDN Web Docs: Arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)

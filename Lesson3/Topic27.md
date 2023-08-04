@@ -165,18 +165,8 @@ console.log(result);
 
 ## Conclusion
 
-Taking user input and converting it to numerical data is an essential skill for creating interactive JavaScript applications. By using the `parseInt`, `parseFloat`, and `Number` functions, we can ensure that user input is treated as numerical data, allowing us to perform arithmetic operations as expected.
-
-Resources:
-- [MDN Web Docs - Global Objects: parseInt()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt)
-- [MDN Web Docs - Global Objects: parseFloat()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseFloat)
-- [W3Schools - JavaScript Type Conversion](https://www.w3schools.com/js/js_type_conversion.asp)
-- [MDN Web Docs - isNaN()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isNaN)
-
-## Conclusion
-
 Arithmetic operators are essential for performing mathematical operations in JavaScript. They enable us to add, subtract, multiply, divide, find remainders, and modify numeric values. Understanding how to use these operators correctly allows us to perform complex calculations and manipulate numerical data effectively.
 
-Resources:
+References:
 - [MDN Web Docs - Arithmetic operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators)
 - [W3Schools - JavaScript Arithmetic Operators](https://www.w3schools.com/js/js_arithmetic.asp)

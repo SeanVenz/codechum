@@ -63,6 +63,6 @@ Function parameters and arguments are crucial components of JavaScript functions
 
 Understanding how to work with function parameters and arguments allows you to build functions that can be customized and adapted to different scenarios. This flexibility enhances the modularity and reusability of your code, making it easier to maintain and scale your JavaScript programs.
 
-Resources:
+References:
 - [MDN Web Docs - Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions)
 - [W3Schools - JavaScript Functions](https://www.w3schools.com/js/js_functions.asp)

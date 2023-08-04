@@ -61,7 +61,7 @@ In the above example, we use `console.log` statements to display messages to the
 
 Input and output are crucial for building interactive and dynamic JavaScript applications. By collecting user input and displaying output, we can create programs that interact with users and provide meaningful information. The `prompt` function allows us to collect user input, while the `console.log` statement enables us to display output and track the values of variables during runtime. Understanding how to collect user input and display output enables us to create more engaging and interactive JavaScript applications.
 
-Resources:
+References:
 - [MDN Web Docs - prompt](https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt)
 - [MDN Web Docs - console.log](https://developer.mozilla.org/en-US/docs/Web/API/Console/log)
 - [W3Schools - JavaScript Input and Output](https://www.w3schools.com/js/js_output.asp)

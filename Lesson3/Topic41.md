@@ -79,6 +79,6 @@ Returning values from functions in JavaScript allows you to send computed result
 
 Remember to consider the desired output and purpose of a function when deciding whether and what to return. The returned value can be used to influence program flow, store results, make decisions, or perform any other operations based on the specific requirements of your application.
 
-Resources:
+References:
 - [MDN Web Docs - Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions)
 - [W3Schools - JavaScript Functions](https://www.w3schools.com/js/js_functions.asp)

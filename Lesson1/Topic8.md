@@ -68,6 +68,6 @@ Here's a diagram illustrating the structure of HTML links:
 
 Creating hyperlinks with anchor tags (a) is essential for connecting web pages, linking to external resources, and improving navigation within web content. By utilizing anchor tags and the appropriate attributes, you can enhance the usability and accessibility of your HTML documents.
 
-Resources:
+References:
 - [Mozilla Developer Network (MDN) - HTML Links](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a)
 - [W3Schools - HTML Links](https://www.w3schools.com/html/html_links.asp)

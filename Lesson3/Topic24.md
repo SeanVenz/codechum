@@ -39,5 +39,5 @@ The structure of a JavaScript program is about how your code is organized. It's 
 
 Understanding the basic syntax and structure of JavaScript is essential for writing clean and readable code. By following JavaScript syntax rules and organizing your code effectively, you can develop well-structured JavaScript programs.
 
-Resources:
+References:
 - [MDN Web Docs - JavaScript Basics](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Introduction)

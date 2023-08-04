@@ -103,6 +103,6 @@ This demonstrates the concept of variable shadowing in JavaScript, wherein varia
 
 Understanding global and local scope is crucial for writing maintainable and bug-free JavaScript code. Global scope allows variables to be accessed from anywhere within the program, while local scope provides encapsulation and protects variable names from conflicts. By understanding the scope hierarchy and variable access rules, you can effectively manage and utilize variables in different scopes, leading to cleaner and more modular code.
 
-Resources:
+References:
 - [MDN Web Docs - Scope](https://developer.mozilla.org/en-US/docs/Glossary/Scope)
 - [W3Schools - JavaScript Scope](https://www.w3schools.com/js/js_scope.asp)

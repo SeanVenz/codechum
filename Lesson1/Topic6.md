@@ -85,6 +85,6 @@ While these formatting tags are useful for enhancing the visual presentation of 
 
 Formatting text with Bold, Italic, Underline, and other tags provides a way to enhance the appearance and emphasize specific parts of your content. By utilizing these tags effectively, you can create visually appealing web pages that engage and guide your readers.
 
-Resources:
+References:
 - [Mozilla Developer Network (MDN) - Text-level Semantics in HTML](https://developer.mozilla.org/en-US/docs/Web/HTML/Element#Text-level_semantics)
 - [W3Schools - HTML Formatting Elements](https://www.w3schools.com/html/html_formatting.asp)

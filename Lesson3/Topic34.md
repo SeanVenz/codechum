@@ -55,6 +55,6 @@ The `do-while` loop provides a way to execute a block of code at least once and 
 
 Remember to use caution when working with `do-while` loops, as they can potentially result in infinite loops if the condition is always true. Ensure that the loop body contains appropriate statements to modify the condition or break out of the loop to prevent infinite execution.
 
-Resources:
+References:
 - [MDN Web Docs - do...while statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/do...while)
 - [W3Schools - JavaScript do...while Loop](https://www.w3schools.com/js/js_loop_do_while.asp)

@@ -66,6 +66,6 @@ Modifying array elements is a powerful feature in JavaScript that allows you to 
 
 Remember to ensure that the index you're modifying is within the valid range of the array to avoid errors. Be mindful of the impact modifying array elements may have on other parts of your code that rely on the original values.
 
-Resources:
+References:
 - [MDN Web Docs - Arrays](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 - [W3Schools - JavaScript Arrays](https://www.w3schools.com/js/js_arrays.asp)

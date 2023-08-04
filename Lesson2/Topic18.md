@@ -158,7 +158,7 @@ The `body` styling is just to center our `div` and the `p` selector is used to r
 
 Understanding the CSS Box Model is essential for creating well-designed and visually appealing webpages. By grasping the concept of the box model and its components (margin, padding, border), as well as controlling element dimensions and spacing, you gain precise control over the layout and appearance of your web content. Remember to experiment and practice using the provided code snippets and resources to deepen your understanding and mastery of the CSS Box Model.
 
-Resources:
+References:
 - [MDN Web Docs - Introduction to the CSS box model](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
 - [CSS-Tricks - Box Sizing](https://css-tricks.com/box-sizing/)
 - [W3Schools - CSS Box Model](https://www.w3schools.com/css/css_boxmodel.asp)

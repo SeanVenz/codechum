@@ -62,6 +62,6 @@ In the above example, the loop control variable `i` is initialized with a value 
 
 Using `for` loops allows us to automate repetitive tasks and perform calculations based on a specific range. They provide a structured and concise way to write code that performs repetitive actions, reducing the need for duplicating code and improving the efficiency of our programs.
 
-Resources:
+References:
 - [MDN Web Docs - for statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for)
 - [W3Schools - JavaScript for Loop](https://www.w3schools.com/js/js_loop_for.asp)

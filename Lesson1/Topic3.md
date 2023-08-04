@@ -45,6 +45,6 @@ Here's a diagram illustrating the usage of the `<p>` tag:
 
 Using the `<p>` tag to mark up paragraphs is a fundamental technique in HTML. It helps structure and format textual content, improving readability and user experience. By employing proper paragraph organization, you can make your web pages more accessible and engaging for your audience.
 
-Resources:
+References:
 - [Mozilla Developer Network (MDN) - HTML `<p>` Tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p)
 - [W3Schools - HTML Paragraphs](https://www.w3schools.com/html/html_paragraphs.asp)

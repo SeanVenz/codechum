@@ -104,12 +104,12 @@ In this example, we have an HTML file with embedded JavaScript code. The `number
 
 Remember to explore further resources and documentation to deepen your understanding and master the array iteration methods in JavaScript. These methods provide powerful tools for working with arrays, simplifying your code and improving its readability. By leveraging these methods, you can write more expressive and efficient code when dealing with arrays in your projects.
 
+## Conclusion
+
+Array iteration methods in ES6 provide powerful tools for working with arrays in JavaScript. The `forEach` method allows you to iterate over array elements and perform operations on each element. The `map` method creates a new array with modified elements. The `filter` method creates a new array containing only the elements that satisfy a condition. The `reduce` method reduces an array to a single value. These methods simplify the process of manipulating arrays, making your code more expressive and efficient.
+
 References:
 - [MDN Web Docs: Array.prototype.forEach()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
 - [MDN Web Docs: Array.prototype.map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
 - [MDN Web Docs: Array.prototype.filter()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
 - [MDN Web Docs: Array.prototype.reduce()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
-
-## Conclusion
-
-Array iteration methods in ES6 provide powerful tools for working with arrays in JavaScript. The `forEach` method allows you to iterate over array elements and perform operations on each element. The `map` method creates a new array with modified elements. The `filter` method creates a new array containing only the elements that satisfy a condition. The `reduce` method reduces an array to a single value. These methods simplify the process of manipulating arrays, making your code more expressive and efficient.

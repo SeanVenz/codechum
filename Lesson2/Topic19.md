@@ -312,7 +312,7 @@ It's recommended to use modern CSS layout techniques like Flexbox and CSS Grid f
 
 CSS provides various methods for creating layouts on web pages. By leveraging CSS display properties such as block, inline, and inline-block, you can control the positioning and behavior of elements within your layouts. Whether you use floats, Flexbox, CSS Grid, or a combination of these techniques, CSS layout plays a significant role in achieving visually appealing web designs.
 
-Resources:
+References:
 - [Mozilla Developer Network (MDN) - CSS Layout](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout)
 - [CSS-Tricks - A Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
 - [FlexboxFroggy](https://flexboxfroggy.com/)

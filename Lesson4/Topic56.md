@@ -228,7 +228,7 @@ By utilizing these techniques, you can manipulate CSS classes dynamically and ac
 
 Manipulating CSS classes dynamically through JavaScript is a powerful tool for modifying the styling of HTML elements in real-time. By adding, removing, or toggling classes, you can apply predefined styles to elements, create dynamic visual effects, and enhance user interactions. This approach promotes reusability and consistency by separating the styles from the JavaScript logic. Experimenting with manipulating CSS classes allows you to create dynamic and engaging user interfaces. 
 
-Resources:
+References:
 - [MDN Web Docs: Manipulating Classes](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList)
 - [W3Schools: JavaScript HTML DOM](https://www.w3schools.com/js/js_htmldom_css.asp)
 - [CSS-Tricks: A Complete Guide to the ClassList API](https://css-tricks.com/snippets/javascript/the-classlist-api/)

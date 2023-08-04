@@ -106,6 +106,6 @@ In the above example, the outer `if` statement checks if the entered number is g
 
 `if`, `else if`, `else`, and nested `if` statements provide powerful control over the flow of our code based on different conditions. They enable us to execute specific code blocks selectively, handle alternative execution paths, and check for multiple conditions in a hierarchical manner. By mastering these statements, we gain the ability to build dynamic and adaptive applications that respond to various scenarios.
 
-Resources:
+References:
 - [MDN Web Docs - if...else](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else)
 - [W3Schools - JavaScript if...else Statement](https://www.w3schools.com/js/js_if_else.asp)

@@ -62,6 +62,6 @@ Understanding the hierarchical structure of the DOM and the parent-child relatio
 
 By utilizing the parent-child relationships, you can perform various operations on elements, such as adding, removing, or modifying elements dynamically. This flexibility enables you to create dynamic web pages, enhance interactivity, and provide a better user experience.
 
-Reference:
+References:
 - [MDN Web Docs - Document Object Model (DOM)](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
 - [W3Schools - JavaScript HTML DOM](https://www.w3schools.com/js/js_htmldom.asp)

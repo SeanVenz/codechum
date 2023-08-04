@@ -445,6 +445,6 @@ In this example, we have two container `<div>` elements. The JavaScript code ret
 
 Being able to access specific elements within the DOM is a fundamental aspect of JavaScript development. The methods `getElementById`, `getElementsByTagName`, and `getElementsByClassName` provide convenient ways to retrieve elements based on their attributes. Additionally, understanding how to navigate the DOM using parent, child, and sibling relationships allows you to manipulate the structure and content of the webpage dynamically. By mastering these techniques, you can create dynamic and interactive web applications.
 
-Resources:
+References:
 - [MDN Web Docs - Document Object Model (DOM)](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
 - [W3Schools - JavaScript HTML DOM](https://www.w3schools.com/js/js_htmldom.asp)

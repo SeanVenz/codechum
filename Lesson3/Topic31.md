@@ -70,6 +70,6 @@ The switch statement provides an elegant and efficient way to handle multiple co
 
 Remember to include the `break` statement after each code block inside the switch statement to prevent execution of the subsequent case blocks. This ensures that only the matching code block is executed and the switch statement is exited.
 
-Resources:
+References:
 - [MDN Web Docs - switch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)
 - [W3Schools - JavaScript switch Statement](https://www.w3schools.com/js/js_switch.asp)

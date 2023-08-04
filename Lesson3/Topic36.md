@@ -77,6 +77,6 @@ Accessing array elements using index values is a fundamental skill when working 
 
 Take time to practice accessing array elements using different index values and explore the versatility of arrays in your JavaScript programs.
 
-Resources:
+References:
 - [MDN Web Docs - Arrays](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 - [W3Schools - JavaScript Arrays](https://www.w3schools.com/js/js_arrays.asp)

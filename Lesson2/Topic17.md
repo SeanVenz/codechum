@@ -203,6 +203,6 @@ Inline Styles > ID Selectors > Class Selectors > Tag Selectors
 
 CSS selectors are powerful tools that allow you to target specific elements and apply styles accordingly. Understanding the differences between tag, class, and ID selectors helps you apply styles precisely. Additionally, grasping selector specificity ensures that styles are applied correctly when dealing with conflicts.
 
-Resources:
+References:
 - [Mozilla Developer Network (MDN) - CSS Selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)
 - [W3Schools - CSS Selectors](https://www.w3schools.com/css/css_selectors.asp)

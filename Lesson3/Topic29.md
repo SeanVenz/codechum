@@ -70,6 +70,6 @@ Logical operators are powerful tools for combining conditions and making decisio
 
 Understanding how to use logical operators correctly allows you to write more flexible and robust code. By combining conditions, you can create sophisticated decision-making processes and solve complex problems in JavaScript applications.
 
-Resources:
+References:
 - [MDN Web Docs - Logical operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators)
 - [W3Schools - JavaScript Logical Operators](https://www.w3schools.com/js/js_operators.asp)

@@ -100,6 +100,6 @@ Invoking functions by calling them and understanding the execution of function c
 
 Remember to include the parentheses `()` when invoking a function to ensure that the function is executed and to pay attention to the order of function calls in your program to achieve the desired outcome.
 
-Resources:
+References:
 - [MDN Web Docs - Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions)
 - [W3Schools - JavaScript Functions](https://www.w3schools.com/js/js_functions.asp)

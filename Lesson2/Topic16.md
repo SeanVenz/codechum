@@ -116,6 +116,6 @@ It's generally recommended to use external CSS stylesheets for better code organ
 
 CSS plays a crucial role in web development by allowing developers to control the visual aspects of HTML documents. By separating the content from the presentation, CSS provides flexibility, consistency, and enhanced user experiences. Understanding the different methods of applying CSS styles—inline, internal, and external—empowers you to create visually stunning and responsive websites.
 
-Resources:
+References:
 - [Mozilla Developer Network (MDN) - CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 - [W3Schools - CSS Tutorial](https://www.w3schools.com/css/)

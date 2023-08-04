@@ -196,7 +196,7 @@ Remember, gradients can be applied not only to the background of elements but al
 ## Conclusion
 Styling backgrounds with colors, images, and gradients is an essential skill for web designers and developers. By leveraging these techniques, you can transform the look and feel of your web pages, creating visually engaging experiences for your users. Remember to experiment with different combinations and effects to achieve the desired results.
 
-## Additional Resources
+References:
 - [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Backgrounds_and_Borders)
 - [CSS-Tricks](https://css-tricks.com/a-complete-guide-to-css-gradients/)
 - [Can I Use](https://caniuse.com/?search=background-image)

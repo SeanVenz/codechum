@@ -42,6 +42,6 @@ In the example above, the `<div>` element contains a heading (`<h2>`), a paragra
 
 The `<div>` tag is a fundamental element in HTML that provides a flexible way to group and organize other elements within a web page. It offers benefits such as structural organization. By using the `<div>` tag wisely, you can create well-structured web pages.
 
-Resources:
+References:
 - [MDN Web Docs - `<div>`: The Generic Block-level Container](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div)
 - [W3Schools - HTML `<div>` Tag](https://www.w3schools.com/tags/tag_div.asp)

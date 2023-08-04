@@ -230,7 +230,7 @@ The `border-radius` property in CSS allows you to create visually appealing and 
 
 Borders are an essential component of web design, providing structure, visual separation, and decorative elements to elements on a webpage. By leveraging CSS border properties, you can customize the style, width, and color of borders, allowing you to achieve various design effects. Experiment with different border styles, widths, and colors to create visually appealing and engaging web interfaces.
 
-Resources:
+References:
 - [MDN Web Docs - border](https://developer.mozilla.org/en-US/docs/Web/CSS/border)
 - [CSS-Tricks - Border](https://css-tricks.com/almanac/properties/b/border/)
 - [W3Schools - CSS Border Property](https://www.w3schools.com/cssref/pr_border.asp)

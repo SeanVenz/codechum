@@ -186,6 +186,6 @@ Attribute manipulation is a powerful technique in web development that allows yo
 
 Remember to explore further resources and documentation to deepen your understanding and master the art of attribute manipulation in web development.
 
-Resources:
+References:
 - [MDN Web Docs: Manipulating Attributes](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents#Changing_attribute_values)
 - [W3Schools: JavaScript HTML DOM](https://www.w3schools.com/js/js_htmldom.asp)

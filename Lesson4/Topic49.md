@@ -152,6 +152,6 @@ By adding event listeners to elements and specifying the type of event to listen
 
 Event listeners are powerful tools for creating interactive and dynamic web applications. By attaching event listeners to HTML elements, you can respond to user interactions and execute custom JavaScript code accordingly. This allows you to enhance the user experience and add interactivity to your web pages. By understanding how to add event listeners and specify the type of event to listen for, you can create engaging and interactive web applications.
 
-Resources:
+References:
 - [MDN Web Docs - Introduction to events](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events)
 - [W3Schools - JavaScript Events](https://www.w3schools.com/js/js_events.asp)

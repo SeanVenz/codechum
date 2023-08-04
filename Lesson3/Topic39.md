@@ -45,6 +45,7 @@ In this example, we define a function called `hiStranger`. The function body log
 Understanding how to declare functions with the `function` keyword and the syntax and structure of functions is fundamental in JavaScript programming. Functions provide a way to organize and reuse code, making your programs more modular and maintainable.
 
 By declaring functions, you can encapsulate specific tasks into reusable blocks of code and improve the efficiency and readability of your programs.
-Resources:
+
+References:
 - [MDN Web Docs - Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions)
 - [W3Schools - JavaScript Functions](https://www.w3schools.com/js/js_functions.asp)

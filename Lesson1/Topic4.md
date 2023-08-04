@@ -44,5 +44,5 @@ It is important to note that the `<br>` tag should be used sparingly and only fo
 
 Inserting line breaks with the `<br>` tag is a simple and effective way to create new lines of text within HTML. It provides control over the layout and spacing of content without the need for additional elements or paragraphs. By using the `<br>` tag thoughtfully, you can enhance the readability and visual organization of your web pages.
 
-Resources:
+References:
 - [Mozilla Developer Network (MDN) - The `<br>` Element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/br)

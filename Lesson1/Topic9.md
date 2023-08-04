@@ -59,6 +59,6 @@ Use meaningful and descriptive text for your menu items to provide clear navigat
 
 Creating navigation menus using lists and anchor tags is a fundamental aspect of web development. By structuring your menus with HTML, you can create organized and accessible navigation systems that help users navigate through your web content.
 
-Resources:
+References:
 - [Mozilla Developer Network (MDN) - HTML Lists](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul)
 - [W3Schools - HTML Lists](https://www.w3schools.com/html/html_lists.asp)

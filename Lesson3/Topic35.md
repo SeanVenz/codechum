@@ -84,6 +84,6 @@ Arrays are fundamental data structures in JavaScript that provide a convenient w
 
 By understanding these concepts, you can effectively work with arrays in JavaScript and harness their power for efficient data organization.
 
-Resources:
+References:
 - [MDN Web Docs - Arrays](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 - [W3Schools - JavaScript Arrays](https://www.w3schools.com/js/js_arrays.asp)

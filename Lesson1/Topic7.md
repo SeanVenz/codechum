@@ -100,6 +100,6 @@ Here's a diagram illustrating the structure of HTML lists:
 
 Creating ordered lists (ol) and unordered lists (ul) is crucial for structuring and presenting information in a clear and organized manner. By utilizing list items (li) and nesting lists, you can create hierarchical structures and improve the readability of your content.
 
-Resources:
+References:
 - [Mozilla Developer Network (MDN) - HTML Lists](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul)
 - [W3Schools - HTML Lists](https://www.w3schools.com/html/html_lists.asp)

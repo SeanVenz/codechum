@@ -66,6 +66,6 @@ In this example, the `unshift` method is used to add the string "apple" to the b
 
 Array methods like `push`, `pop`, `shift`, and `unshift` provide powerful ways to add and remove elements from an array in JavaScript. These methods enable dynamic modification of array contents, allowing you to manipulate arrays to suit your program's needs. By utilizing these methods effectively, you can build flexible and responsive programs that work with array data efficiently.
 
-Resources:
+References:
 - [MDN Web Docs - Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 - [W3Schools - JavaScript Arrays](https://www.w3schools.com/js/js_arrays.asp)
