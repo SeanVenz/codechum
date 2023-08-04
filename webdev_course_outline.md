@@ -16,7 +16,7 @@ Lesson 1: Introduction to HTML
   - Using heading tags (h1-h6) for different levels of headings
 
 - Topic 6: HTML Text Formatting
-  - Formatting text with strong, emphasis, underline, and other tags 
+  - Formatting text with strong, emphasis, underline, and other tags
 
 - Topic 7: HTML Lists
   - Creating ordered lists (ol) and unordered lists (ul)
@@ -35,6 +35,7 @@ Lesson 1: Introduction to HTML
 - Topic 11: HTML Semantics
   - Understanding the importance of HTML semantics
   - Using semantic tags: header, nav, main, section, article, aside, footer
+  - The role of semantic tags in SEO and web accessibility
 
 - Topic 12: HTML Tables
   - Creating tables using table, tr, td, and th tags
@@ -161,67 +162,63 @@ Lesson 3: Introduction to JavaScript
   - Understanding global and local scope in JavaScript
   - Scope hierarchy and access to variables
 
-- Topic 44: Variable Declaration and Assignment within Scopes
-  - Declaring variables within different scopes
-  - Assigning values to variables in different scopes
-
-- Topic 45: Accessing Variables within Different Scopes
-  - Accessing variables defined in different scopes
-  - Shadowing variables in nested scopes
+- Topic 44: Variable Hoisting and Its Implications
+  - Understanding variable hoisting in JavaScript
+  - Effects of hoisting on variable declaration and assignment
 
 Lesson 4: DOM Manipulation and Event Handling
 
-- Topic 46: DOM Tree Structure
+- Topic 45: DOM Tree Structure
   - Understanding the hierarchical structure of the DOM
   - Parent-child relationships between elements
- 
-- Topic 47: Accessing Elements with JavaScript
+
+- Topic 46: Accessing Elements with JavaScript
   - Using methods like getElementById, getElementsByTagName, getElementsByClassName
   - Navigating the DOM using parent, child, and sibling relationships
 
-- Topic 48: Modifying Element Properties and Content
+- Topic 47: Modifying Element Properties and Content
   - Changing text content, attributes, and CSS styles
   - Adding, removing, and manipulating DOM nodes
 
-- Topic 49: Event Listeners
+- Topic 48: Event Listeners
   - Adding event listeners to elements
   - Specifying the type of event to listen for (click, mouseover, etc.)
 
-- Topic 50: Event Handling Functions
+- Topic 49: Event Handling Functions
   - Defining functions to handle events
   - Responding to user interactions and triggering actions
 
-- Topic 51: Event Object
+- Topic 50: Event Object
   - Accessing event information and properties
   - Preventing default browser behavior and propagating events
 
-- Topic 52: Form Validation Basics
+- Topic 51: Form Validation Basics
   - Validating form input on the client-side
   - Checking for empty fields, required formats, and constraints
 
-- Topic 53: Event Handling for Form Validation
+- Topic 52: Event Handling for Form Validation
   - Listening for form submission events
   - Validating form input before submitting
 
-- Topic 54: Displaying Error Messages
+- Topic 53: Displaying Error Messages
   - Showing error messages for invalid input
   - Updating the user interface to indicate validation errors
 
-- Topic 55: Modifying Inline Styles
+- Topic 54: Modifying Inline Styles
   - Changing element styles directly using JavaScript
   - Setting properties like color, font-size, background-color
 
-- Topic 56: Manipulating CSS Classes
+- Topic 55: Manipulating CSS Classes
   - Adding, removing, and toggling classes dynamically
   - Applying predefined styles by adding/removing classes
 
-- Topic 57: Attribute Manipulation
+- Topic 56: Attribute Manipulation
   - Modifying element attributes related to styling
   - Manipulating attributes like "src", "href", "data-*"
 
 Lesson 5: JavaScript ES6
 
-- Topic 58: Introduction to JavaScript ES6
+- Topic 57: Introduction to JavaScript ES6
   - Block-scoped variables: let and const
   - Arrow functions and their syntax
   - Enhanced object literals
@@ -229,34 +226,34 @@ Lesson 5: JavaScript ES6
   - Spread and rest operators
   - Default parameters and parameter handling
 
-- Topic 59: Template Literals for String Interpolation
+- Topic 58: Template Literals for String Interpolation
   - Creating dynamic strings with variables and expressions
   - Multiline strings using template literals
 
-- Topic 60: String Methods in ES6
+- Topic 59: String Methods in ES6
   - String interpolation with template literals
   - String methods: length, indexOf, slice, replace, toUpperCase, toLowerCase, etc.
 
-- Topic 61: Array Iteration Methods in ES6
+- Topic 60: Array Iteration Methods in ES6
   - forEach: iterating over array elements
   - map: creating a new array with modified elements
   - filter: creating a new array with elements that satisfy a condition
   - reduce: reducing an array to a single value
 
-- Topic 62: Arrow Functions in ES6
+- Topic 61: Arrow Functions in ES6
   - Shorter syntax for function expressions
   - Lexical scoping and this binding in arrow functions
 
 Lesson 6: Building Responsive Web Design
 
-- Topic 63: Introduction to Responsive Web Design
+- Topic 62: Introduction to Responsive Web Design
   - Principles of responsive design
     - Understanding the importance of responsive web design
     - Fluid grids and flexible layouts
     - Media queries for adapting to different screen sizes
     - Viewport meta tag and its role in responsive design
 
-- Topic 64: Flexbox Basics
+- Topic 63: Flexbox Basics
   - Flex Container and Flex Items
     - Understanding the flex container and its properties
     - Defining flex items and their properties
@@ -268,7 +265,7 @@ Lesson 6: Building Responsive Web Design
   - Align Items
     - Aligning flex items along the cross axis
 
-- Topic 65: Creating Flexible Layouts with Flexbox
+- Topic 64: Creating Flexible Layouts with Flexbox
   - Distributing Space with Flexbox Properties
     - Using flex-grow, flex-shrink, and flex-basis to distribute space
   - Controlling Item Order and Alignment
@@ -277,7 +274,7 @@ Lesson 6: Building Responsive Web Design
   - Responsive Design with Flexbox
     - Adapting flexbox layouts to different screen sizes
 
-- Topic 66: CSS Grid Fundamentals
+- Topic 65: CSS Grid Fundamentals
   - Grid Container and Grid Items
     - Understanding the grid container and its properties
     - Defining grid items and their properties
@@ -286,7 +283,7 @@ Lesson 6: Building Responsive Web Design
   - Grid Areas and Grid Templates
     - Creating grid areas and defining grid templates
 
-- Topic 67: Building Grid-based Layouts with CSS Grid
+- Topic 66: Building Grid-based Layouts with CSS Grid
   - Creating Grid Columns and Rows
     - Defining the number and size of grid columns and rows
   - Placing Items on the Grid using Grid Properties
