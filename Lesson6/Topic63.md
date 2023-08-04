@@ -1,145 +1,125 @@
-# Introduction to Responsive Web Design
+# Flexbox Basics: Creating Flexible Layouts
 
-Responsive web design is an essential approach that allows websites to adapt and provide an optimal viewing experience across a wide range of devices and screen sizes. In today's digital landscape, where users access websites from various devices such as desktops, laptops, tablets, and smartphones, it's crucial to create web experiences that are visually appealing and functional on any screen. In this topic, we will explore the principles of responsive design and the key techniques used to achieve responsiveness.
+## Introduction
 
-## Understanding the Importance of Responsive Web Design
+Flexbox is a powerful CSS layout module that provides a flexible and efficient way to create complex and responsive layouts. It offers a set of properties for aligning and distributing space among items in a container. In this topic, we will explore the fundamental concepts of flex containers, flex items, and the key properties used to control their behavior.
 
-Responsive web design plays a vital role in ensuring a seamless user experience and improving user engagement. Here are a few reasons why responsive design is important:
+## Flex Container and Flex Items
 
-- **Enhanced User Experience:** Responsive websites automatically adjust their layout, font sizes, and images to fit different screen sizes. This eliminates the need for users to zoom in or scroll horizontally, creating a more user-friendly experience.
+Flexbox is a method to create flexible layouts in CSS. It operates based on the relationship between a parent element (which we call a "flex container") and its child elements ("flex items").
 
-- **Increased Mobile Traffic:** With the increasing use of smartphones and tablets, mobile traffic has become a significant portion of website traffic. Responsive design ensures that your website is accessible and functional on mobile devices, allowing you to tap into this growing user base.
-
-- **Search Engine Optimization (SEO):** Responsive websites are preferred by search engines because they provide a consistent user experience across devices. Search engines prioritize mobile-friendly websites in their search results, leading to improved visibility and organic traffic.
-
-### Understanding Media Queries
-
-Media queries are a fundamental aspect of responsive web design. They allow you to apply different styles and layout rules based on the characteristics of the device or viewport. Media queries enable your website to adapt and provide an optimal user experience on various screen sizes, from small smartphones to large desktop monitors.
-
-### Understanding Media Query Parameters
-
-Media queries consist of a media type and one or more expressions that define the conditions for applying the associated CSS rules. The most commonly used media type is `screen`, which targets devices with screens, including desktops, laptops, tablets, and smartphones. Here's the general syntax of a media query:
-
-```css
-@media media-type and (media-feature) {
-  /* CSS rules for the specified conditions */
-}
-```
-
-The `media-type` refers to the type of media being targeted, while the `media-feature` represents the condition or characteristic being evaluated. One commonly used media feature is `width`, which allows you to set rules based on the width of the viewport.
-
-### Choosing Appropriate Parameters
-
-When selecting appropriate parameters for media queries, it's important to consider the characteristics of the devices you are targeting. Here are some common guidelines:
-
-- Small devices (e.g., smartphones): Typically have a maximum width of around 767px or smaller. It's common to use media queries targeting `max-width: 767px` for small devices.
-- Medium-sized devices (e.g., tablets): Usually have a width between 768px and 1023px. Media queries with a `min-width` of 768px and a `max-width` of 1023px are commonly used to style medium-sized devices.
-- Large devices (e.g., desktops, laptops): Have a width greater than 1024px. You can use media queries with a `min-width` of 1024px to apply specific styles for larger screens.
-
-These guidelines provide a starting point for determining appropriate media query parameters. However, it's crucial to consider the specific needs of your design and test your website across different devices to ensure optimal responsiveness.
-
-![Device View](https://www.seobility.net/en/wiki/images/6/6f/Media-Queries.png)
-
-## Viewport Meta Tag and Its Role in Responsive Design
-
-The viewport meta tag is an essential element in responsive web design. It controls how the website is displayed on different devices and ensures that the layout and scaling are optimized for the viewport size. Here's an example of the viewport meta tag:
+To create a flex container, you need to apply the `display: flex;` or `display: inline-flex;` property to the parent element. Here's an example:
 
 ```html
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Responsive Design</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-  <!-- Content goes here -->
-</body>
-</html>
-```
-
-In this example, the `meta` tag with the `name` attribute set to "viewport" defines the viewport settings. The `content` attribute specifies the width of the viewport as the device width and sets the initial scale to 1.0. This ensures that the website adapts to the device width and is displayed at the correct scale.
-
-### Using Max and Min Width
-
-Two important media features for responsive design are `max-width` and `min-width`. These features allow you to set rules based on the maximum and minimum width of the viewport, respectively.
-
-For example, suppose you want to apply different styles for small devices (e.g., smartphones) and medium-sized devices (e.g., tablets). You can use media queries with appropriate `max-width` and `min-width` values to target specific ranges of screen sizes.
-
-```css
-/* Styles for small devices (e.g., smartphones) */
-@media (max-width: 767px) {
-  /* CSS rules for small devices */
-}
-
-/* Styles for medium-sized devices (e.g., tablets) */
-@media (min-width: 768px) and (max-width: 1023px) {
-  /* CSS rules for medium-sized devices */
-}
-```
-
-In this example, the first media query targets devices with a maximum width of 767px, applying styles specifically designed for small devices such as smartphones. The second media query targets devices with a minimum width of 768px and a maximum width of 1023px, representing medium-sized devices like tablets.
-
-## Media Queries for Adapting to Different Screen Sizes
-
-Media queries are a fundamental part of responsive design. They allow you to apply CSS styles based on the characteristics of the device or screen size. Media queries use the `@media` rule and specify conditions such as screen width, height, orientation, and resolution. Here's an example:
-
-HTML File:
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Responsive Design</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div class="container">
-    <!-- Content goes here -->
-  </div>
-</body>
-</html>
-```
-
-CSS File:
-```css
-/* styles.css */
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-@media (max-width: 768px) {
+<style>
   .container {
-    padding: 10px;
+    display: flex;
   }
-}
+</style>
+
+<div class="container">
+  <!-- Flex items go here -->
+</div>
 ```
 
-In this example, the `.container` class is styled with a padding of 20px. However, when the screen size becomes smaller than or equal to 768px, the media query inside the `@media` rule is triggered, and the padding is changed to 10px. This adjustment ensures that the content remains visually appealing and well-spaced on smaller screens.
+In this example, we made the `<div>` with the class `.container` a flex container. Everything inside this container are called "flex items". These flex items can now be managed in a more flexible way.
 
-## Fluid Grids and Flexible Layouts
+Flexbox gives us control over the alignment, direction, order, and size of these items within the container.
 
-One of the core principles of responsive web design is the use of fluid grids and flexible layouts. Instead of using fixed pixel-based widths, fluid grids adapt to the screen size by using relative units such as percentages. This allows the content to resize proportionally and fit different screen sizes. Here's an example:
+For example, look at this code:
+
+```html
+<style>
+  .container {
+    display: flex;
+    justify-content: space-between;  /* This will evenly distribute items along the horizontal line */
+    align-items: center;  /* This will align items vertically in the middle */
+  }
+  
+  .item {
+    flex: 1 0 0;  /* This will allow the items to grow to fill the container if there's extra space */
+  }
+</style>
+
+<div class="container">
+  <div class="item">Item 1</div>
+  <div class="item">Item 2</div>
+  <div class="item">Item 3</div>
+</div>
+
+```
+
+Here we're using some properties like `justify-content`, `align-items`, and `flex`.
+
+- `justify-content` changes the alignment of the items along the horizontal line in the container.
+- `align-items` does the same, but along the vertical line.
+- `flex` is a shorthand for three properties: `flex-grow` (how much the item will grow relative to the rest of the items), `flex-shrink` (how much the item will shrink relative to the rest), and `flex-basis` (the default size of an element before it is adjusted with `flex-grow` or `flex-shrink`).
+
+## Flex Direction and Flex Wrap
+
+### Flex Direction
+
+Flexbox provides two properties, `flex-direction` and `flex-wrap`, which control the direction and wrapping behavior of flex items.
+
+The `flex-direction` property determines the main axis along which the flex items are laid out. Here are its possible values:
+
+- `row` (default): Items are laid out in a line from left to right.
+- `row-reverse`: Items are laid out from right to left.
+- `column`: Items are laid out from top to bottom.
+- `column-reverse`: Items are laid out from bottom to top.
+
+For example:
+
+```html
+<style>
+  .container {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+</style>
+
+<div class="container">
+  <!-- Flex items go here -->
+</div>
+```
+
+### Code and Sample Output
 
 HTML File:
 ```html
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Responsive Design</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-  <div class="container">
-    <div class="column">
-      <!-- Content for the first column -->
-    </div>
-    <div class="column">
-      <!-- Content for the second column -->
-    </div>
+  <h2>Flex-direction: row (default)</h2>
+  <div class="container row">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+  </div>
+
+  <h2>Flex-direction: row-reverse</h2>
+  <div class="container row-reverse">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+  </div>
+
+  <h2>Flex-direction: column</h2>
+  <div class="container column">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+  </div>
+
+  <h2>Flex-direction: column-reverse</h2>
+  <div class="container column-reverse">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
   </div>
 </body>
 </html>
@@ -148,135 +128,388 @@ HTML File:
 CSS File:
 ```css
 .container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+  display: flex;
+  width: 50%;
+  margin-bottom: 20px;
 }
 
-.column {
+.item {
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid black;
+  flex-basis: 50%;
+}
+
+.nowrap {
+  flex-wrap: nowrap;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+```
+
+#### Output
+
+![Flex](https://i.imgur.com/qSsGyRj.png)
+![Flex](https://i.imgur.com/xGGGrNX.png)
+
+In this code, `flex-direction: row-reverse;` is applied to the `.container` class, which lays out the flex items from right to left.
+
+### Flex-Wrap
+
+The `flex-wrap` property decides whether the flex items should wrap onto the next line when there isn't enough space in the container. Here are its possible values:
+
+- `nowrap` (default): Items will try to fit on one line.
+- `wrap`: Items will wrap onto new lines from top to bottom.
+- `wrap-reverse`: Items will wrap onto new lines from bottom to top.
+
+For example:
+
+```html
+<style>
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+</style>
+
+<div class="container">
+  <!-- Flex items go here -->
+</div>
+```
+
+In this code, `flex-wrap: wrap;` is applied to the `.container` class, which allows the flex items to move to a new line when there's not enough space on the current line.
+
+### Code and Sample Output
+
+HTML File:
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <h2>Flex-wrap: nowrap (default)</h2>
+  <div class="container nowrap">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+    <div class="item">Item 4</div>
+    <div class="item">Item 5</div>
+    <div class="item">Item 6</div>
+  </div>
+
+  <h2>Flex-wrap: wrap</h2>
+  <div class="container wrap">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+    <div class="item">Item 4</div>
+    <div class="item">Item 5</div>
+    <div class="item">Item 6</div>
+  </div>
+
+  <h2>Flex-wrap: wrap-reverse</h2>
+  <div class="container wrap-reverse">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+    <div class="item">Item 4</div>
+    <div class="item">Item 5</div>
+    <div class="item">Item 6</div>
+  </div>
+</body>
+</html>
+```
+CSS File:
+```css
+.container {
+  display: flex;
   width: 50%;
-  float: left;
+  margin-bottom: 20px;
+}
+
+.item {
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid black;
+  flex-basis: 50%;
+}
+
+.nowrap {
+  flex-wrap: nowrap;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+```
+
+#### Output
+
+![Wrap](https://i.imgur.com/3KpYmFT.png)
+![Wrap](https://i.imgur.com/PMmKCON.png)
+
+## Justify Content
+
+The `justify-content` property aligns items along the main axis of the current line of the flex container. The alignment is done after the lengths and auto margins are resolved. It means that if there is at least one flexible element, with `flex-grow` different from 0, it will have no effect as there would be no available space.
+
+Here's what each property does:
+
+- `flex-start` (default): Items align to the start of the container.
+- `flex-end`: Items align to the end of the container.
+- `center`: Items align at the center of the container.
+- `space-between`: Items display with equal spacing between them.
+- `space-around`: Items display with equal spacing around them.
+- `space-evenly`: Items display with equal spacing around and between them.
+
+Now, let's see examples for each `justify-content` value:
+
+HTML File:
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <h2>Justify-content: flex-start</h2>
+  <div class="container flex-start">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+  </div>
+
+  <h2>Justify-content: flex-end</h2>
+  <div class="container flex-end">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+  </div>
+
+  <h2>Justify-content: center</h2>
+  <div class="container center">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+  </div>
+
+  <h2>Justify-content: space-between</h2>
+  <div class="container space-between">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+  </div>
+
+  <h2>Justify-content: space-around</h2>
+  <div class="container space-around">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+  </div>
+
+  <h2>Justify-content: space-evenly</h2>
+  <div class="container space-evenly">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+  </div>
+</body>
+</html>
+```
+
+CSS File:
+```css
+.container {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  margin-bottom: 20px;
+}
+
+.item {
+  margin: 10px;
+  padding: 20px;
   border: 1px solid black;
 }
 
-@media (max-width: 768px) {
-  .column {
-  width: 100%;
-  float: none;
-  }
+.flex-start {
+  justify-content: flex-start;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.center {
+  justify-content: center;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
+.space-evenly {
+  justify-content: space-evenly;
 }
 ```
 
-In the example above, the `.container` class represents a container element that holds two columns. The columns are set to have a width of 50% each using the `float` property. However, when the screen size becomes smaller (768px or less), a media query is used to change the columns' width to 100% and remove the float, allowing the columns to stack vertically. This ensures that the content remains readable and accessible on smaller screens.
+In these files, I've created several containers, each applying a different `justify-content` value. The `flex-start` class represents `justify-content: flex-start;`, `flex-end` for `justify-content: flex-end;`, and so on. 
 
-### Output
-
-#### PC
-
-![PC Output](https://i.imgur.com/N6E84OR.png)
-
-#### CP
-
-![CP Output](https://i.imgur.com/8rH9hxH.png)
-
-## More Examples
-
-To further understand the principles of responsive web design, let's explore additional examples.
-
-### Example 1: Responsive Images
-
-  HTML File:
-  ```html
-  <!DOCTYPE html>
-  <html>
-  <head>
-    <title>Responsive Design</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">s
-  </head>
-  <body>
-    <div class="container">
-      <img src="image.jpg" alt="Responsive Image">
-    </div>
-  </body>
-  </html>
-  ```
-
-  CSS File:
-  ```css
-  .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-  ```
-In this example, the `.container` class sets the maximum width of the container element to 1200px and centers it horizontally using `margin: 0 auto;`. The `img` element is styled with `max-width: 100%` to ensure it scales down proportionally with its parent container while maintaining its aspect ratio.
+The `.item` class styles each flex item with a border, some padding, and a `flex-basis` value which helps us demonstrate the effect of each `justify-content` value.
 
 #### Output
 
-##### PC
+![Justify](https://i.imgur.com/QwWRBKA.png)
+![Justify](https://i.imgur.com/5tL6pJ6.png)
 
-![PC Output](https://i.imgur.com/bslJnJO.png)
+## Align Items
 
-##### CP
+The `align-items` property sets the default alignment for all the children's cross-axis alignments within the current flex container. It means that if the individual items do not have their `align-self` property set, they will default to the value set for `align-items` on the container.
 
-![CP Output](https://i.imgur.com/ksZzHU1.png)
+Here's what each property does:
 
-### Example 2: Hiding Elements on Small Screens
+- `stretch` (default): Stretch to fill the container (still respect min-width/max-width)
+- `flex-start`: Cross-start margin edge of the items is placed on the cross-start line
+- `flex-end`: Cross-end margin edge of the items is placed on the cross-end line
+- `center`: Items are centered in the cross-axis
+- `baseline`: Items are aligned such as their baselines align
 
-HTML File:
+Now, let's see examples for each `align-items` value:
+
+HTML File (`index.html`):
 ```html
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Responsive Design</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-  <div class="sidebar">
-    <!-- Sidebar content -->
-    <p>Some Sidebar Content</p>
+  <h2>Align-items: stretch (default)</h2>
+  <div class="container stretch">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+  </div>
+
+  <h2>Align-items: flex-start</h2>
+  <div class="container flex-start">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+  </div>
+
+  <h2>Align-items: flex-end</h2>
+  <div class="container flex-end">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+  </div>
+
+  <h2>Align-items: center</h2>
+  <div class="container center">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+  </div>
+
+  <h2>Align-items: baseline</h2>
+  <div class="container baseline">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
   </div>
 </body>
 </html>
 ```
 
-CSS File:
+CSS File (`styles.css`):
 ```css
-.sidebar {
-  display: block;
+.container {
+  display: flex;
+  width: 100%;
+  height: 200px;
+  margin-bottom: 20px;
+  border: 1px solid black;
 }
 
-@media (max-width: 768px) {
-  .sidebar {
-    display: none;
-  }
+.item {
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid red;
+}
+
+.stretch {
+  align-items: stretch;
+}
+
+.flex-start {
+  align-items: flex-start;
+}
+
+.flex-end {
+  align-items: flex-end;
+}
+
+.center {
+  align-items: center;
+}
+
+.baseline {
+  align-items: baseline;
 }
 ```
 
-In this example, the `.sidebar` class represents a sidebar element. By default, it is set to `display: block;`, allowing it to be visible on larger screens. However, when the screen size becomes smaller than or equal to 768px, the media query inside the `@media` rule is triggered, and the sidebar is hidden (`display: none;`). This ensures that the sidebar doesn't take up unnecessary space on small screens, providing a better mobile experience.
+In these files, I've created several containers, each applying a different `align-items` value. The `stretch` class represents `align-items: stretch;`, `flex-start` for `align-items: flex-start;`, and so on. 
+
+The `.item` class styles each flex item with a border, some padding, and a `flex-basis` value which helps us demonstrate the effect of each `align-items` value.
 
 #### Output
 
-##### PC
+![Align](https://i.imgur.com/TfNSudE.png)
+![Align](https://i.imgur.com/wKWZp3s.png)
+![Align](https://i.imgur.com/SpjM8w3.png)
 
-![PC Output](https://i.imgur.com/jwhJv91.png)
+## Gap Property
 
-##### CP
+The `gap` property is a newer addition to Flexbox. It is used to define the spacing between the flex items in a flex container along both the main and cross axes.
 
-![CP Output](https://i.imgur.com/ozzdhm8.png)
+Here's how you can use the `gap` property:
+
+```css
+.container {
+  display: flex;
+  gap: 20px;
+}
+```
+
+In this example, the `.container` class is a flex container, and `gap: 20px;` is applied to it. This means that there will be a 20-pixel gap between each flex item inside the container, both horizontally and vertically.
+
+Using the `gap` property is a convenient way to add spacing between flex items without having to add margin or padding to each item individually. It also ensures that the spacing between items is consistent, making your layout more uniform and easier to manage.
 
 ## Conclusion
 
-Responsive web design is a fundamental concept in modern web development. By applying the principles of responsive design, such as fluid grids, media queries, and flexible layouts, you can create websites that adapt to different screen sizes and devices, providing a seamless user experience. The use of the viewport meta tag further enhances the responsiveness of the website. Understanding and implementing responsive design principles is essential for ensuring your website is accessible, visually appealing, and functional across a wide range of devices. By prioritizing responsive design, you can cater to the needs of your users, improve engagement, and stay ahead in the ever-evolving digital landscape.
+Flexbox provides a flexible and efficient way to create complex and responsive layouts. By understanding the concepts of flex containers and flex items, along with the key properties like `flex-direction`, `flex-wrap`, `justify-content`, and `align-items`, you can create dynamic and adaptive designs that respond to different screen sizes and devices.
 
-Resources:
-- [MDN Web Docs: Responsive Web Design Basics](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design)
-- [W3Schools: Responsive Web Design](https://www.w3schools.com/css/css_rwd_intro.asp)
+References:
+- [MDN Web Docs: Flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox)
+- [CSS-Tricks: A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+- [W3Schools: CSS Flexbox](https://www.w3schools.com/css/css3_flexbox.asp)
+

@@ -1,179 +1,172 @@
-# Event Object
+# Form Validation Basics: Ensuring Data Accuracy
 
-The Event Object in JavaScript provides information about an event that has occurred, such as a user action or a system event. It allows developers to access important details about the event, including its type, target element, and other properties. Additionally, the Event Object can be used to prevent the default browser behavior and control the propagation of events.
+Form validation is an essential aspect of web development, ensuring that user-entered data is accurate and meets specific criteria. With client-side form validation, you can validate user input directly in the web browser before submitting it to the server. This approach provides immediate feedback to users, reducing unnecessary requests and enhancing the user experience. In this topic, we will explore the basics of client-side form validation, focusing on checking for empty fields, required formats, and constraints.
 
-In this topic, we will explore how to access event information and properties and demonstrate how to prevent default browser behavior and propagate events using the Event Object.
+## Understanding the `required` Attribute 
 
-## Accessing Event Information and Properties
+The `required` attribute in HTML is a powerful tool that aids in form validation right at the HTML level. It is a boolean attribute that can be used on specific input types in an HTML form to denote that a field must be filled out before the form can be submitted. This attribute plays a key role in basic client-side form validation.
 
-When an event is triggered, an Event Object is automatically created and passed to the event handler function. This object contains valuable information about the event, which can be accessed using the event parameter within the event handler.
+When a form with a `required` attribute is submitted, the browser checks whether all required fields have been filled. If a required field is left empty, the browser prevents form submission and provides a default error message to the user, asking them to fill in the missing data.
 
-Here's an example of accessing event information and properties:
+Here's an example of how to use the `required` attribute:
 
-```javascript
-
-const button = document.getElementById("myButton");
-button.addEventListener("click", function(event) {
-  console.log("Event type:", event.type);
-  console.log("Target element:", event.target);
-  console.log("Mouse coordinates:", event.clientX, event.clientY);
-});
+```html
+<form>
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" required>
+  
+  <input type="submit" value="Submit">
+</form>
 ```
 
-In this example, we have added a click event listener to a button element with the ID "myButton." When the button is clicked, the event object is passed to the function expression as the `event` parameter. We can then access various properties of the event object using dot notation. The code above logs the event type, target element, and mouse coordinates to the console.
+In this code snippet, the `required` attribute is added to the `<input>` element for the name field. This means the form cannot be submitted unless the name field is filled in by the user.
 
-## Preventing Default Browser Behavior and Propagating Events
+A key thing to note is that the `required` attribute only works with the following `<input>` types: text, search, URL, tel, email, password, date pickers, number, checkbox, radio, and file. It can also be used with the `<textarea>` and `<select>` elements.
 
-The Event Object also provides methods to prevent the default behavior of the browser associated with a specific event. For example, when a user clicks on a link, the browser navigates to the URL specified in the `href` attribute by default. However, you can use the Event Object to override this behavior and perform custom actions instead.
+Here's an example of `required` attribute usage with the `<textarea>` element:
 
-Here's an example that demonstrates preventing the default browser behavior:
-
-```javascript
-const link = document.getElementById("myLink");
-link.addEventListener("click", function(event) {
-  event.preventDefault();
-  console.log("Link clicked, but default behavior prevented.");
-});
+```html
+<form>
+  <label for="message">Message:</label>
+  <textarea id="message" name="message" required></textarea>
+  
+  <input type="submit" value="Submit">
+</form>
 ```
 
-In this code snippet, we have added a click event listener to a hyperlink element with the ID "myLink." When the link is clicked, the event object is passed to the anonymous function as the `event` parameter. By calling the `preventDefault()` method on the event object, we prevent the browser from following the link and display the message in the console instead.
+And an example with the `<select>` element:
 
-In addition to preventing default browser behavior, the Event Object allows developers to control event propagation. Event propagation, also known as event bubbling and event capturing, refers to the process by which events are triggered and propagated through the DOM (Document Object Model) hierarchy.
+```html
+<form>
+  <label for="country">Country:</label>
+  <select id="country" name="country" required>
+    <option value="">Select...</option>
+    <option value="usa">USA</option>
+    <option value="uk">UK</option>
+    <option value="canada">Canada</option>
+  </select>
 
-When an event occurs on an element, such as a click event, the event is initially triggered on that specific element. However, the event doesn't stop there. By default, the event continues to propagate through the DOM, triggering event handlers on the element's ancestors (parent elements) until it reaches the root element (usually the `<html>` element).
+  <input type="submit" value="Submit">
+</form>
+```
 
-There are two phases of event propagation:
+The `required` attribute is a simple but powerful tool for basic form validation. It's important to remember that while the `required` attribute aids in form validation at the client side.
 
-1. **Capture Phase**: In this phase, the event starts from the root element and moves down through the DOM hierarchy, triggering event handlers on the ancestors of the target element. This phase is not commonly used in practice.
+## Checking for Empty Fields
 
-2. **Bubbling Phase**: After the capture phase, the event enters the bubbling phase, where it starts from the target element and moves up through the DOM hierarchy, triggering event handlers on the ancestors of the target element. This is the default behavior of event propagation and the one most frequently used.
+One fundamental aspect of form validation is checking whether the required fields have been filled out by the user. Empty fields can lead to incomplete or inaccurate data being submitted. To ensure all required fields are completed, JavaScript can be used to validate the form.
 
-By default, event handlers are executed in the bubbling phase. However, you can use the `stopPropagation()` method of the Event Object to prevent further propagation of the event. When `stopPropagation()` is called within an event handler, it halts the event from triggering event handlers on ancestor elements. This allows you to control where the event stops propagating and which event handlers are executed.
+In JavaScript, you can access the values of form fields using the `document.forms` property. This property provides access to all `<form>` elements in the current HTML document. By retrieving the value of specific form fields, you can check if they are empty or not.
 
-### Example:
+Here's an example of how to check for empty fields using JavaScript:
 
-Here's a code example that demonstrates event propagation and the use of `stopPropagation()`:
+```javascript
+function validateForm() {
+  var name = document.forms["myForm"]["name"].value;
+  var email = document.forms["myForm"]["email"].value;
+  
+  if (name === "" || email === "") {
+    console.log("Please fill out all required fields.");
+    return false;
+  }
+}
+```
 
-HTML File:
+In the code snippet above, we define a `validateForm` function that is called when the form is submitted. Inside the function, we retrieve the values of the `name` and `email` fields using the `document.forms` property. The subsequent `if` statement checks if either of these fields is empty. If any required field is empty, an console.log is displayed, and the function returns `false`, preventing the form from being submitted.
+
+To use this function, you need to include the following HTML code within the `<form>` tags:
+
+```html
+<form name="myForm" onsubmit="return validateForm()">
+  <!-- form fields go here -->
+  <input type="text" name="name" required>
+  <input type="email" name="email" required>
+  <input type="submit" value="Submit">
+</form>
+```
+
+The `required` attribute is added to the `<input>` elements, indicating that the respective fields must be filled out. The `onsubmit` event calls the `validateForm` function, triggering the form validation.
+
+## Checking for Required Formats and Constraints
+
+Apart from checking for empty fields, you may also want to validate the format and constraints of specific input fields. For example, you might require a valid email address, a certain password length, or numeric values within a specific range.
+
+Let's consider an example where we validate the length of a password field:
+
+```javascript
+function validateForm() {
+  var password = document.forms["myForm"]["password"].value;
+  
+  if (password.length < 8) {
+    console.log("Password must be at least 8 characters long.");
+    return false;
+  }
+}
+```
+
+In the code snippet above, we define a function named `validateForm`. This function is called when the form is submitted. Inside the function, we retrieve the value entered in the password field using the `document.forms` property.
+
+The subsequent `if` statement checks if the length of the `password` string is less than 8 characters. If the password fails to meet this length requirement, an console.log is displayed with the message "Password must be at least 8 characters long." The function then returns `false`, preventing the form from being submitted.
+
+## More Example
+
+To provide a more practical understanding, let's consider an example that demonstrates form validation for a registration form. We'll validate the format of the email and password fields, along with checking for empty fields.
+
+Here's an example:
 
 ```html
 <!DOCTYPE html>
 <html>
 <head>
-  <style>
-    .container {
-      padding: 20px;
-      background-color: #eaeaea;
-    }
-
-    .nested {
-      padding: 10px;
-      background-color: #ffffff;
-    }
-  </style>
+  <title>Registration Form</title>
 </head>
 <body>
-  <div class="container">
-    <div class="nested" id="nestedElement">
-      <button id="innerButton">Click me!</button>
-    </div>
-  </div>
+  <h1>Registration Form</h1>
+  
+  <form name="registrationForm" onsubmit="return validateForm()">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    
+    <input type="submit" value="Register">
+  </form>
 
-  <script src = "script.js"></script>
-</body>
-</html>
-```
-JavaScript File:
-```javascript
-const nestedElement = document.getElementById("nestedElement");
-nestedElement.addEventListener("click", function(event) {
-  event.stopPropagation();
-  console.log("Event stopped propagating at the nested element.");
-});
-
-const innerButton = document.getElementById("innerButton");
-innerButton.addEventListener("click", function(event) {
-  console.log("Inner button clicked.");
-});
-```
-In this example, we have a nested structure of HTML elements. The outer `<div>` with the class "container" represents an ancestor element, and the inner `<div>` with the class "nested" represents the target element where the click event is handled. Inside the inner `<div>`, there is a `<button>` element with the ID "innerButton."
-
-When you click the inner button, the click event is triggered. However, the event propagation is stopped at the nested element due to the `stopPropagation()` method call in its event handler. As a result, the event does not propagate further to the ancestor container element.
-
-## Examples
-
-### Example 1: Changing Background Color on Hover
-
-Let's consider a scenario where we want to change the background color of an element when the user hovers over it. We can achieve this by using the `mouseover` and `mouseout` events and manipulating the `style` property of the target element.
-
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <style>
-    #myElement {
-      width: 200px;
-      height: 200px;
-      background-color: #eaeaea;
-    }
-  </style>
-</head>
-<body>
-  <div id="myElement"></div>
-  <script src = "script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
 ```
 
-JavaScript File:
 ```javascript
-const element = document.getElementById("myElement");
-
-element.addEventListener("mouseover", function(event) {
-    event.target.style.backgroundColor = "blue";
-});
-
-element.addEventListener("mouseout", function(event) {
-    event.target.style.backgroundColor = "#eaeaea";
-});
+// script.js
+function validateForm() {
+  var email = document.forms["registrationForm"]["email"].value;
+  var password = document.forms["registrationForm"]["password"].value;
+  
+  if (email === "" || password === "") {
+    console.log("Please fill out all required fields.");
+    return false;
+  }
+  
+  if (password.length < 8) {
+    console.log("Password must be at least 8 characters long.");
+    return false;
+  }
+}
 ```
 
-In this example, we select an element with the class "myElement" and attach event listeners for `mouseover` and `mouseout` events. When the mouse hovers over the element, the background color is changed to blue, and when the mouse moves out, the background color is reset to the default color.
+Within the `validateForm()` function, the values entered in the email and password fields are retrieved using the `document.forms` property. The variables `email` and `password` store these values.
 
-### Example 2: Keydown Event for Keyboard Input
+The function then checks if either the email or password field is empty by comparing them to an empty string. If any of these required fields is empty, an console.log is displayed with the message "Please fill out all required fields." The function returns `false`, which prevents the form from being submitted.
 
-Suppose we want to capture and display the key that the user presses while focusing on an input field. We can achieve this by using the `keydown` event and accessing the `key` property of the event object.
+Additionally, there is a check to ensure that the password is at least 8 characters long. If the length of the password is less than 8, an console.log is displayed with the message "Password must be at least 8 characters long." Again, the function returns `false` to prevent form submission.
 
-HTML File:
-
-```html
-<!DOCTYPE html>
-<html>
-<body>
-  <input id="myInput" type="text" placeholder="Type something...">
-  <script src = "script.js"></script>
-</body>
-</html>
-```
-
-JavaScript File:
-```javascript
-const inputField = document.getElementById("myInput");
-
-inputField.addEventListener("keydown", function(event) {
-    console.log("Key pressed:", event.key);
-});
-```
-
-In this example, we attach a `keydown` event listener to an input field. Whenever a key is pressed while the input field is in focus, the event object is passed to the anonymous function, and the pressed key is logged to the console.
+By performing these validations, this ensures that the user fills out all required fields and that the password meets the minimum length requirement before allowing the form to be submitted.
 
 ## Conclusion
 
-Understanding and utilizing the Event Object is crucial for handling events effectively in JavaScript. It allows developers to access event information, manipulate properties, prevent default browser behavior, and control event propagation. By harnessing the power of the Event Object, you can create interactive and dynamic web applications that respond to user actions precisely.
-
-Remember to refer to the official documentation and authoritative resources for in-depth learning and exploration of the Event Object and its capabilities. Happy coding!
+Form validation plays a crucial role in ensuring data accuracy and improving the user experience. By checking for empty fields, required formats, and constraints, you can provide immediate feedback to users and prevent incorrect or incomplete data from being submitted.
 
 References:
-- [MDN Web Docs - Event](https://developer.mozilla.org/en-US/docs/Web/API/Event)
-- [MDN Web Docs - Event.preventDefault()](https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault)
-- [MDN Web Docs - Event.stopPropagation()](https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation)
+- [MDN Web Docs: Client-side Form Validation](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation)

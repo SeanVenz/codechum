@@ -1,23 +1,71 @@
-# Modifying Element Properties and Content
+# Event Listeners
 
 ## Introduction
 
-When working with the Document Object Model (DOM) in JavaScript, it's common to need to modify the properties, content, and structure of HTML elements dynamically. This allows you to update text content, change attributes, apply CSS styles, add or remove elements, and manipulate the DOM structure to create interactive and dynamic web applications. In this topic, we will explore various techniques for modifying element properties and content, including changing text content, attributes, and CSS styles, as well as adding, removing, and manipulating DOM nodes.
+Event listeners are essential for building interactive web applications. They allow you to respond to user interactions, such as clicks, mouse movements, or keyboard input. By attaching event listeners to HTML elements, you can specify the type of event to listen for and execute custom JavaScript code when that event occurs. In this topic, we will explore how to add event listeners to elements and specify the type of event to listen for, providing code examples and explanations for a better understanding.
 
-## Changing Text Content, Attributes, and CSS Styles
+## Adding Event Listeners to Elements
 
-### Changing Text Content
+To add an event listener to an element, you can use the `addEventListener` method. This method takes two arguments: the type of event to listen for and a callback function to execute when the event occurs.
 
-To change the text content of an element, you can manipulate the `textContent` property. It allows you to set or retrieve the text content of an element. Here's an example:
+The callback function is a function that gets executed when the specified event occurs. It contains the code that should be executed in response to the event. This function is often referred to as an **event handler**. Here's an example:
 
+Here's an example:
+
+```javascript
+const button = document.getElementById('myButton');
+button.addEventListener('click', function() {
+  // Event handler code here
+});
+```
+
+In this example, the event listener is added to the button element with the id "myButton". It listens for the 'click' event and executes the callback function when the button is clicked. Inside the callback function, you can write the code that should be executed in response to the event.
+
+## Specifying the Type of Event to Listen For
+
+There are various types of events that you can listen for, depending on the user interactions you want to respond to. Some common event types include:
+
+- `click`: Triggered when an element is clicked.
+- `mouseover`: Triggered when the mouse pointer is moved over an element.
+- `keydown`: Triggered when a key is pressed down.
+- `submit`: Triggered when a form is submitted.
+- `load`: Triggered when a page finishes loading.
+- `focus:` Triggered when an element receives focus
+- `blur:` Triggered when an element loses focus
+- `contextmenu:` Triggered when a context menu is opened
+- `scroll:` Triggered when an element's scroll position changes
+- `touchstart:` Triggered when a touch point is placed on the touch surface (usually used on touch screen devices)
+- `touchmove:` Triggered when a touch point is moved along the touch surface (usually used on touch screen devices)
+- `touchend:` Triggered when a touch point is removed from the touch surface (usually used on touch screen devices)
+
+To listen for a specific event type, simply pass the event type as the first argument to the `addEventListener` method. Here's an example:
+
+```javascript
+const element = document.getElementById('myElement');
+element.addEventListener('mouseover', function() {
+  // Event handler code here
+});
+```
+
+In this example, the event listener is added to the element with the id "myElement" and listens for the 'mouseover' event. The callback function will be executed when the mouse pointer is moved over the element.
+
+## Examples
+
+Here are some examples of commonly used event types:
+
+### Example 1 Click Event
+
+The `'click'` event is triggered when an element is clicked by the user. You can use it to perform an action or execute a function when the element is clicked. Here's an example:
+
+HTML File:
 ```html
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Changing Text Content</title>
+  <title>Click Event Example</title>
 </head>
 <body>
-  <div id="myElementId">Initial Text Content</div>
+  <button id="myButton">Click Me</button>
   <script src="script.js"></script>
 </body>
 </html>
@@ -26,81 +74,31 @@ To change the text content of an element, you can manipulate the `textContent` p
 Create a new file named `script.js` and add the following JavaScript code:
 
 ```javascript
-const element = document.getElementById('myElementId');
-element.textContent = 'New Text Content';
+const button = document.getElementById('myButton');
+button.addEventListener('click', function() {
+  console.log('Button clicked');
+});
 ```
 
-In this example, the `textContent` property is used to change the text content of the element with the id "myElementId" from "Initial Text Content" to "New Text Content".
+In this example, the event listener is added to a button element with the id "myButton". When the button is clicked, the callback function is executed, and the message "Button clicked" is logged to the console.
 
-### Changing Text Color
+### Example 2 Mouseover Event
 
-Similarly you can change the color of the text:
-
-```javascript
-const element = document.getElementById('myElementId');
-element.style.color = 'red';
-```
-
-In this example, the color of the text of the element with the ID `myElementId` will be changed to red.
-
-### Changing Background Color
-
-Similarly, you can change the background color:
-
-```javascript
-const element = document.getElementById('myElementId');
-element.style.backgroundColor = 'blue';
-```
-
-This will change the background color of the element with the ID `myElementId` to blue.
-
-
-### Changing Attributes
-
-To change the value of an attribute on an element, you can access and modify the attribute using the `setAttribute` and `getAttribute` methods. Here's an example:
+The `'mouseover'` event is triggered when the mouse pointer is moved over an element. It can be used to trigger actions like showing tooltips or highlighting elements when the mouse hovers over them. Here's an example:
 
 ```html
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Changing Attributes</title>
-</head>
-<body>
-  <img id="myImage" src="image.jpg" alt="Old Image">
-  <script src="script.js"></script>    
-</body>
-</html>
-```
-
-Create a new file named `script.js` and add the following JavaScript code:
-
-```javascript
-const element = document.getElementById('myImage');
-element.setAttribute('src', 'new-image.jpg');
-const altValue = element.getAttribute('alt');
-console.log(altValue); // Output: "Old Image"
-```
-
-In this example, the `setAttribute` method is used to change the `src` attribute of the image element with the id "myImage" to "new-image.jpg". The `getAttribute` method is then used to retrieve the value of the `alt` attribute, which remains unchanged as "Old Image".
-
-### Changing CSS Styles
-
-To modify CSS styles of an element, you can access the `style` property of the element and manipulate its individual CSS properties. Here's an example:
-
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Changing CSS Styles</title>
+  <title>Mouseover Event Example</title>
   <style>
-    .myElement {
-      background-color: blue;
-      font-size: 20px;
+    .highlight {
+      background-color: yellow;
     }
   </style>
 </head>
 <body>
-  <div id="myElementId" class="myElement">Styled Element</div>
+  <div id="myElement">Hover over me</div>
   <script src="script.js"></script>
 </body>
 </html>
@@ -109,29 +107,30 @@ To modify CSS styles of an element, you can access the `style` property of the e
 Create a new file named `script.js` and add the following JavaScript code:
 
 ```javascript
-const element = document.getElementById('myElementId');
-element.style.backgroundColor = 'red';
-element.style.fontSize = '30px';
+const element = document.getElementById('myElement');
+element.addEventListener('mouseover', function() {
+  element.classList.add('highlight');
+});
+
+element.addEventListener('mouseout', function() {
+  element.classList.remove('highlight');
+});
 ```
 
-In this example, the background color of the element with the id "myElementId" is changed to red, and the font size is set to 30 pixels by manipulating the `style` property.
+In this example, the event listener is added to a `<div>` element with the id "myElement". When the mouse is moved over the element, the callback function adds the "highlight" class to the element, causing it to have a yellow background. When the mouse moves out of the element, the class is removed, restoring the original styling.
 
-## Adding, Removing, and Manipulating DOM Nodes
+### Example 3 Load Event
 
-### Adding Elements
-
-To add new elements to the DOM, you can create new elements using the `createElement` method, set their properties, and append them to existing elements using methods like `appendChild` or `insertBefore`. Here's an example:
+The `'load'` event is triggered when a page finishes loading. It allows you to perform actions or initialize components after the page has fully loaded. Here's an example:
 
 ```html
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Adding Elements</title>
+  <title>Load Event Example</title>
 </head>
 <body>
-  <div id="parentElementId">
-    <p>Existing Element</p>
-  </div>
+  <h1>Hello, World!</h1>
   <script src="script.js"></script>
 </body>
 </html>
@@ -140,75 +139,19 @@ To add new elements to the DOM, you can create new elements using the `createEle
 Create a new file named `script.js` and add the following JavaScript code:
 
 ```javascript
-const parentElement = document.getElementById('parentElementId');
-const newElement = document.createElement('div');
-newElement.textContent = 'New Element';
-parentElement.appendChild(newElement);
+window.addEventListener('load', function() {
+  console.log('Page loaded');
+});
 ```
 
-In this example, a new `<div>` element is created and assigned the text content "New Element". The new element is then appended as a child to the element with the id "parentElementId" using the `appendChild` method.
+In this example, the event listener is added to the `window` object, representing the browser window. When the page finishes loading, the callback function is executed, and the message "Page loaded" is logged to the console.
 
-### Removing Elements
-
-To remove elements from the DOM, you can use the `removeChild` method on the parent element, passing the element you want to remove as the argument. Here's an example:
-
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Removing Elements</title>
-</head>
-<body>
-  <div id="parentElementId">
-    <p id="childElementId">Child Element</p>
-  </div>
-  <script src="script.js"></script>
-</body>
-</html>
-```
-
-Create a new file named `script.js` and add the following JavaScript code:
-
-```javascript
-const parentElement = document.getElementById('parentElementId');
-const childElement = document.getElementById('childElementId');
-parentElement.removeChild(childElement);
-```
-
-In this example, the element with the id "childElementId" is removed from the DOM by calling the `removeChild` method on its parent element, which is obtained using the `getElementById` method.
-
-### Manipulating DOM Structure
-
-You can also manipulate the structure of the DOM by moving elements, replacing elements, or cloning elements. Here's an example of moving an element:
-
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Manipulating DOM Structure</title>
-</head>
-<body>
-  <div id="sourceElementId">Source Element</div>
-  <div id="destinationElementId">Destination Element</div>
-  <script src="script.js"></script>
-</body>
-</html>
-```
-
-Create a new file named `script.js` and add the following JavaScript code:
-
-```javascript
-const sourceElement = document.getElementById('sourceElementId');
-const destinationElement = document.getElementById('destinationElementId');
-destinationElement.appendChild(sourceElement);
-```
-
-In this example, the element with the id "sourceElementId" is moved from its current parent and appended as a child to the element with the id "destinationElementId" using the `appendChild` method.
+By adding event listeners to elements and specifying the type of event to listen for, you can create interactive and responsive web applications that respond to user actions and provide a seamless user experience.
 
 ## Conclusion
 
-Modifying element properties and content is crucial for creating dynamic and interactive web applications. JavaScript provides powerful methods and properties to change text content, attributes, and CSS styles of elements. Additionally, adding, removing, and manipulating DOM nodes allows you to modify the structure and composition of the webpage dynamically. By mastering these techniques, you can create engaging user experiences and build sophisticated web applications.
+Event listeners are powerful tools for creating interactive and dynamic web applications. By attaching event listeners to HTML elements, you can respond to user interactions and execute custom JavaScript code accordingly. This allows you to enhance the user experience and add interactivity to your web pages. By understanding how to add event listeners and specify the type of event to listen for, you can create engaging and interactive web applications.
 
 References:
-- [MDN Web Docs - Manipulating documents](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
-- [W3Schools - JavaScript HTML DOM](https://www.w3schools.com/js/js_htmldom.asp)
+- [MDN Web Docs - Introduction to events](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events)
+- [W3Schools - JavaScript Events](https://www.w3schools.com/js/js_events.asp)

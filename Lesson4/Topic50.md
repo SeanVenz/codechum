@@ -1,46 +1,58 @@
-# Event Handling Functions
+# Event Object
 
-In JavaScript, event handling functions are used to define the behavior or actions that should occur in response to specific events. These functions are associated with event listeners and are executed when the corresponding event is triggered. Event handling functions play a crucial role in creating interactive and dynamic web applications by allowing you to respond to user interactions and trigger actions.
+The Event Object in JavaScript provides information about an event that has occurred, such as a user action or a system event. It allows developers to access important details about the event, including its type, target element, and other properties. Additionally, the Event Object can be used to prevent the default browser behavior and control the propagation of events.
 
-## Responding to User Interactions and Triggering Actions
+In this topic, we will explore how to access event information and properties and demonstrate how to prevent default browser behavior and propagate events using the Event Object.
 
-Event handling functions allow you to respond to various user interactions, such as keystrokes, and form submissions. By defining the appropriate event handling functions, you can trigger actions or modify the behavior and appearance of elements in response to these interactions.
+## Accessing Event Information and Properties
 
-Here are some examples of how event handling functions can be used to respond to user interactions:
+When an event is triggered, an Event Object is automatically created and passed to the event handler function. This object contains valuable information about the event, which can be accessed using the event parameter within the event handler.
 
-### Example: Submit Event
-
-HTML file:
-
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Submit Event</title>
-</head>
-<body>
-  <form id="myForm">
-    <input type="text" placeholder="Type something...">
-    <button type="submit">Submit</button>
-  </form>
-  <script src="script.js"></script>
-</body>
-</html>
-```
-
-Javascript File:
+Here's an example of accessing event information and properties:
 
 ```javascript
-const form = document.getElementById('myForm');
-form.addEventListener('submit', function(event) {
+
+const button = document.getElementById("myButton");
+button.addEventListener("click", function(event) {
+  console.log("Event type:", event.type);
+  console.log("Target element:", event.target);
+  console.log("Mouse coordinates:", event.clientX, event.clientY);
+});
+```
+
+In this example, we have added a click event listener to a button element with the ID "myButton." When the button is clicked, the event object is passed to the function expression as the `event` parameter. We can then access various properties of the event object using dot notation. The code above logs the event type, target element, and mouse coordinates to the console.
+
+## Preventing Default Browser Behavior and Propagating Events
+
+The Event Object also provides methods to prevent the default behavior of the browser associated with a specific event. For example, when a user clicks on a link, the browser navigates to the URL specified in the `href` attribute by default. However, you can use the Event Object to override this behavior and perform custom actions instead.
+
+Here's an example that demonstrates preventing the default browser behavior:
+
+```javascript
+const link = document.getElementById("myLink");
+link.addEventListener("click", function(event) {
   event.preventDefault();
-  console.log('Form submitted');
+  console.log("Link clicked, but default behavior prevented.");
 });
 ```
 
-In this example, the event handling function is defined to prevent the default form submission behavior and log a message when the form is submitted. **`event.preventDefault();`** Within the event handling function, we call the preventDefault() method on the event object. This method prevents the default form submission behavior, which typically results in the page being refreshed or redirected. By calling `preventDefault()`, we can stop this default behavior from happening.
+In this code snippet, we have added a click event listener to a hyperlink element with the ID "myLink." When the link is clicked, the event object is passed to the anonymous function as the `event` parameter. By calling the `preventDefault()` method on the event object, we prevent the browser from following the link and display the message in the console instead.
 
-### Example: Click Event
+In addition to preventing default browser behavior, the Event Object allows developers to control event propagation. Event propagation, also known as event bubbling and event capturing, refers to the process by which events are triggered and propagated through the DOM (Document Object Model) hierarchy.
+
+When an event occurs on an element, such as a click event, the event is initially triggered on that specific element. However, the event doesn't stop there. By default, the event continues to propagate through the DOM, triggering event handlers on the element's ancestors (parent elements) until it reaches the root element (usually the `<html>` element).
+
+There are two phases of event propagation:
+
+1. **Capture Phase**: In this phase, the event starts from the root element and moves down through the DOM hierarchy, triggering event handlers on the ancestors of the target element. This phase is not commonly used in practice.
+
+2. **Bubbling Phase**: After the capture phase, the event enters the bubbling phase, where it starts from the target element and moves up through the DOM hierarchy, triggering event handlers on the ancestors of the target element. This is the default behavior of event propagation and the one most frequently used.
+
+By default, event handlers are executed in the bubbling phase. However, you can use the `stopPropagation()` method of the Event Object to prevent further propagation of the event. When `stopPropagation()` is called within an event handler, it halts the event from triggering event handlers on ancestor elements. This allows you to control where the event stops propagating and which event handlers are executed.
+
+### Example:
+
+Here's a code example that demonstrates event propagation and the use of `stopPropagation()`:
 
 HTML File:
 
@@ -48,135 +60,120 @@ HTML File:
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Click Event</title>
-</head>
-<body>
-  <button id="myButton">Click Me!</button>
-  <script src="script.js"></script>
-</body>
-</html>
-```
-
-JavaScript File:
-```javascript
-const button = document.getElementById('myButton');
-button.addEventListener('click', function(event) {
-  console.log('Button clicked');
-});
-```
-
-In this example, the event handling function is triggered when the button is clicked, and it logs a message to the console. The `event` parameter can be used to access information about the click event, such as the target element or mouse coordinates.
-
-### Example: Keydown Event
-
-HTML File:
-
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Keydown Event</title>
-</head>
-<body>
-  <p>Press Enter!</p>
-  <script src="script.js"></script>
-</body>
-</html>
-```
-
-JavaScript File:
-
-```javascript
-document.addEventListener('keydown', function(event) {
-  if (event.key === 'Enter') {
-    console.log('Enter key pressed');
-  }
-});
-```
-
-In this example, the event handling function is triggered when a key is pressed down anywhere on the document. It checks if the pressed key is the Enter key and logs a message to the console. The `event` parameter allows you to access information about the keydown event, such as the pressed key or modifiers.
-
-### Example: Mousemove Event
-
-HTML File:
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>MouseMove Event Handling Example</title>
   <style>
-    #myContainer {
-      width: 300px;
-      height: 300px;
-      border: 1px solid black;
+    .container {
+      padding: 20px;
+      background-color: #eaeaea;
+    }
+
+    .nested {
+      padding: 10px;
+      background-color: #ffffff;
     }
   </style>
 </head>
 <body>
-  <h1>MouseMove Event</h1>
+  <div class="container">
+    <div class="nested" id="nestedElement">
+      <button id="innerButton">Click me!</button>
+    </div>
+  </div>
 
-  <div id="myContainer"></div>
+  <script src = "script.js"></script>
+</body>
+</html>
+```
+JavaScript File:
+```javascript
+const nestedElement = document.getElementById("nestedElement");
+nestedElement.addEventListener("click", function(event) {
+  event.stopPropagation();
+  console.log("Event stopped propagating at the nested element.");
+});
 
-  <script src="script.js"></script>
+const innerButton = document.getElementById("innerButton");
+innerButton.addEventListener("click", function(event) {
+  console.log("Inner button clicked.");
+});
+```
+In this example, we have a nested structure of HTML elements. The outer `<div>` with the class "container" represents an ancestor element, and the inner `<div>` with the class "nested" represents the target element where the click event is handled. Inside the inner `<div>`, there is a `<button>` element with the ID "innerButton."
+
+When you click the inner button, the click event is triggered. However, the event propagation is stopped at the nested element due to the `stopPropagation()` method call in its event handler. As a result, the event does not propagate further to the ancestor container element.
+
+## Examples
+
+### Example 1: Changing Background Color on Hover
+
+Let's consider a scenario where we want to change the background color of an element when the user hovers over it. We can achieve this by using the `mouseover` and `mouseout` events and manipulating the `style` property of the target element.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #myElement {
+      width: 200px;
+      height: 200px;
+      background-color: #eaeaea;
+    }
+  </style>
+</head>
+<body>
+  <div id="myElement"></div>
+  <script src = "script.js"></script>
 </body>
 </html>
 ```
 
 JavaScript File:
-
 ```javascript
-const container = document.getElementById('myContainer');
-container.addEventListener('mousemove', function(event) {
-  console.log(`Mouse coordinates: (${event.clientX}, ${event.clientY})`);
+const element = document.getElementById("myElement");
+
+element.addEventListener("mouseover", function(event) {
+    event.target.style.backgroundColor = "blue";
+});
+
+element.addEventListener("mouseout", function(event) {
+    event.target.style.backgroundColor = "#eaeaea";
 });
 ```
 
-In this example, the event handling function is triggered when the mouse is moved over the container element. It logs the mouse coordinates (X and Y) to the console. The `event` parameter provides information about the mousemove event, including the mouse coordinates relative to the viewport.
+In this example, we select an element with the class "myElement" and attach event listeners for `mouseover` and `mouseout` events. When the mouse hovers over the element, the background color is changed to blue, and when the mouse moves out, the background color is reset to the default color.
 
-These examples demonstrate how event handling functions can make use of the `event` parameter to access event-specific information and perform actions based on user interactions.
+### Example 2: Keydown Event for Keyboard Input
 
-Please note that the `event` parameter can be named differently. It is a convention to use `event` or `e`, but you can choose any valid identifier. By defining event handling functions, you can respond to user interactions and trigger actions that enhance the interactivity and functionality of your web applications.
+Suppose we want to capture and display the key that the user presses while focusing on an input field. We can achieve this by using the `keydown` event and accessing the `key` property of the event object.
 
-## Defining Event Handling Functions Separately
+HTML File:
 
-You can also define your event handling functions separately and then use them as second parameters inside your event listeners. This can make your code easier to read, more organized, and allow you to reuse your functions in multiple places.
-
-Here is an example:
-
-```javascript
-function handleButtonClick(event) {
-  console.log('Button clicked');
-}
-
-const button = document.getElementById('myButton');
-button.addEventListener('click', handleButtonClick);
+```html
+<!DOCTYPE html>
+<html>
+<body>
+  <input id="myInput" type="text" placeholder="Type something...">
+  <script src = "script.js"></script>
+</body>
+</html>
 ```
 
-In this example, the event handling function `handleButtonClick` is defined separately. It logs a message to the console when the button is clicked. After defining the function, it is used as the second parameter inside the `addEventListener` method.
-
-This pattern allows for a clear separation of responsibilities in your code. The `handleButtonClick` function only needs to know how to handle a button click event, while the code that attaches the event listener to the button does not need to know the specifics of what happens when the button is clicked.
-
-### Another Example: Form Submission
-
+JavaScript File:
 ```javascript
-function handleFormSubmit(event) {
-  event.preventDefault();
-  console.log('Form submitted');
-}
+const inputField = document.getElementById("myInput");
 
-const form = document.getElementById('myForm');
-form.addEventListener('submit', handleFormSubmit);
+inputField.addEventListener("keydown", function(event) {
+    console.log("Key pressed:", event.key);
+});
 ```
 
-In this example, the event handling function `handleFormSubmit` is defined to prevent the default form submission behavior and log a message. This function is then passed as the second argument to the `addEventListener` method on the form element.
-
-This separation of responsibilities can make your code easier to maintain, as it's clear which parts of your code are responsible for handling events, and which parts are responsible for setting up the event listeners.
+In this example, we attach a `keydown` event listener to an input field. Whenever a key is pressed while the input field is in focus, the event object is passed to the anonymous function, and the pressed key is logged to the console.
 
 ## Conclusion
 
-Event handling functions are a fundamental aspect of web development, allowing you to respond to user interactions and trigger actions accordingly. By defining these functions, you can create interactive and engaging web experiences for your users.
+Understanding and utilizing the Event Object is crucial for handling events effectively in JavaScript. It allows developers to access event information, manipulate properties, prevent default browser behavior, and control event propagation. By harnessing the power of the Event Object, you can create interactive and dynamic web applications that respond to user actions precisely.
+
+Remember to refer to the official documentation and authoritative resources for in-depth learning and exploration of the Event Object and its capabilities. Happy coding!
 
 References:
-- [MDN Web Docs - EventTarget.addEventListener()](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
-- [JavaScript.info - Introduction to Events](https://javascript.info/introduction-browser-events)
+- [MDN Web Docs - Event](https://developer.mozilla.org/en-US/docs/Web/API/Event)
+- [MDN Web Docs - Event.preventDefault()](https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault)
+- [MDN Web Docs - Event.stopPropagation()](https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation)

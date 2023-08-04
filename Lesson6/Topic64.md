@@ -1,515 +1,284 @@
-# Flexbox Basics: Creating Flexible Layouts
+# Creating Flexible Layouts with Flexbox
 
-## Introduction
+Creating flexible and responsive designs for web pages is a common requirement in web development. To aid in achieving this, CSS introduced the Flexible Box Layout Module, commonly known as Flexbox. This model provides an efficient way to lay out, align, and distribute space among items in a container, even when their sizes are unknown or dynamic. 
 
-Flexbox is a powerful CSS layout module that provides a flexible and efficient way to create complex and responsive layouts. It offers a set of properties for aligning and distributing space among items in a container. In this topic, we will explore the fundamental concepts of flex containers, flex items, and the key properties used to control their behavior.
+## Distributing Space with Flexbox Properties
 
-## Flex Container and Flex Items
+Flexbox gives you control over how space is distributed among items within a container. The main properties involved are: `flex-grow`, `flex-shrink`, and `flex-basis`.
 
-Flexbox is a method to create flexible layouts in CSS. It operates based on the relationship between a parent element (which we call a "flex container") and its child elements ("flex items").
-
-To create a flex container, you need to apply the `display: flex;` or `display: inline-flex;` property to the parent element. Here's an example:
-
-```html
-<style>
-  .container {
-    display: flex;
-  }
-</style>
-
-<div class="container">
-  <!-- Flex items go here -->
-</div>
-```
-
-In this example, we made the `<div>` with the class `.container` a flex container. Everything inside this container are called "flex items". These flex items can now be managed in a more flexible way.
-
-Flexbox gives us control over the alignment, direction, order, and size of these items within the container.
-
-For example, look at this code:
-
-```html
-<style>
-  .container {
-    display: flex;
-    justify-content: space-between;  /* This will evenly distribute items along the horizontal line */
-    align-items: center;  /* This will align items vertically in the middle */
-  }
+### Using flex-grow, flex-shrink, and flex-basis to distribute space
   
+`flex-grow` and `flex-shrink` dictate how much a flex item will grow or shrink relative to others in the container. `flex-basis` sets the initial main size of a flex item.
+
+- **`flex-grow`**: This property specifies how much a flex item will grow relative to the rest of the flex items in the container. It's a unitless value that serves as a proportion. It dictates how much of the remaining space inside the flex container the item should take up. If every item has `flex-grow` set to 1, the remaining space in the container will be distributed equally to all children. If one of the children has a `flex-grow` of 2, the remaining space would take up twice as much space as the others (or it will try to, as long as it doesn't violate other constraints, like `min-width` or `max-width`).
+
+    For example, if we have two elements and the first element has `flex-grow: 1;` and the second element has `flex-grow: 2;`, the second element will take up twice as much remaining space as the first one.
+
+- **`flex-shrink`**: This property determines how much a flex item will shrink relative to the rest of the items in the container when there isn't enough space. It is similar to `flex-grow`, but it controls the size of the items when the container is too small. In other words, it describes how to shrink the items.
+
+    It's important to note that `flex-shrink` is used when the size of the box is larger than the flex container. If the size of all items is equal to or smaller than the container, then this property has no effect.
+
+- **`flex-basis`**: This property specifies the initial size of a flex item before CSS starts to distribute free space left over. It can be specified with any unit used to describe width (px, em, %, etc.). `flex-basis` is like `width` for flex items. 
+
+    If `flex-basis` is set to `0`, the additional free space is distributed based on the `flex-grow` factor. If `flex-basis` is set to `auto`, the additional free space is distributed based on the item's width property.
+
+- **`flex`**: This is the shorthand for `flex-grow`, `flex-shrink` and `flex-basis` combined. The second and third parameters (`flex-shrink` and `flex-basis`) are optional. The default is `0 1 auto`, but if you have `flex: 1;` then it would be equivalent to `flex: 1 1 0;`.
+
+In the given CSS code:
+
+```css
+.item {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+}
+```
+
+Every item is allowed to grow and shrink. Since every item has the same `flex-grow` factor, the remaining space in the container is distributed equally to all items. Also, since every item has the same `flex-shrink` factor, if the total width of the items is larger than the container, every item will shrink equally until they can fit within the container.
+
+By specifying `flex-basis: 0`, we're essentially saying that the base size is 0 pixels, and the size of items is determined solely by the `flex-grow` and `flex-shrink` factors. This is what makes every item the same size regardless of their content.
+
+It's important to note that `flex-grow`, `flex-shrink`, and `flex-basis` are very powerful when combined and can create very flexible layouts with minimal code.
+
+Consider a container with three items:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<html>
+<body>
+  <div class="container">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+  </div>
+</body>
+</html>
+```
+
+In the CSS, we can set the flex properties:
+
+```css
+.container {
+  display: flex;
+}
+
+.item {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+}
+```
+
+This will ensure each item can grow to take up the same proportion of space, shrink if necessary, and has an initial size of 0. In practice, you often use the shorthand `flex` property to set these three properties at once:
+
+```css
+.item {
+  flex: 1 1 0; /* flex-grow, flex-shrink, flex-basis */
+}
+```
+
+#### Output
+
+![Flex](https://i.imgur.com/BmUt4lL.png)
+
+## Controlling Item Order and Alignment
+
+In addition to controlling the distribution of space, Flexbox also offers easy ways to control the order and alignment of items.
+
+### Changing the order of flex items
+
+The `order` property in Flexbox allows you to control the order in which items appear within the flex container. By default, items will display in the order they are written in the HTML. However, you can override this:
+
+HTML File:
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="container">
+    <div class="item itemA">Item A</div>
+    <div class="item itemB">Item B</div>
+    <div class="item itemC">Item C</div>
+  </div>
+</body>
+</html>
+```
+CSS File:
+```css
+.container {
+  display: flex;
+}
+
+.item {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+}
+
+.itemA {
+  order: 3;
+}
+
+.itemB {
+  order: 1;
+}
+
+.itemC {
+  order: 2;
+}
+```
+
+In this example, "Item 1" will now appear second, and "Item 2" will appear first.
+
+#### Output
+
+![Output](https://i.imgur.com/3UmYaiC.png)
+
+### Aligning flex items individually
+
+Flexbox also gives you individual control over item alignment through the `align-self` property. This property accepts the same values as `align-items`, and it allows you to override any value set by the `align-items` property on the flex container.
+
+HTML File:
+```html
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<html>
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="container">
+    <div class="item itemA">Item A</div>
+    <div class="item itemB">Item B</div>
+    <div class="item itemC">Item C</div>
+  </div>
+</body>
+</html>
+```
+CSS File:
+```css
+.container {
+  display: flex;
+  height: 200px; /* Ensure there's enough space for items to move on cross axis */
+}
+
+.item {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+}
+
+.itemA {
+  align-self: flex-start;
+}
+
+.itemB {
+  align-self: center;
+}
+
+.itemC {
+  align-self: flex-end;
+}
+```
+
+Here, each item is aligned differently along the cross axis: the first item is at the start, the second in the center, and the third at the end.
+
+#### Output
+
+![Output](https://i.imgur.com/DMIck4L.png)
+
+## Responsive Design with Flexbox
+
+Flexbox is a valuable tool when creating responsive layouts. With it, you can easily design layouts that adjust and reflow their contents in response to different screen sizes.
+
+### Adapting flexbox layouts to different screen sizes
+
+With media queries, you can make your Flexbox layout respond to different viewport sizes:
+
+```css
+.container {
+  display:
+
+ flex;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
   .item {
-    flex: 1 0 0;  /* This will allow the items to grow to fill the container if there's extra space */
+    flex: 1 0 100%; /* grow, shrink, basis */
   }
-</style>
-
-<div class="container">
-  <div class="item">Item 1</div>
-  <div class="item">Item 2</div>
-  <div class="item">Item 3</div>
-</div>
-
+}
 ```
 
-Here we're using some properties like `justify-content`, `align-items`, and `flex`.
+In this example, when the viewport is 600px or less, each flex item will take up the full width of the container, stacking vertically.
 
-- `justify-content` changes the alignment of the items along the horizontal line in the container.
-- `align-items` does the same, but along the vertical line.
-- `flex` is a shorthand for three properties: `flex-grow` (how much the item will grow relative to the rest of the items), `flex-shrink` (how much the item will shrink relative to the rest), and `flex-basis` (the default size of an element before it is adjusted with `flex-grow` or `flex-shrink`).
+## More Examples
 
-## Flex Direction and Flex Wrap
+Let's illustrate these concepts with a more comprehensive example. In this snippet, we define a flex container and several flex items, all of varying sizes. The goal is to distribute the space between the items evenly, regardless of their individual widths.
 
-### Flex Direction
-
-Flexbox provides two properties, `flex-direction` and `flex-wrap`, which control the direction and wrapping behavior of flex items.
-
-The `flex-direction` property determines the main axis along which the flex items are laid out. Here are its possible values:
-
-- `row` (default): Items are laid out in a line from left to right.
-- `row-reverse`: Items are laid out from right to left.
-- `column`: Items are laid out from top to bottom.
-- `column-reverse`: Items are laid out from bottom to top.
-
-For example:
-
-```html
-<style>
-  .container {
-    display: flex;
-    flex-direction: row-reverse;
-  }
-</style>
-
-<div class="container">
-  <!-- Flex items go here -->
-</div>
-```
-
-### Code and Sample Output
-
-HTML File:
 ```html
 <!DOCTYPE html>
 <html>
 <head>
+  <title>Flexbox Demo</title>
   <link rel="stylesheet" href="styles.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-  <h2>Flex-direction: row (default)</h2>
-  <div class="container row">
-    <div class="item">Item 1</div>
-    <div class="item">Item 2</div>
-    <div class="item">Item 3</div>
-  </div>
-
-  <h2>Flex-direction: row-reverse</h2>
-  <div class="container row-reverse">
-    <div class="item">Item 1</div>
-    <div class="item">Item 2</div>
-    <div class="item">Item 3</div>
-  </div>
-
-  <h2>Flex-direction: column</h2>
-  <div class="container column">
-    <div class="item">Item 1</div>
-    <div class="item">Item 2</div>
-    <div class="item">Item 3</div>
-  </div>
-
-  <h2>Flex-direction: column-reverse</h2>
-  <div class="container column-reverse">
-    <div class="item">Item 1</div>
-    <div class="item">Item 2</div>
-    <div class="item">Item 3</div>
+  <div class="container">
+    <div class="item item1">1</div>
+    <div class="item item2">2</div>
+    <div class="item item3">3</div>
   </div>
 </body>
 </html>
 ```
 
-CSS File:
 ```css
 .container {
   display: flex;
-  width: 50%;
-  margin-bottom: 20px;
 }
 
 .item {
-  margin: 10px;
-  padding: 20px;
   border: 1px solid black;
-  flex-basis: 50%;
+  padding: 10px;
+  flex-basis: 100px;
+  text-align: center;
 }
 
-.nowrap {
-  flex-wrap: nowrap;
+.item1 {
+  flex: 1 0 auto;
 }
 
-.wrap {
-  flex-wrap: wrap;
+.item2 {
+  flex: 2 0 auto;
 }
 
-.wrap-reverse {
-  flex-wrap: wrap-reverse;
-}
-```
-
-#### Output
-
-![Flex](https://i.imgur.com/qSsGyRj.png)
-![Flex](https://i.imgur.com/xGGGrNX.png)
-
-In this code, `flex-direction: row-reverse;` is applied to the `.container` class, which lays out the flex items from right to left.
-
-### Flex-Wrap
-
-The `flex-wrap` property decides whether the flex items should wrap onto the next line when there isn't enough space in the container. Here are its possible values:
-
-- `nowrap` (default): Items will try to fit on one line.
-- `wrap`: Items will wrap onto new lines from top to bottom.
-- `wrap-reverse`: Items will wrap onto new lines from bottom to top.
-
-For example:
-
-```html
-<style>
-  .container {
-    display: flex;
-    flex-wrap: wrap;
-  }
-</style>
-
-<div class="container">
-  <!-- Flex items go here -->
-</div>
-```
-
-In this code, `flex-wrap: wrap;` is applied to the `.container` class, which allows the flex items to move to a new line when there's not enough space on the current line.
-
-### Code and Sample Output
-
-HTML File:
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <link rel="stylesheet" href="styles.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-  <h2>Flex-wrap: nowrap (default)</h2>
-  <div class="container nowrap">
-    <div class="item">Item 1</div>
-    <div class="item">Item 2</div>
-    <div class="item">Item 3</div>
-    <div class="item">Item 4</div>
-    <div class="item">Item 5</div>
-    <div class="item">Item 6</div>
-  </div>
-
-  <h2>Flex-wrap: wrap</h2>
-  <div class="container wrap">
-    <div class="item">Item 1</div>
-    <div class="item">Item 2</div>
-    <div class="item">Item 3</div>
-    <div class="item">Item 4</div>
-    <div class="item">Item 5</div>
-    <div class="item">Item 6</div>
-  </div>
-
-  <h2>Flex-wrap: wrap-reverse</h2>
-  <div class="container wrap-reverse">
-    <div class="item">Item 1</div>
-    <div class="item">Item 2</div>
-    <div class="item">Item 3</div>
-    <div class="item">Item 4</div>
-    <div class="item">Item 5</div>
-    <div class="item">Item 6</div>
-  </div>
-</body>
-</html>
-```
-CSS File:
-```css
-.container {
-  display: flex;
-  width: 50%;
-  margin-bottom: 20px;
-}
-
-.item {
-  margin: 10px;
-  padding: 20px;
-  border: 1px solid black;
-  flex-basis: 50%;
-}
-
-.nowrap {
-  flex-wrap: nowrap;
-}
-
-.wrap {
-  flex-wrap: wrap;
-}
-
-.wrap-reverse {
-  flex-wrap: wrap-reverse;
+.item3 {
+  flex: 1 0 auto;
 }
 ```
 
-#### Output
-
-![Wrap](https://i.imgur.com/3KpYmFT.png)
-![Wrap](https://i.imgur.com/PMmKCON.png)
-
-## Justify Content
-
-The `justify-content` property aligns items along the main axis of the current line of the flex container. The alignment is done after the lengths and auto margins are resolved. It means that if there is at least one flexible element, with `flex-grow` different from 0, it will have no effect as there would be no available space.
-
-Here's what each property does:
-
-- `flex-start` (default): Items align to the start of the container.
-- `flex-end`: Items align to the end of the container.
-- `center`: Items align at the center of the container.
-- `space-between`: Items display with equal spacing between them.
-- `space-around`: Items display with equal spacing around them.
-- `space-evenly`: Items display with equal spacing around and between them.
-
-Now, let's see examples for each `justify-content` value:
-
-HTML File:
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <link rel="stylesheet" href="styles.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-  <h2>Justify-content: flex-start</h2>
-  <div class="container flex-start">
-    <div class="item">Item 1</div>
-    <div class="item">Item 2</div>
-    <div class="item">Item 3</div>
-  </div>
-
-  <h2>Justify-content: flex-end</h2>
-  <div class="container flex-end">
-    <div class="item">Item 1</div>
-    <div class="item">Item 2</div>
-    <div class="item">Item 3</div>
-  </div>
-
-  <h2>Justify-content: center</h2>
-  <div class="container center">
-    <div class="item">Item 1</div>
-    <div class="item">Item 2</div>
-    <div class="item">Item 3</div>
-  </div>
-
-  <h2>Justify-content: space-between</h2>
-  <div class="container space-between">
-    <div class="item">Item 1</div>
-    <div class="item">Item 2</div>
-    <div class="item">Item 3</div>
-  </div>
-
-  <h2>Justify-content: space-around</h2>
-  <div class="container space-around">
-    <div class="item">Item 1</div>
-    <div class="item">Item 2</div>
-    <div class="item">Item 3</div>
-  </div>
-
-  <h2>Justify-content: space-evenly</h2>
-  <div class="container space-evenly">
-    <div class="item">Item 1</div>
-    <div class="item">Item 2</div>
-    <div class="item">Item 3</div>
-  </div>
-</body>
-</html>
-```
-
-CSS File:
-```css
-.container {
-  display: flex;
-  width: 100%;
-  height: 100px;
-  margin-bottom: 20px;
-}
-
-.item {
-  margin: 10px;
-  padding: 20px;
-  border: 1px solid black;
-}
-
-.flex-start {
-  justify-content: flex-start;
-}
-
-.flex-end {
-  justify-content: flex-end;
-}
-
-.center {
-  justify-content: center;
-}
-
-.space-between {
-  justify-content: space-between;
-}
-
-.space-around {
-  justify-content: space-around;
-}
-
-.space-evenly {
-  justify-content: space-evenly;
-}
-```
-
-In these files, I've created several containers, each applying a different `justify-content` value. The `flex-start` class represents `justify-content: flex-start;`, `flex-end` for `justify-content: flex-end;`, and so on. 
-
-The `.item` class styles each flex item with a border, some padding, and a `flex-basis` value which helps us demonstrate the effect of each `justify-content` value.
-
-#### Output
-
-![Justify](https://i.imgur.com/QwWRBKA.png)
-![Justify](https://i.imgur.com/5tL6pJ6.png)
-
-## Align Items
-
-The `align-items` property sets the default alignment for all the children's cross-axis alignments within the current flex container. It means that if the individual items do not have their `align-self` property set, they will default to the value set for `align-items` on the container.
-
-Here's what each property does:
-
-- `stretch` (default): Stretch to fill the container (still respect min-width/max-width)
-- `flex-start`: Cross-start margin edge of the items is placed on the cross-start line
-- `flex-end`: Cross-end margin edge of the items is placed on the cross-end line
-- `center`: Items are centered in the cross-axis
-- `baseline`: Items are aligned such as their baselines align
-
-Now, let's see examples for each `align-items` value:
-
-HTML File (`index.html`):
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <link rel="stylesheet" href="styles.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-  <h2>Align-items: stretch (default)</h2>
-  <div class="container stretch">
-    <div class="item">Item 1</div>
-    <div class="item">Item 2</div>
-    <div class="item">Item 3</div>
-  </div>
-
-  <h2>Align-items: flex-start</h2>
-  <div class="container flex-start">
-    <div class="item">Item 1</div>
-    <div class="item">Item 2</div>
-    <div class="item">Item 3</div>
-  </div>
-
-  <h2>Align-items: flex-end</h2>
-  <div class="container flex-end">
-    <div class="item">Item 1</div>
-    <div class="item">Item 2</div>
-    <div class="item">Item 3</div>
-  </div>
-
-  <h2>Align-items: center</h2>
-  <div class="container center">
-    <div class="item">Item 1</div>
-    <div class="item">Item 2</div>
-    <div class="item">Item 3</div>
-  </div>
-
-  <h2>Align-items: baseline</h2>
-  <div class="container baseline">
-    <div class="item">Item 1</div>
-    <div class="item">Item 2</div>
-    <div class="item">Item 3</div>
-  </div>
-</body>
-</html>
-```
-
-CSS File (`styles.css`):
-```css
-.container {
-  display: flex;
-  width: 100%;
-  height: 200px;
-  margin-bottom: 20px;
-  border: 1px solid black;
-}
-
-.item {
-  margin: 10px;
-  padding: 20px;
-  border: 1px solid red;
-}
-
-.stretch {
-  align-items: stretch;
-}
-
-.flex-start {
-  align-items: flex-start;
-}
-
-.flex-end {
-  align-items: flex-end;
-}
-
-.center {
-  align-items: center;
-}
-
-.baseline {
-  align-items: baseline;
-}
-```
-
-In these files, I've created several containers, each applying a different `align-items` value. The `stretch` class represents `align-items: stretch;`, `flex-start` for `align-items: flex-start;`, and so on. 
-
-The `.item` class styles each flex item with a border, some padding, and a `flex-basis` value which helps us demonstrate the effect of each `align-items` value.
-
-#### Output
-
-![Align](https://i.imgur.com/TfNSudE.png)
-![Align](https://i.imgur.com/wKWZp3s.png)
-![Align](https://i.imgur.com/SpjM8w3.png)
-
-## Gap Property
-
-The `gap` property is a newer addition to Flexbox. It is used to define the spacing between the flex items in a flex container along both the main and cross axes.
-
-Here's how you can use the `gap` property:
-
-```css
-.container {
-  display: flex;
-  gap: 20px;
-}
-```
-
-In this example, the `.container` class is a flex container, and `gap: 20px;` is applied to it. This means that there will be a 20-pixel gap between each flex item inside the container, both horizontally and vertically.
-
-Using the `gap` property is a convenient way to add spacing between flex items without having to add margin or padding to each item individually. It also ensures that the spacing between items is consistent, making your layout more uniform and easier to manage.
+In this example, each item has a basis of `100px`, but they are allowed to grow to fill the container. The second item will take up twice as much remaining space as the others, due to its `flex-grow` value of `2`.
 
 ## Conclusion
 
-Flexbox provides a flexible and efficient way to create complex and responsive layouts. By understanding the concepts of flex containers and flex items, along with the key properties like `flex-direction`, `flex-wrap`, `justify-content`, and `align-items`, you can create dynamic and adaptive designs that respond to different screen sizes and devices.
+Flexbox is a powerful tool for creating flexible, responsive web layouts. It provides fine-grained control over the distribution and alignment of space within a container, allowing you to create complex designs with less CSS than traditional methods.
+
+Moreover, Flexbox's capabilities make it a valuable asset for creating responsive designs that adapt to different viewport sizes, ensuring your website looks great on all devices.
 
 References:
-- [MDN Web Docs: Flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox)
-- [CSS-Tricks: A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-- [W3Schools: CSS Flexbox](https://www.w3schools.com/css/css3_flexbox.asp)
-
+- [CSS Flexible Box Layout - CSS: Cascading Style Sheets | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout)
+- [A Complete Guide to Flexbox | CSS-Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+- [Flexbox Froggy - A game for learning CSS flexbox](https://flexboxfroggy.com/)
