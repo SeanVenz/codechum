@@ -75,8 +75,6 @@ In this example, the array numbers has three elements, but trying to access the 
 
 Accessing array elements using index values is a fundamental skill when working with arrays in JavaScript. By understanding the zero-based indexing concept, you can effectively retrieve and manipulate individual elements within an array. Remember that index values start from 0 for the first element and increment by 1 for each subsequent element.
 
-Take time to practice accessing array elements using different index values and explore the versatility of arrays in your JavaScript programs.
-
 References:
 - [MDN Web Docs - Arrays](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 - [W3Schools - JavaScript Arrays](https://www.w3schools.com/js/js_arrays.asp)
