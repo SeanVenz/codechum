@@ -57,7 +57,7 @@ In the code snippet above, we retrieve the value of the input field (`myInput`) 
 
 These resources provide comprehensive explanations, examples, and exercises to reinforce your understanding of event handling and form validation.
 
-## More Examples
+## More Example
 
 Here's an additional example that demonstrates form validation using JavaScript.
 
