@@ -174,17 +174,17 @@ In the example above, the `.container` class represents a container element that
 
 #### PC
 
-![PC Output](https://i.imgur.com/N6E84OR.png)
+![Fluid Grids PC Output](https://i.imgur.com/N6E84OR.png)
 
 #### CP
 
-![CP Output](https://i.imgur.com/8rH9hxH.png)
+![Fluid Grids CP Output](https://i.imgur.com/8rH9hxH.png)
 
 ## More Examples
 
 To further understand the principles of responsive web design, let's explore additional examples.
 
-### Example 1: Responsive Images
+### Responsive Images
 
   HTML File:
   ```html
@@ -222,13 +222,13 @@ In this example, the `.container` class sets the maximum width of the container 
 
 ##### PC
 
-![PC Output](https://i.imgur.com/bslJnJO.png)
+![Responsive Images PC Output](https://i.imgur.com/bslJnJO.png)
 
 ##### CP
 
-![CP Output](https://i.imgur.com/ksZzHU1.png)
+![Responsive Images CP Output](https://i.imgur.com/ksZzHU1.png)
 
-### Example 2: Hiding Elements on Small Screens
+### Hiding Elements on Small Screens
 
 HTML File:
 ```html
@@ -267,11 +267,11 @@ In this example, the `.sidebar` class represents a sidebar element. By default, 
 
 ##### PC
 
-![PC Output](https://i.imgur.com/jwhJv91.png)
+![Hiding Elements PC Output](https://i.imgur.com/jwhJv91.png)
 
 ##### CP
 
-![CP Output](https://i.imgur.com/ozzdhm8.png)
+![Hiding Elements CP Output](https://i.imgur.com/ozzdhm8.png)
 
 ## Conclusion
 
