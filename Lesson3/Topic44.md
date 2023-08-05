@@ -85,7 +85,7 @@ Variable hoisting is an essential concept to understand when working with JavaSc
 
 Remember that hoisting applies to `var` declarations, but not to `let` and `const` declarations, as `let` and `const` have block-level scope and do not get hoisted to the top of their scope. Always declare variables before using them to avoid unexpected behavior and make your code more readable.
 
-Resources:
-[MDN Web Docs var](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var)
-[MDN Web Docs let](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)
-[MDN Web Docs const](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)
+References:
+- [MDN Web Docs var](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var)
+- [MDN Web Docs let](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)
+- [MDN Web Docs const](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)
