@@ -128,22 +128,37 @@ HTML File:
 CSS File:
 ```css
 .container {
-  display: flex;
-  width: 50%;
-  margin-bottom: 20px;
-}
-
-.item {
-  margin: 10px;
-  padding: 20px;
-  border: 1px solid black;
-  flex-basis: 50%;
-}
+    display: flex;
+    width: 50%;
+    margin-bottom: 20px;
+  }
+  
+  .item {
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid black;
+    flex-basis: 50%;
+  }
+  
+  .row {
+    flex-direction: row;
+  }
+  
+  .row-reverse {
+    flex-direction: row-reverse;
+  }
+  
+  .column {
+    flex-direction: column;
+  }
+  
+  .column-reverse {
+    flex-direction: column-reverse;
+  }
 ```
 
 #### Output
-
-![Flex Direction Output](https://imgur.com/Rln7Kkq)
+![Flex Direction Output](https://i.imgur.com/Rln7Kkq.png)
 
 In this code, `flex-direction: row-reverse;` is applied to the `.container` class, which lays out the flex items from right to left.
 
