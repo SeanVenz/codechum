@@ -139,18 +139,6 @@ CSS File:
   border: 1px solid black;
   flex-basis: 50%;
 }
-
-.nowrap {
-  flex-wrap: nowrap;
-}
-
-.wrap {
-  flex-wrap: wrap;
-}
-
-.wrap-reverse {
-  flex-wrap: wrap-reverse;
-}
 ```
 
 #### Output
