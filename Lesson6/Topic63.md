@@ -143,8 +143,7 @@ CSS File:
 
 #### Output
 
-![Flex](https://i.imgur.com/qSsGyRj.png)
-![Flex](https://i.imgur.com/xGGGrNX.png)
+![Flex Direction Output](https://imgur.com/Rln7Kkq)
 
 In this code, `flex-direction: row-reverse;` is applied to the `.container` class, which lays out the flex items from right to left.
 
